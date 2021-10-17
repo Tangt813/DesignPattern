@@ -1,4 +1,4 @@
-package Adapter.src.Visitor;
+package Visitor;
 
 public class RecreationFacility implements Facility {
 

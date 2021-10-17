@@ -1,4 +1,4 @@
-package Adapter.src.Visitor;
+package Visitor;
 
 public class Periscope implements Facility {
 

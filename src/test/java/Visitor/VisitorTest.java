@@ -1,9 +1,5 @@
 package Visitor;
 
-import Adapter.src.Visitor.Facility;
-import Adapter.src.Visitor.FacilityAdministrator;
-import Adapter.src.Visitor.FacilityPlayer;
-import Adapter.src.Visitor.RecreationFacility;
 import org.junit.Test;
 
 public class VisitorTest {

@@ -1,4 +1,4 @@
-package Adapter.src.Visitor;
+package Visitor;
 
 public interface FacilityVisitor {
     public void visit(RecreationFacility recreationFacility);
