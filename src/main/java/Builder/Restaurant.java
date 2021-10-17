@@ -1,7 +1,7 @@
 package Builder;
 
 public class Restaurant {
-    private BaseRestaurantWaiter waiter;
+    private final BaseRestaurantWaiter waiter;
     public Restaurant(BaseRestaurantWaiter waiter) {
         this.waiter = waiter;
     }
