@@ -16,11 +16,12 @@ public class Ticket {
     public String userName;
     public int price;
     public Date time;
-
-    public Ticket(String userName, int price, Date time) {
+    public String type;
+    public Ticket(String userName, int price, Date time, String type) {
         this.userName = userName;
         this.price = price;
         this.time = time;
+        this.type = type;
     }
 
     public String getUserName() {
@@ -33,5 +34,9 @@ public class Ticket {
 
     public Date getTime() {
         return time;
+    }
+
+    public String getType() {
+        return type;
     }
 }
