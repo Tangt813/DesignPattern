@@ -7,5 +7,7 @@ package Factory.src;/*
 
 public class DrinkDish extends Dish{
     private String type;
-    DrinkDish(String name){this.name=name;}
+    public DrinkDish(String name, Integer price){
+        super(name, price);
+    }
 }

@@ -6,7 +6,7 @@ package Factory.src;/*
 */
 
 public interface DishFactory {
-    Dish produceDish();
+    Dish produceDish(String name, Integer price);
 }
 
 

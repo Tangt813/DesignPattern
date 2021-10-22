@@ -16,13 +16,9 @@ public class FactoryTest {
         DrinkDishFactory Drink_Fac=new DrinkDishFactory();
         //新建订单
         DishOrderService order=new DishOrderService();
-        //获取订单信息
-        Main_Fac.getname(order.getMain());
-        Snack_Fac.getname(order.getSnack());
-        Drink_Fac.getname(order.getDrink());
         //生产食品
-        Main_Fac.produceDish();
-        Snack_Fac.produceDish();
-        Drink_Fac.produceDish();
+        Main_Fac.produceDish("汉堡", 60);
+        Snack_Fac.produceDish("薯条", 40);
+        Drink_Fac.produceDish("可乐", 20);
     }
 }

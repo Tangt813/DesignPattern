@@ -1,8 +1,12 @@
 package Builder;
 
+import Factory.src.DrinkDish;
+import Factory.src.MainDish;
+import Factory.src.SnackDish;
+
 public abstract class BaseRestaurantWaiter {
-    abstract void prepareMainFood(String mainFood);
-    abstract void prepareSnack(String snack);
-    abstract void prepareDrink(String drink);
+    abstract void prepareMainFood(MainDish mainFood);
+    abstract void prepareSnack(SnackDish snack);
+    abstract void prepareDrink(DrinkDish drink);
     abstract Meal prepareMeal();
 }

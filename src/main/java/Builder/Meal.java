@@ -11,38 +11,38 @@ public class Meal {
     private DrinkDish drink;
 
     public Meal() {
-        this.mainFood = "待选择";
-        this.snack = "待选择";
-        this.drink = "待选择";
+        this.mainFood = new MainDish("待选择", 0);
+        this.snack = new SnackDish("待选择", 0);
+        this.drink = new DrinkDish("待选择", 0);
     }
 
-    public Meal(String mainFood, String snack, String drink) {
+    public Meal(MainDish mainFood, SnackDish snack, DrinkDish drink) {
         this.mainFood = mainFood;
         this.snack = snack;
         this.drink = drink;
     }
 
-    public String getMainFood() {
+    public MainDish getMainFood() {
         return mainFood;
     }
 
-    public void setMainFood(String mainFood) {
+    public void setMainFood(MainDish mainFood) {
         this.mainFood = mainFood;
     }
 
-    public String getSnack() {
+    public SnackDish getSnack() {
         return snack;
     }
 
-    public void setSnack(String snack) {
+    public void setSnack(SnackDish snack) {
         this.snack = snack;
     }
 
-    public String getDrink() {
+    public DrinkDish getDrink() {
         return drink;
     }
 
-    public void setDrink(String drink) {
+    public void setDrink(DrinkDish drink) {
         this.drink = drink;
     }
 }

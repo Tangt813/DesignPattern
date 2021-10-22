@@ -5,7 +5,10 @@ package Factory.src;/*
 @description:
 */
 
-public class SnackDish extends Dish{
-     private String type;
-     SnackDish(String name){this.name=name;}
+public class SnackDish extends Dish {
+
+    public SnackDish(String name, Integer price) {
+        this.name = name;
+        this.price = price;
+    }
 }

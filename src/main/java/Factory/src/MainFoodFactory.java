@@ -5,15 +5,12 @@ package Factory.src;/*
 @description:
 */
 
-public class MainFoodFactory implements DishFactory{
-    private String MainFoodName;
+public class MainFoodFactory implements DishFactory {
 
-    public void getname(String name)
-    {this.MainFoodName=name;}
     @Override
-    public Dish produceDish() {
-        System.out.println(MainFoodName);
+    public MainDish produceDish(String mainFoodName, Integer price) {
+        System.out.println(mainFoodName);
         System.out.println(" has been produced");
-        return new MainDish(this.MainFoodName);
+        return new MainDish(mainFoodName, price);
     }
 }
