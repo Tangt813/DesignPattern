@@ -1,9 +1,14 @@
 package Builder;
 
+import Factory.src.DrinkDish;
+import Factory.src.MainDish;
+import Factory.src.SnackDish;
+
+// 结合Dish类以及Iterator
 public class Meal {
-    private String mainFood;
-    private String snack;
-    private String drink;
+    private MainDish mainFood;
+    private SnackDish snack;
+    private DrinkDish drink;
 
     public Meal() {
         this.mainFood = "待选择";
