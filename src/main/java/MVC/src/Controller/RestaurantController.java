@@ -1,8 +1,8 @@
-package Controller;
+package MVC.src.Controller;
 
-import model.Restaurant;
-import view.RestaurantView;
-
+import MVC.src.model.Restaurant;
+import MVC.src.view.RestaurantView;
+import Iterator.*;
 public class RestaurantController {
     private Restaurant restaurant;
     private RestaurantView RV;
@@ -10,6 +10,10 @@ public class RestaurantController {
     {
         this.restaurant=restaurant;
         this.RV=RV;
+    }
+    public void showMenu()
+    {
+        restaurant.showMenu();
     }
     public void setName(String name)
     {

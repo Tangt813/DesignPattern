@@ -1,6 +1,4 @@
-package view;
-
-import model.Restaurant;
+package MVC.src.view;
 
 public class RestaurantView {
     public void show(String name,int needTime,int queueNum,int freeSeat)

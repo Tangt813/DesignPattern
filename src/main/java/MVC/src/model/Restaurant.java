@@ -1,6 +1,7 @@
-package model;
+package MVC.src.model;
 
-import java.sql.SQLOutput;
+import Iterator.*;
+
 
 public class Restaurant {
     public String name;
@@ -9,12 +10,14 @@ public class Restaurant {
     private int queueNum=0;
     private int speed=1;
     private int needTime=0;
+    private Iterator menuIt;
     public void setName(String name)
     {
         this.name=name;
     }
-    public Restaurant(int seat,String name)
+    public Restaurant(int seat,String name,Iterator menuIt)
     {
+        this.menuIt=menuIt;
         this.seat=seat;
         this.name=name;
     }
@@ -58,6 +61,13 @@ public class Restaurant {
     public int getFree()
     {
         return seat-busySeat;
+    }
+    public void showMenu()
+    {
+        while (menuIt.hasNext()) {
+            Dish dish = (Dish) menuIt.next();
+            System.out.println(dish.getName());
+        }
     }
 
 
