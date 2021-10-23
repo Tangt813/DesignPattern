@@ -15,8 +15,7 @@ public class DrinkDishFactory implements DishFactory {
 
     @Override
     public DrinkDish produceDish(String drinkName, Integer price) {
-        System.out.println(drinkName);
-        System.out.println(" has been produced");
+        System.out.println("一份"+drinkName+"已经制作完成");
         return new DrinkDish(drinkName, price);
     }
 }

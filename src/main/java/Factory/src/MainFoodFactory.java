@@ -9,8 +9,7 @@ public class MainFoodFactory implements DishFactory {
 
     @Override
     public MainDish produceDish(String mainFoodName, Integer price) {
-        System.out.println(mainFoodName);
-        System.out.println(" has been produced");
+        System.out.println("一份"+mainFoodName+"已经制作完成");
         return new MainDish(mainFoodName, price);
     }
 }

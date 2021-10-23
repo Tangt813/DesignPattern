@@ -14,10 +14,13 @@ public class BuilderTest {
         DrinkDishFactory drinkDishFactory=new DrinkDishFactory();
         //新建订单
         DishOrderService order=new DishOrderService();
+        String mainFoodName=order.getMain();
+        String snackName=order.getSnack();
+        String drinkName=order.getDrink();
         //生产食品
-        MainDish mainDish = mainFoodFactory.produceDish("汉堡", 60);
-        SnackDish snackDish = snackFactory.produceDish("薯条", 40);
-        DrinkDish drinkDish = drinkDishFactory.produceDish("可乐", 20);
+        MainDish mainDish = mainFoodFactory.produceDish(mainFoodName, 60);
+        SnackDish snackDish = snackFactory.produceDish(snackName, 40);
+        DrinkDish drinkDish = drinkDishFactory.produceDish(drinkName, 20);
         restaurant.prepareMeal(mainDish, snackDish, drinkDish);
         System.out.println("顾客收到了餐品。");
         System.out.println("--------------------Builder Pattern Test End--------------------");

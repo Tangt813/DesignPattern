@@ -9,8 +9,7 @@ public class SnackFactory implements DishFactory {
 
     @Override
     public SnackDish produceDish(String snackName, Integer price) {
-        System.out.println(snackName);
-        System.out.println(" has been produced");
+        System.out.println("一份"+snackName+"已经制作完成");
         return new SnackDish(snackName, price);
     }
 }
