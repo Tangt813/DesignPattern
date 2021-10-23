@@ -15,7 +15,7 @@ public class StateTest {
         System.out.println("--------------------State Pattern Test Start--------------------");
         System.out.println("初始状态：有一位还未购票的游客");
         Context visitor=new Context();
-        System.out.println("未购票游客发出入院请求：");
+        System.out.println("未购票游客发出入园请求：");
         visitor.enter();
         System.out.println("未购票游客购票，state改变：");
         visitor.purchase();
