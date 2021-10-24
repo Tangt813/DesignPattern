@@ -1,7 +1,9 @@
-import Controller.RestaurantController;
-import model.Restaurant;
-import view.RestaurantView;
+package MVC.src;
+import MVC.src.Controller.RestaurantController;
+import MVC.src.model.Restaurant;
+import MVC.src.view.RestaurantView;
 import java.util.Scanner;
+import Iterator.*;
 public class MVCDemo {
     public static void main(String[] args) {
 
@@ -11,7 +13,7 @@ public class MVCDemo {
         while(true)
         {
             RC.updateView();
-            System.out.println("请输入你要执行的要求：(1.更改店名。2.增加顾客。3.顾客离开。4.显示当前信息。0.退出)");
+            System.out.println("请输入你要执行的要求：(1.更改店名。2.增加顾客。3.顾客离开。4.显示当前信息。5.展示菜单。0.退出)");
             Scanner scan= new Scanner(System.in);
             int choice=scan.nextInt();
             if(choice==1) {
@@ -33,6 +35,10 @@ public class MVCDemo {
                 int number = scan.nextInt();
                 RC.clear(number);
             }
+            else if(choice==5)
+            {
+                RC.showMenu();
+            }
             else if(choice==0) {
                 break;
             }
@@ -41,6 +47,12 @@ public class MVCDemo {
 
     public static Restaurant getRestaurant()
     {
-        return new Restaurant(10,"一起吃");
+        Menu menu = new Menu();
+        menu.appendDish(new Dish("同济大排",5));
+        menu.appendDish(new Dish());
+        menu.appendDish(new Dish("烤肉饭",18));
+        menu.appendDish(new Dish("猪肝面",19));
+        Iterator MI=menu.iterator();
+        return new Restaurant(10,"一起吃",MI);
     }
 }
