@@ -17,6 +17,13 @@ public class MenuIterator implements Iterator {
         this.index = 0;
     }
 
+    @Override
+    public Object first() {
+        Dish dish = menu.getDishAt(0);
+        index = 0;
+        return dish;
+    }
+
     public boolean hasNext() {
         return index < menu.getLength();
     }
