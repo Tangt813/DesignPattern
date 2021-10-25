@@ -8,6 +8,13 @@ public class RecordDAOImpl implements RecordDAO{
 
     public RecordDAOImpl(){
         records = new ArrayList<Record>();
+        Record record1 = new Record(3000,"2021-10-18",1);
+        records.add(record1);
+        Record record2 = new Record(2400,"2021-10-19",1);
+        records.add(record2);
+        Record record3 = new Record(1900,"2021-10-20",1);
+        records.add(record3);
+
     }
 
     @Override
@@ -35,6 +42,7 @@ public class RecordDAOImpl implements RecordDAO{
 
     @Override
     public void insertRecord(Record record){
+        record.setRecordNo(records.size());
         records.add(record);
         System.out.println("Record insert: date"+record.getDate()+" income:"+record.getIncome()+" has been inserted");
     }
