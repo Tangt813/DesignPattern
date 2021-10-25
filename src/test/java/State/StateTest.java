@@ -23,7 +23,7 @@ public class StateTest {
         visitor.purchase();
         System.out.println("已购票游客进园：");
         visitor.enter();
-        System.out.println("--------------------State Pattern Test Start--------------------");
+        System.out.println("--------------------State Pattern Test End--------------------");
 
     }
 }
