@@ -29,6 +29,14 @@ public class Ticket {
     }
 
     public int getPrice() {
+        if (this.getType().equalsIgnoreCase("OLD")) {
+            return 0;
+        }
+
+        if (this.getType().equalsIgnoreCase("VIP")) {
+            return 50;
+        }
+
         return price;
     }
 
