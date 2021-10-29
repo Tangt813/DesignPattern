@@ -12,8 +12,9 @@ public class CrystallBallFactory {
             num=num+1;
             crystalBall = new CrystalBall(radius);
             circleMap.put(radius, crystalBall);
-            System.out.println(num);
+
         }
         return crystalBall;
     }
+    public static int numMuzi(){return num;}
 }
