@@ -8,7 +8,7 @@ package Iterator;
  * @createTime 2021年10月25日 20:40:00
  */
 public class DrinkDish extends Dish{
-    public DrinkDish(String name, Integer price){
+    public DrinkDish(String name, Double price){
         super(name, price);
     }
 }

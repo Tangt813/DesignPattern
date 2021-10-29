@@ -10,7 +10,7 @@ package Iterator;
  */
 public class MainDish extends Dish {
 
-    public MainDish(String name, Integer price) {
+    public MainDish(String name, Double price) {
         this.name = name;
         this.price = price;
     }

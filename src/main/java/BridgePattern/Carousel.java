@@ -3,14 +3,12 @@ package BridgePattern;
 /**
  * @author tangshuo
  * @version 1.0.0
- * @ClassName rollerCoaster.java
- * @Description 过山车类
- * @createTime 2021年10月12日 11:32:00
+ * @ClassName Carousel.java
+ * @Description TODO
+ * @createTime 2021年10月29日 18:58:00
  */
-public class RollerCoaster extends AmusementFacility {
-
-
-    RollerCoaster(People suitablePeople) {
+public class Carousel extends AmusementFacility {
+    Carousel(People suitablePeople) {
         super(suitablePeople);
     }
 
@@ -21,12 +19,11 @@ public class RollerCoaster extends AmusementFacility {
 
     @Override
     public String getAmusementFacilityName() {
-
-        return "RollerCoaster"+suitablePeople.getAgeGroupName();
+        return "Carousel"+suitablePeople.getAgeGroupName();
     }
 
     @Override
     public void run() {
-        return;
+
     }
 }

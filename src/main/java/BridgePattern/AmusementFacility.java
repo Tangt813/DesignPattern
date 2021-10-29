@@ -8,6 +8,10 @@ package BridgePattern;
  * @createTime 2021年10月11日 23:15:00
  */
 public abstract class AmusementFacility {
+    AmusementFacility(People suitablePeople){
+        setSuitablePeople(suitablePeople);
+    }
+
     public People suitablePeople;
 
     public abstract void setSuitablePeople(People suitablePeople);

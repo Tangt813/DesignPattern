@@ -10,9 +10,9 @@ package Iterator;
 public class IteratorTest {
     public static void main(String[] args) {
         Menu menu = new Menu();
-        menu.appendDish(new MainDish("饭",5));
-        menu.appendDish(new DrinkDish("可乐",5));
-        menu.appendDish(new SnackDish("零食",5));
+        menu.appendDish(new MainDish("饭",5.0));
+        menu.appendDish(new DrinkDish("可乐",5.0));
+        menu.appendDish(new SnackDish("零食",5.0));
         Iterator it = menu.iterator();
         while (it.hasNext()) {
             Dish dish = (Dish) it.next();

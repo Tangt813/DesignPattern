@@ -15,11 +15,6 @@ public interface Iterator {
 
     public abstract Object next();
 
-<<<<<<< HEAD
     public Iterator begin();
-=======
 
-
-
->>>>>>> 3da54d455b61f14b7b48bb1ee09e15eecc082dcc
 }

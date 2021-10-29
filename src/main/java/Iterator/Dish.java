@@ -10,14 +10,14 @@ package Iterator;
 public abstract class Dish {
 
     protected String name;
-    protected double price;
+    protected Double price;
 
     public Dish(){
         this.name = "Default Dish Name";
-        this.price = 99999;
+        this.price = 99999.0;
     }
 
-    public Dish(String name,Integer price){
+    public Dish(String name,Double price){
         this.name = name;
         this.price = price;
     }

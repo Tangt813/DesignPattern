@@ -8,6 +8,11 @@ package BridgePattern;
  * @createTime 2021年10月12日 19:58:00
  */
 public class BigHammer extends AmusementFacility{
+
+    BigHammer(People suitablePeople) {
+        super(suitablePeople);
+    }
+
     @Override
     public void setSuitablePeople(People suitablePeople) {
         this.suitablePeople = suitablePeople;

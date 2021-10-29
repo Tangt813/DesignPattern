@@ -44,18 +44,14 @@ public class MVCDemo {
         }
     }
 
-<<<<<<< HEAD
     public static Restaurant getRestaurant()
     {
         Menu menu = new Menu();
-//        menu.appendDish(new Dish("同济大排",5));
-//        menu.appendDish(new Dish());
-//        menu.appendDish(new Dish("烤肉饭",18));
-//        menu.appendDish(new Dish("猪肝面",19));
+        menu.appendDish(new MainDish("饭",5.0));
+        menu.appendDish(new DrinkDish("可乐",5.0));
+        menu.appendDish(new SnackDish("零食",5.0));
         Iterator MI=menu.iterator();
         return new Restaurant(10,"一起吃",MI);
     }
-=======
 
->>>>>>> 3da54d455b61f14b7b48bb1ee09e15eecc082dcc
 }
