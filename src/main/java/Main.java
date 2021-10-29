@@ -1,5 +1,7 @@
 
-import MVC.src.*;
+import Builder.RestaurantManager;
+import Builder.RestaurantWaiter;
+import Factory.src.*;
 import MVC.src.Controller.RestaurantController;
 import MVC.src.model.Restaurant;
 import MVC.src.view.RestaurantView;
@@ -27,14 +29,13 @@ public class Main {
         Restaurant restaurant=Restaurant.getRestaurant();
         RestaurantView RV=new RestaurantView();
         RestaurantController RC=new RestaurantController(restaurant,RV);
-        System.out.println("----------------------MVC Pattern Test Start---------------------------");
         RC.updateView();
         RC.showMenu();
         while(true)//之后true改为choice，选择了展示MVC模式才进入
         {
             //首先先输出一次信息
 
-            System.out.println("请输入你要执行的要求：(1.更改店名。2.增加顾客。3.顾客离开。4.显示当前信息。5.展示菜单。0.退出)");
+            System.out.println("请输入你要执行的要求：(1.更改店名。2.增加顾客。3.顾客离开。4.显示当前信息。5.展示菜单。6.顾客点餐。0.退出)");
             Scanner scan= new Scanner(System.in);
             int choice=scan.nextInt();
             if(choice==1) {
@@ -70,11 +71,27 @@ public class Main {
                 System.out.println("通过Controller调用showMenu函数展示菜单");
                 RC.showMenu();
             }
+            else if(choice==6){
+                RestaurantManager restaurantManager = new RestaurantManager(new RestaurantWaiter());
+                MainFoodFactory mainFoodFactory=new MainFoodFactory();
+                SnackFactory snackFactory=new SnackFactory();
+                DrinkDishFactory drinkDishFactory=new DrinkDishFactory();
+                //新建订单
+                DishOrderService order=new DishOrderService();
+                String mainFoodName=order.getMain();
+                String snackName=order.getSnack();
+                String drinkName=order.getDrink();
+                //生产食品
+                MainDish mainDish = mainFoodFactory.produceDish(mainFoodName, 60);
+                SnackDish snackDish = snackFactory.produceDish(snackName, 40);
+                DrinkDish drinkDish = drinkDishFactory.produceDish(drinkName, 20);
+                restaurantManager.prepareMeal(mainDish, snackDish, drinkDish);
+                System.out.println("顾客收到了餐品。");
+            }
             else if(choice==0) {
                 break;
             }
         }
-        System.out.println("----------------------MVC Pattern Test End----------------------------------");
     }
 
 }

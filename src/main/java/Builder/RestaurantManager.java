@@ -4,9 +4,9 @@ import Factory.src.DrinkDish;
 import Factory.src.MainDish;
 import Factory.src.SnackDish;
 
-public class Restaurant {
+public class RestaurantManager {
     private final BaseRestaurantWaiter waiter;
-    public Restaurant(BaseRestaurantWaiter waiter) {
+    public RestaurantManager(BaseRestaurantWaiter waiter) {
         this.waiter = waiter;
     }
 

@@ -27,7 +27,6 @@ public class TicketState {
     }
 
     public void display(){
-        System.out.println("Balance:"+this.balance);
         System.out.println("Left Tickets:"+this.leftTickets);
     }
 }
