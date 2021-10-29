@@ -2,11 +2,8 @@ package ChainOfResponsibility;
 
 import Filter.Ticket;
 
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.ZoneId;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -15,8 +12,8 @@ import java.util.Date;
  * @author zhichenren
  * @version 1.0
  */
-public class AutoHandler extends Handler{
-    private final Handler artificialHandler = new ArtificialHandler();
+public class AutoHandler extends BaseHandler {
+    private final BaseHandler artificialHandler = new ArtificialHandler();
     @Override
     public Boolean handle(RefundRequest request) {
         LocalDate today = LocalDate.now();
@@ -39,7 +36,7 @@ public class AutoHandler extends Handler{
     public static void main(String[] args) {
         Ticket ticket = new Ticket("Tom", 100, new Date(), "Adult");
         RefundRequest request = new RefundRequest(ticket);
-        Handler autoHandler = new AutoHandler();
+        BaseHandler autoHandler = new AutoHandler();
         System.out.println(autoHandler.handle(request));
     }
 }

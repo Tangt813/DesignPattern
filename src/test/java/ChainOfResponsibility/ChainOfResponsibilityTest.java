@@ -1,19 +1,11 @@
 package ChainOfResponsibility;
 
 import Filter.Ticket;
-import Template.BasePerformance;
-import Template.DolphinPerformance;
-import Template.SeaLionPerformance;
-import Template.SealPerformance;
 import org.junit.Test;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 /**
  * Description
@@ -25,7 +17,7 @@ public class ChainOfResponsibilityTest {
     @Test
     public void performTest() throws ParseException {
         System.out.println("--------------------Chain of Responsibility Pattern Test Start--------------------");
-        Handler autoHandler = new AutoHandler();
+        BaseHandler autoHandler = new AutoHandler();
         System.out.println("一名游客准备办理退票，他的购票信息如下。");
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Ticket ticket1 = new Ticket("Tom", 100, dateFormat.parse("2021-08-01"), "Adult");

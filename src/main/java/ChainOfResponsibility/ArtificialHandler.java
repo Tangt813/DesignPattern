@@ -1,7 +1,6 @@
 package ChainOfResponsibility;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.ZoneId;
 
 /**
@@ -10,7 +9,7 @@ import java.time.ZoneId;
  * @author zhichenren
  * @version 1.0
  */
-public class ArtificialHandler extends Handler{
+public class ArtificialHandler extends BaseHandler {
     @Override
     public Boolean handle(RefundRequest request) {
         LocalDate today = LocalDate.now();
