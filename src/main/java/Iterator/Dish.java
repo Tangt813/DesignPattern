@@ -7,10 +7,10 @@ package Iterator;
  * @Description 菜品
  * @createTime 2021年10月17日 13:05:00
  */
-public class Dish {
+public abstract class Dish {
 
-    private final String name;
-    private final Integer price;
+    protected String name;
+    protected double price;
 
     public Dish(){
         this.name = "Default Dish Name";
@@ -26,7 +26,7 @@ public class Dish {
         return name;
     }
 
-    public Integer getPrice() {
+    public double getPrice() {
         return price;
     }
 }

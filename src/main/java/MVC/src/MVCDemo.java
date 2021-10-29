@@ -48,10 +48,10 @@ public class MVCDemo {
     public static Restaurant getRestaurant()
     {
         Menu menu = new Menu();
-        menu.appendDish(new Dish("同济大排",5));
-        menu.appendDish(new Dish());
-        menu.appendDish(new Dish("烤肉饭",18));
-        menu.appendDish(new Dish("猪肝面",19));
+//        menu.appendDish(new Dish("同济大排",5));
+//        menu.appendDish(new Dish());
+//        menu.appendDish(new Dish("烤肉饭",18));
+//        menu.appendDish(new Dish("猪肝面",19));
         Iterator MI=menu.iterator();
         return new Restaurant(10,"一起吃",MI);
     }
