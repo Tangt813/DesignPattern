@@ -1,4 +1,5 @@
 
+import Builder.BaseRestaurantManager;
 import Builder.RestaurantManager;
 import Builder.RestaurantWaiter;
 import Factory.src.*;
@@ -72,7 +73,8 @@ public class Main {
                 RC.showMenu();
             }
             else if(choice==6){
-                RestaurantManager restaurantManager = new RestaurantManager(new RestaurantWaiter());
+                BaseRestaurantManager restaurantManager = new RestaurantManager();
+                restaurantManager.addWaiter(new RestaurantWaiter());
                 MainFoodFactory mainFoodFactory=new MainFoodFactory();
                 SnackFactory snackFactory=new SnackFactory();
                 DrinkDishFactory drinkDishFactory=new DrinkDishFactory();

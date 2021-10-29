@@ -6,7 +6,8 @@ public class BuilderTest {
     @Test
     public void builderTest() {
         System.out.println("--------------------Builder Pattern Test Start--------------------");
-        RestaurantManager restaurantManager = new RestaurantManager(new RestaurantWaiter());
+        BaseRestaurantManager restaurantManager = new RestaurantManager();
+        restaurantManager.addWaiter(new RestaurantWaiter());
 //        System.out.println("一名顾客在餐厅购买了一份套餐，包括一份汉堡，一份薯条与一杯可乐。");
 //        restaurant.prepareMeal("汉堡", "薯条", "可乐");
         MainFoodFactory mainFoodFactory=new MainFoodFactory();

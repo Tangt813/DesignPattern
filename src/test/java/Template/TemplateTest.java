@@ -14,7 +14,7 @@ public class TemplateTest {
         performances.add(new SeaLionPerformance());
 
         for(BasePerformance p: performances) {
-            p.openCeremonyProcess();
+            p.performProcess();
         }
         System.out.println("--------------------Template Pattern Test End--------------------");
     }
