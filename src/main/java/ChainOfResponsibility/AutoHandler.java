@@ -1,5 +1,7 @@
 package ChainOfResponsibility;
 
+import Filter.Ticket;
+
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.Period;
@@ -19,17 +21,24 @@ public class AutoHandler extends Handler{
     public Boolean handle(RefundRequest request) {
         LocalDate today = LocalDate.now();
         LocalDate buyDate = LocalDate.ofInstant(request.getBuyDate().toInstant(), ZoneId.systemDefault());
-        Integer duration = Period.between(buyDate, today).getDays();
-        if(request.getPrice() <= 100 && duration < 14){
+        Long duration = today.toEpochDay() - buyDate.toEpochDay();
+        if(request.getPrice() <= 100 && duration <= 14){
             System.out.println("自动退票办理成功！");
             return Boolean.TRUE;
         }
-        System.out.println("无法办理自动退票，进入人工审核流程。");
+        if(request.getPrice() > 100){
+            System.out.println("您的订单金额过大，请前往人工柜台办理。");
+        }
+        if(duration > 14){
+            System.out.println("您的订单不满足14天自动退票条件，请前往人工柜台办理。");
+        }
+        System.out.println("进入人工审核流程。");
         return artificialHandler.handle(request);
     }
 
     public static void main(String[] args) {
-        RefundRequest request = new RefundRequest(new Date(2021, Calendar.OCTOBER, 1), "Official", 500);
+        Ticket ticket = new Ticket("Tom", 100, new Date(), "Adult");
+        RefundRequest request = new RefundRequest(ticket);
         Handler autoHandler = new AutoHandler();
         System.out.println(autoHandler.handle(request));
     }

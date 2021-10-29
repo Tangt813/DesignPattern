@@ -11,6 +11,15 @@ public class Restaurant {
     private int speed=1;
     private int needTime=0;
     private Iterator menuIt;
+    public static Restaurant getRestaurant()
+    {
+        Menu menu = new Menu();
+        menu.appendDish(new Dish("同济大排",5));
+        menu.appendDish(new Dish("烤肉饭",18));
+        menu.appendDish(new Dish("猪肝面",19));
+        Iterator MI=menu.iterator();
+        return new Restaurant(10,"一起吃",MI);
+    }
     public void setName(String name)
     {
         this.name=name;
@@ -64,10 +73,20 @@ public class Restaurant {
     }
     public void showMenu()
     {
+        System.out.println("----------------------Iterator Pattern Test Start---------------------------");
+        System.out.println("");
+        System.out.println("Iterator检查是否有下一个");
         while (menuIt.hasNext()) {
+            System.out.println("有下一个");
             Dish dish = (Dish) menuIt.next();
-            System.out.println(dish.getName());
+            System.out.println(dish.getName()+"  价格："+dish.getPrice());
+            System.out.println("");
+            System.out.println("Iterator检查是否有下一个");
+
         }
+        System.out.println("没有下一个，结束迭代");
+        System.out.println("----------------------Iterator Pattern Test End-----------------------------");
+        menuIt.first();
     }
 
 
