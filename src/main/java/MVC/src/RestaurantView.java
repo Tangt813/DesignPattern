@@ -1,4 +1,4 @@
-package MVC.src.view;
+package MVC.src;
 
 public class RestaurantView {
     public void show(String name,int needTime,int queueNum,int freeSeat)

@@ -30,8 +30,10 @@ public class VIPCustomer extends CustomerDecorator{
      */
     @Override
     public void buyTicket() {
-        people.buyTicket();
-        System.out.print("" + VIPFunction());
+            String ticketBreif=this.people.getID()+","+this.getDescription();
+            ticket.getTicket(ticketBreif);
+//        people.buyTicket();
+//        System.out.print("" + VIPFunction());
     }
 
     /**
