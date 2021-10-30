@@ -1,12 +1,17 @@
 package MVC.src;
 
+import Iterator.DrinkDish;
+import Iterator.Iterator;
+import Iterator.MainDish;
+import Iterator.Menu;
 import MVC.src.Controller.RestaurantController;
+import Iterator.*;
 import MVC.src.model.Restaurant;
 import MVC.src.view.RestaurantView;
 
 import java.util.Scanner;
 
-import Iterator.*;
+
 
 public class MVCDemo {
     public static void main(String[] args) {
@@ -51,7 +56,7 @@ public class MVCDemo {
         menu.appendDish(new DrinkDish("可乐",5.0));
         menu.appendDish(new SnackDish("零食",5.0));
         Iterator MI=menu.iterator();
-        return new Restaurant(10,"一起吃",MI);
+        return new Restaurant("一起吃",MI);
     }
 
 }
