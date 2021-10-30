@@ -22,8 +22,4 @@ public class Child extends People {
         return "Child";
     }
 
-    @Override
-    public Boolean take() {
-        return null;
-    }
 }

@@ -1,5 +1,7 @@
 package BridgePattern;
 
+import java.util.Objects;
+
 /**
  * @author tangshuo
  * @version 1.0.0
@@ -23,7 +25,10 @@ public abstract class People {
     }
 
     public abstract String getAgeGroupName();
-    public abstract Boolean take();
+
+    public Boolean take(AmusementFacility amusementFacility){
+        return Objects.equals(amusementFacility.getSuitablePeople(), getAgeGroupName());
+    };
 }
 
 

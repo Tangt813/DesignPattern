@@ -22,8 +22,5 @@ public class Youth extends People {
         return "Youth";
     }
 
-    @Override
-    public Boolean take() {
-        return null;
-    }
+
 }
