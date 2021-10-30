@@ -26,6 +26,13 @@ public class Ticket {
         this.type = type;
     }
 
+    public Ticket(String userName) {
+        this.price = 100;
+        this.time = new Date();
+        this.type = "ADULT";
+        this.userName = userName;
+    }
+
     public String getUserName() {
         return userName;
     }
@@ -48,5 +55,9 @@ public class Ticket {
 
     public String getType() {
         return type;
+    }
+
+    public boolean isNil() {
+        return false;
     }
 }
