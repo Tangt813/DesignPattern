@@ -2,7 +2,9 @@ package Restaurant;
 import MVC.src.Controller.RestaurantController;
 import MVC.src.model.Restaurant;
 import MVC.src.view.RestaurantView;
+import Factory.src.*;
 import org.junit.Test;
+
 
 import java.util.Scanner;
 
@@ -16,6 +18,10 @@ public class RestaurantTest {
         Restaurant restaurant=Restaurant.getRestaurant();
         RestaurantView RV=new RestaurantView();
         RestaurantController RC=new RestaurantController(restaurant,RV);
+        //餐厅的DishFactory
+        MainFoodFactory Main_Fac=new MainFoodFactory();
+        SnackFactory Snack_Fac=new SnackFactory();
+        DrinkDishFactory Drink_Fac=new DrinkDishFactory();
         while(true)
         {
             RC.updateView();
@@ -35,6 +41,16 @@ public class RestaurantTest {
                 scan = new Scanner(System.in);
                 int number = scan.nextInt();
                 RC.add(number);
+                System.out.println("新顾客点餐：");
+                DishOrderService service=new DishOrderService();
+                System.out.println("查看订单请选择1");
+                int op=scan.nextInt();
+                if(op==1)
+                    System.out.println("您的订单："+"\n主食："+service.getMain()+"\n小吃："+service.getSnack()+"\n饮料："+service.getDrink());
+                System.out.println("备餐中...");
+                Main_Fac.produceDish(service.getMain(), 22);
+                Snack_Fac.produceDish(service.getSnack(), 12);
+                Drink_Fac.produceDish(service.getDrink(), 10);
             }
             else if(choice==3) {
                 System.out.println("请输入离开的顾客人数：");
