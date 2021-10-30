@@ -1,5 +1,5 @@
 package Decorated;
-
+import Interpreter.*;
 public class Customer implements People {
     String ID = "";
 
@@ -25,7 +25,9 @@ public class Customer implements People {
      */
     @Override
     public void buyTicket() {
-        System.out.print("购买票价钱：原价");
+        String ticketBreif=ID+","+this.getDescription();
+        ticket.getTicket(ticketBreif);
+        //System.out.print("购买票价钱：原价");
     }
 
     /**

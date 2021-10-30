@@ -1,7 +1,9 @@
 package Decorated;
 
-public interface People {
+import Interpreter.Context;
 
+public interface People {
+    Context ticket = new Context();
     /**
      * 获取用户的类型
      * @return 用户类型
