@@ -1,4 +1,4 @@
-package BussinessDelegatePattern;
+package BusinessDelegate;
 
 /**
  * @author tangshuo
@@ -9,7 +9,7 @@ package BussinessDelegatePattern;
  */
 public class WarehouseClient {
 
-    WarehouseDelegate warehouseService;
+    protected WarehouseDelegate warehouseService;
 
     public WarehouseClient(WarehouseDelegate warehouseService){
         this.warehouseService  = warehouseService;

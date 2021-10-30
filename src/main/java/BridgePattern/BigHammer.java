@@ -9,7 +9,7 @@ package BridgePattern;
  */
 public class BigHammer extends AmusementFacility{
 
-    BigHammer(People suitablePeople) {
+    public BigHammer(People suitablePeople) {
         super(suitablePeople);
     }
 
@@ -23,8 +23,4 @@ public class BigHammer extends AmusementFacility{
         return "BigHammer"+suitablePeople.getAgeGroupName();
     }
 
-    @Override
-    public void run() {
-
-    }
 }

@@ -23,11 +23,6 @@ public class MenuIterator implements Iterator {
         return dish;
     }
 
-    public Iterator begin() {
-        index = 0;
-        return this;
-    }
-
     public boolean hasNext() {
         return index < menu.getLength();
     }
