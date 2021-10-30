@@ -1,4 +1,4 @@
-package MVC.src.model;
+package MVC.src;
 
 import Iterator.*;
 

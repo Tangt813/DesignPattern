@@ -1,8 +1,5 @@
-package MVC.src.Controller;
+package MVC.src;
 
-import MVC.src.model.Restaurant;
-import MVC.src.view.RestaurantView;
-import Iterator.*;
 public class RestaurantController {
     private Restaurant restaurant;
     private RestaurantView RV;
