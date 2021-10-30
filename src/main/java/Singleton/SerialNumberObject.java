@@ -1,26 +1,29 @@
-import java.util.ArrayList;
-import java.util.HashSet;
+package Singleton;
 
-public class serial_number {
+import java.util.ArrayList;
+
+public class SerialNumberObject {
     //private static Set sernum=new HashSet();
     private static ArrayList<Long>sernum=new ArrayList<Long>();
     //private static int sernum=0;
-    private static serial_number instance;
-    private  serial_number(){};
-    public static synchronized serial_number getInstance(){//加锁
+    private static SerialNumberObject instance;
+    private SerialNumberObject(){};
+    public static synchronized SerialNumberObject getInstance(){//加锁
         if (instance == null) {
-            instance = new serial_number();
+            instance = new SerialNumberObject();
         }
         return instance;
     }
-    public void getnumber(){
+    public long getnumber(){
        long newnum=(long)((Math.random()*9+1)*100000);
        while(find(newnum,0,sernum.size()-1)){
            newnum=(long)((double)(Math.random()*9+1)*100000);
        }
        sernum.add(newnum);
-      System.out.println(newnum);
+      System.out.println("The serial number:"+newnum);
+      return newnum;
     }
+
   private boolean find(long target,int left,int right){
         if(left<=right) {
             int mid = (left + right) / 2;
@@ -29,11 +32,6 @@ public class serial_number {
         }
         else return false;
   }
-    public static void main(String []args){
-        serial_number test =serial_number.getInstance();
-test.getnumber();
-test.getnumber();
-test.getnumber();
-    }
+
 }
 
