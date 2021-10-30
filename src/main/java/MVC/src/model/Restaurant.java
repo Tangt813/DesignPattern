@@ -5,12 +5,12 @@ import Iterator.*;
 
 public class Restaurant {
     public String name;
-    private int seat;
     private int busySeat=0;
     private int queueNum=0;
     private int speed=1;
     private int needTime=0;
     private Iterator menuIt;
+    private int seat=10;
     public static Restaurant getRestaurant()
     {
         Menu menu = new Menu();
@@ -18,16 +18,15 @@ public class Restaurant {
         menu.appendDish(new DrinkDish("可乐",5.0));
         menu.appendDish(new SnackDish("零食",5.0));
         Iterator MI=menu.iterator();
-        return new Restaurant(10,"一起吃",MI);
+        return new Restaurant("一起吃",MI);
     }
     public void setName(String name)
     {
         this.name=name;
     }
-    public Restaurant(int seat,String name,Iterator menuIt)
+    public Restaurant(String name, Iterator menuIt)
     {
         this.menuIt=menuIt;
-        this.seat=seat;
         this.name=name;
     }
     public void add(int number)
