@@ -1,10 +1,21 @@
-package BridgePattern;
+package Bridge;
 
-public class BridgePattern {
+import BridgePattern.BigHammer;
+import BridgePattern.Child;
+import BridgePattern.RollerCoaster;
+import BridgePattern.Youth;
+import org.junit.Test;
 
-
-    public static void main(String[] args) {
-	// write your code here
+/**
+ * @author tangshuo
+ * @version 1.0.0
+ * @ClassName BridgeTest.java
+ * @Description TODO
+ * @createTime 2021年10月30日 10:37:00
+ */
+public class BridgeTest {
+    @Test
+    public void bridgeTest() {
         Child child = new Child("TSChild");
         System.out.println(child.getName() + " is " + child.getAgeGroupName());
         Youth youth = new Youth("TSYouth");

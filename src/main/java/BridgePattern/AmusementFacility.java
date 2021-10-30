@@ -12,15 +12,13 @@ public abstract class AmusementFacility {
         setSuitablePeople(suitablePeople);
     }
 
-    public People suitablePeople;
+    protected People suitablePeople;
 
     public abstract void setSuitablePeople(People suitablePeople);
 
-    public People getSuitablePeople() {
-        return suitablePeople;
+    public String getSuitablePeople() {
+        return suitablePeople.getAgeGroupName();
     }
 
     public abstract String getAmusementFacilityName();
-
-    public abstract void run();
 }

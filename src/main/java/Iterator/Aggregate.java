@@ -8,6 +8,5 @@ package Iterator;
  * @createTime 2021年10月17日 13:10:00
  */
 public interface Aggregate {
-
     public abstract Iterator iterator();
 }

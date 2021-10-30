@@ -10,7 +10,7 @@ package BridgePattern;
 public class RollerCoaster extends AmusementFacility {
 
 
-    RollerCoaster(People suitablePeople) {
+    public RollerCoaster(People suitablePeople) {
         super(suitablePeople);
     }
 
@@ -21,12 +21,6 @@ public class RollerCoaster extends AmusementFacility {
 
     @Override
     public String getAmusementFacilityName() {
-
         return "RollerCoaster"+suitablePeople.getAgeGroupName();
-    }
-
-    @Override
-    public void run() {
-        return;
     }
 }

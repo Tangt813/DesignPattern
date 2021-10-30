@@ -1,4 +1,4 @@
-package BussinessDelegatePattern;
+package BusinessDelegate;
 
 /**
  * @author tangshuo
