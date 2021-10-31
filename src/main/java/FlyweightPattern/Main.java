@@ -3,7 +3,7 @@ package FlyweightPattern;
 import java.util.Scanner;
 
 public class Main {
-    public static int radius[] = { 6,8,10 };
+    public static int radius[] = { 6,8,10,12 };
     public static String colors[] = { "blue", "yellow", "red", "white", "green" };
     public static String names[] = { "**","++","Ameis", "Wang", "China"};
 
@@ -50,7 +50,7 @@ public class Main {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            int raduis1=getRandomRadius();
+            int raduis1;
             System.out.print("半径:");
             raduis1=input.nextInt();
             System.out.print("颜色:");
@@ -58,9 +58,9 @@ public class Main {
             System.out.print("图案:");
             String names1=input.next();
             CrystalBall crystalBal = CrystallBallFactory.getCrystalBall(raduis1);
-            crystalBal.setColor(colors[i%5]);
+//            crystalBal.setColor(colors[i%5]);
 //            crystalBal.setName(names[i%5]);
-//            crystalBal.setColor(color1);
+            crystalBal.setColor(color1.toString());
             crystalBal.setName(names1);
 //            System.out.println("半径:"+raduis1+" 颜色:"+colors[i%5]+" 图案:"+names[i%5]);
             System.out.println("稍等片刻，你的水晶球马上做好！");
