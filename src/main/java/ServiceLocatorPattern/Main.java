@@ -47,67 +47,18 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("有三个演员，海马，大白鲨，海豚");
-        System.out.println("有三个演员，海马");
-        System.out.println("\33[94m   .       \n" +
-                "    MN0f     \n" +
-                "   M0`,&     \n" +
-                "  GM#gCM*%—6\n" +
-                "  ^ ]MR    \n" +
-                "     #M0A    \n" +
-                "    ]^]0M    \n" +
-                "    ] j!     \n" +
-                "     ,'      \n" +
-                "     #       \n" +
-                "     &` I    \n" +
-                "     `\"\"     \33[0m");
-        try {
-            Thread.sleep(800);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("演员，大白鲨");
-        System.out.println("                          ,                      \n" +
-                "                           0L                     \n" +
-                "0K,                       0Bm                    \n" +
-                "  N0g                     g@M#b_                  \n" +
-                "  *&0Fs            __,pqg0&MN0&0R0MN&ppgg__,,,,   \n" +
-                "   ]M00p_   _m#m0MR#QMN2NNB&MNN#M&0QNM0MBM#8?~=/  \n" +
-                "    #0QB0NM*V@N#MMR25N%6KFE$0NA0NMM&0MpE9E%#^     \n" +
-                "    #E^   ~~**a_  `7M@0&WD0##80NN@M00WBM7.      \n" +
-                "   j0`             q,,_rKKDQB&3N^&Q0KB0KBQza*M^      \n" +
-                "  ,0`               ``~*NAQDWQ&0DQ#M###@    \n" +
-                "                               ##^       ");
-        try {
-            Thread.sleep(800);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("演员，派大星");
-        System.out.println("\33[31m               a,\n" +
-                "               !  Dq\n" +
-                "               ^/   \\                    \n" +
-                "                l   4                      \n" +
-                "                ] pS7#                     \n" +
-                "                | j+q/&       ,            \n" +
-                "         n\\     I Iy/qcl    x^m            \n" +
-                "         & 9,   N A` F`|  ,6  j            \n" +
-                "         E  ~b y/ \33[0m^   ^ \33[31m,O    f            \n" +
-                "         ]    \\ $       \\a    Y             \n" +
-                "          l_    ` \33[0mR$#MQz \33[31m&   7              \n" +
-                "           +               \\Y/               \n" +
-                "            hj\\         \\   \\                                      \n" +
-                "            ^%]            II              \n" +
-                "\33[32m             Yp0p#  %^``##N&0p,               \n" +
-                "              MMH -  ^ ^ ~Z/I               \n" +
-                "              ]0N#%L,  m-S  W               \n" +
-                "\33[31m               NN&3p-   #t~3                \n" +
-                "                _ g     ^%p^                \n" +
-                "                 =^      =^    \33[0m");
         ServiceDetails seaHouse = new ServiceDetails("海马","海马小馆",false);
         ServiceDetails shark = new ServiceDetails("大白鲨","大白鲨馆",false);
         ServiceDetails paidaxing = new ServiceDetails("派大星","派大星小屋",false);
         ServiceDetails people = new ServiceDetails("经纪人","休息室",false);
+        System.out.println("有三个演员，海马，大白鲨，海豚");
+        System.out.println("有三个演员，海马");
+        seaHouse.drawSeaHorse();
+        System.out.println("演员，大白鲨");
+        shark.drawShark();
+        System.out.println("演员，派大星");
+        paidaxing.drawPaidaXing();
+
         ServiceLocator.addService(seaHouse);
         ServiceLocator.addService(shark);
         ServiceLocator.addService(paidaxing);
@@ -147,51 +98,3 @@ public class Main {
 
     }
 }
-//package ServiceLocatorPattern;
-//
-//import java.awt.Color;
-//import java.awt.Graphics;
-//import java.awt.Image;
-//import java.awt.Toolkit;
-//
-//
-//import javax.swing.JFrame;
-//
-//
-//public class Main extends JFrame{
-//    private static final int WIDTH=500;
-//    private static final int HEIGHT=500;
-//    private static int WINDOW_WIDTH=Toolkit.getDefaultToolkit().getScreenSize().width;
-//    private static int WINDOW_HEIGHT=Toolkit.getDefaultToolkit().getScreenSize().height;
-//    public Main(){
-//        super("I love you");
-//        this.setBackground(Color.BLACK);
-//        this.setLocation((WINDOW_WIDTH-WIDTH)/2,(WINDOW_HEIGHT-HEIGHT)/2);
-//        this.setSize(WIDTH, HEIGHT);
-//        this.setLayout(getLayout());
-//        this.setVisible(true);
-//        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-//    }
-//    public void paint(Graphics g){
-//        double x,y,r;
-//        Image image=this.createImage(WIDTH,HEIGHT);
-//        Graphics pic=image.getGraphics();
-//        for(int i=-2;i<90;i++){
-//            for(int j=-2;j<90;j++){
-//                r=Math.PI/45+Math.PI/45*i*(1-Math.sin(Math.PI/45*j))*18;
-//                x=r*Math.cos(Math.PI/45*j)*Math.sin(Math.PI/45*i)+WIDTH/2;
-//                y=-r*Math.sin(Math.PI/45*j)+HEIGHT/3;
-//                pic.setColor(Color.MAGENTA);
-//                pic.fillOval((int)x, (int)y, 2, 2);
-//            }
-//            g.drawImage(image, 0, 0, this);
-//        }
-//    }
-//    public static void main(String[] args) {
-//        new Main();
-//
-//
-//    }
-//
-//
-//}
