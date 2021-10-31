@@ -20,7 +20,7 @@ public class Warehouse {
         this.colorList = new ArrayList<String>();
     }
 
-    Warehouse(List<Integer> radiusList,List<String> colorList) {
+    public Warehouse(List<Integer> radiusList, List<String> colorList) {
         this.radiusList = radiusList;
         this.colorList = colorList;
     }

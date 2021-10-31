@@ -14,11 +14,19 @@ public class Restaurant {
     public static Restaurant getRestaurant()
     {
         Menu menu = new Menu();
-        menu.appendDish(new MainDish("饭",5.0));
-        menu.appendDish(new DrinkDish("可乐",5.0));
-        menu.appendDish(new SnackDish("零食",5.0));
+        menu.appendDish(new MainDish("蟹黄堡",15.0));
+        menu.appendDish(new MainDish("意面",25.0));
+        menu.appendDish(new MainDish("烩饭",15.0));
+        menu.appendDish(new MainDish("披萨",15.0));
+        menu.appendDish(new DrinkDish("薯条",10.0));
+        menu.appendDish(new DrinkDish("鱿鱼圈",10.0));
+        menu.appendDish(new DrinkDish("炸鸡",10.0));
+        menu.appendDish(new SnackDish("可乐",5.0));
+        menu.appendDish(new SnackDish("橙汁",5.0));
+        menu.appendDish(new SnackDish("牛奶",5.0));
         Iterator MI=menu.iterator();
-        return new Restaurant("一起吃",MI);
+        return new Restaurant("海皇大酒店",MI);
+
     }
     public void setName(String name)
     {
