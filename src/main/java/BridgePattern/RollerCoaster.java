@@ -1,6 +1,6 @@
 package BridgePattern;
 
-import strategy.playRollerCoaster;
+import Strategy.playRollerCoaster;
 
 /**
  * @author tangshuo

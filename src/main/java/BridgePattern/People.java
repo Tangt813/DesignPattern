@@ -1,8 +1,8 @@
 package BridgePattern;
 
 import Adapter.RegularTicket;
-import strategy.PlayAction;
-import strategy.playBigHammer;
+import Strategy.PlayAction;
+import Strategy.playBigHammer;
 
 import java.util.Objects;
 
