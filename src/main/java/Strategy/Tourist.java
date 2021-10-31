@@ -1,6 +1,7 @@
-package strategy;
+package Strategy;
 
 public class Tourist {
+
     private PlayAction playAction;
     public Tourist(PlayAction playAction){
         this.playAction=playAction;
@@ -8,7 +9,7 @@ public class Tourist {
     public void Changemethod(PlayAction playAction){
         this.playAction=playAction;
     }
-    public void doplaying(){
-        playAction.play_facility();
+    public void doPlaying(){
+        playAction.playFacility();
     }
 }

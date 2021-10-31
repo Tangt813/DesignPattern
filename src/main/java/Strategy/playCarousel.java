@@ -1,9 +1,9 @@
-package strategy;
+package Strategy;
 
 public class playCarousel implements PlayAction {
     private String facility_name="Carousel";
     @Override
-    public void play_facility(){
+    public void playFacility(){
         String ans="play:"+this.facility_name;
         System.out.println("let's play "+facility_name);
         try {
@@ -106,6 +106,6 @@ public class playCarousel implements PlayAction {
     }
     public static void main(String []args){
         playCarousel t=new playCarousel();
-        t.play_facility();
+        t.playFacility();
     }
 }

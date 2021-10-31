@@ -1,9 +1,9 @@
-package strategy;
+package Strategy;
 
 public class playBigHammer implements PlayAction {
     private String facility_name="BigHammer";
     @Override
-    public void play_facility(){
+    public void playFacility(){
         System.out.println("let's play "+facility_name);
         try {
             Thread.sleep(1000);
@@ -70,6 +70,6 @@ public class playBigHammer implements PlayAction {
     }
     public static void main(String[] args){
         playBigHammer instance_swing_hammer=new playBigHammer();
-        instance_swing_hammer.play_facility();
+        instance_swing_hammer.playFacility();
     }
 }

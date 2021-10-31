@@ -1,4 +1,4 @@
-package strategy;
+package Strategy;
 
 import java.util.Scanner;
 
@@ -19,19 +19,19 @@ index=sc.nextInt();
 switch (index){
     case 1:
        context.Changemethod(new playBigHammer());
-       context.doplaying();
+       context.doPlaying();
        break;
     case 2:
         context.Changemethod(new playCarousel());
-        context.doplaying();
+        context.doPlaying();
         break;
     case 3:
         context.Changemethod(new playRollerCoaster());
-        context.doplaying();
+        context.doPlaying();
         break;
     case 4:
         context.Changemethod(new playShooting());
-        context.doplaying();
+        context.doPlaying();
         break;
     case 0:
         break;

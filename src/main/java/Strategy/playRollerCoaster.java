@@ -1,9 +1,9 @@
-package strategy;
+package Strategy;
 
 public class playRollerCoaster implements PlayAction {
 private String facility_name="RollerCoaster";
 @Override
-    public void play_facility(){
+    public void playFacility(){
     String ans="play:"+this.facility_name;
     System.out.println("let's play "+facility_name);
     try {
@@ -67,6 +67,6 @@ private String facility_name="RollerCoaster";
 }
 public static void main(String []args){
     playRollerCoaster t =new playRollerCoaster();
-    t.play_facility();
+    t.playFacility();
 }
 }
