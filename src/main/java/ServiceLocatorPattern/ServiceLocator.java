@@ -24,6 +24,7 @@ public class ServiceLocator {
 
         if(service != null){
             service.setPositon(jndiPos);
+            System.out.println(jndiName+"前往了------>"+jndiPos);
             return service;
         }
 
@@ -36,6 +37,12 @@ public class ServiceLocator {
 
         if(service != null){
             service.setActive(jndiAct);
+            if(jndiAct==true){
+                System.out.println(jndiName+"顺便吃了个饭");
+            }
+            else if(jndiAct==false){
+
+            }
             return service;
         }
 
