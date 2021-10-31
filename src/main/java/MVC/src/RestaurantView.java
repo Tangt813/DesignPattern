@@ -1,5 +1,7 @@
 package MVC.src;
 
+import Prototype.Factory_Proto.DishCache;
+
 public class RestaurantView {
     public void show(String name,int needTime,int queueNum,int freeSeat)
     {

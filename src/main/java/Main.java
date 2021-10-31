@@ -3,9 +3,9 @@ import Builder.BaseRestaurantManager;
 import Builder.RestaurantManager;
 import Builder.RestaurantWaiter;
 import Factory.src.*;
-import MVC.src.Controller.RestaurantController;
-import MVC.src.model.Restaurant;
-import MVC.src.view.RestaurantView;
+import MVC.src.RestaurantController;
+import MVC.src.Restaurant;
+import MVC.src.RestaurantView;
 
 import MVC.src.RestaurantController;
 import MVC.src.Restaurant;

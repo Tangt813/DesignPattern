@@ -1,13 +1,13 @@
 package Command;
 
 public class BuyGoods implements Order {
-    private Goods abcGoods;
+    private Goods goods;
 
-    public BuyGoods(Goods abcGoods){
-        this.abcGoods = abcGoods;
+    public BuyGoods(Goods goods){
+        this.goods = goods;
     }
 
     public void execute() {
-        abcGoods.buy();
+        goods.buy();
     }
 }

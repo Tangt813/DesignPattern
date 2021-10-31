@@ -4,7 +4,7 @@ import org.junit.Test;
 public class CommandTest {
     @Test
     public void commandTest() {
-        System.out.print("----------------------Visitor Pattern Test Start--------------------\n");
+        System.out.print("----------------------Command Pattern Test Start--------------------\n");
         System.out.print("商店要执行对可乐的进货和出售任务\n");
         Goods abcGoods = new Goods();
 
@@ -19,7 +19,7 @@ public class CommandTest {
         shop.takeOrder(sellGoodsOrder);
         System.out.print("命令开始按顺序执行\n");
         shop.placeOrders();
-        System.out.print("----------------------Visitor Pattern Test End---------------------\n");
+        System.out.print("----------------------Command Pattern Test End---------------------\n");
 
     }
 }

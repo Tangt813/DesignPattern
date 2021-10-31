@@ -1,12 +1,10 @@
 package Prototype;
 
-public abstract class Souvenir implements Cloneable {
+public abstract class Food implements Cloneable {
 
     private String id;
     public String name;
     protected double price;
-
-    abstract void draw();
 
     public double getPrice(){
         return price;
