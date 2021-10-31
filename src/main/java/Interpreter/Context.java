@@ -3,7 +3,7 @@ package Interpreter;
 /**
  * 文本
  */
-class Context {
+public class Context {
     private String[] persons = {"老人", "儿童"};
     private String[] values = {"VIP"};
     private Expression personValue;

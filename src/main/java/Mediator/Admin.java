@@ -20,6 +20,12 @@ public class Admin {
     }
 
     public void addGuest(String facility) {
-        Monitor.showQueueProcess(this, facility);
+        Mediator.addNewGuy(this, facility);
     }
+
+    public void popGuest(String facility) {
+        Mediator.removeNewGuy(this, facility);
+    }
+
+
 }

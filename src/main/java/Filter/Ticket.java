@@ -17,11 +17,20 @@ public class Ticket {
     public int price;
     public Date time;
     public String type;
+
+//    public String id;
     public Ticket(String userName, int price, Date time, String type) {
         this.userName = userName;
         this.price = price;
         this.time = time;
         this.type = type;
+    }
+
+    public Ticket(String userName) {
+        this.price = 100;
+        this.time = new Date();
+        this.type = "ADULT";
+        this.userName = userName;
     }
 
     public String getUserName() {
@@ -46,5 +55,9 @@ public class Ticket {
 
     public String getType() {
         return type;
+    }
+
+    public boolean isNil() {
+        return false;
     }
 }

@@ -20,7 +20,7 @@ public class OrCriteria implements Criteria {
         List<Ticket> firstCriteriaTickets = criteria.meetCriteria(tickets);
         List<Ticket> anotherCriteriaTickets = anotherCriteria.meetCriteria(tickets);
         for (Ticket ticket: anotherCriteriaTickets) {
-            if (firstCriteriaTickets.contains(ticket)) {
+            if (!firstCriteriaTickets.contains(ticket)) {
                 firstCriteriaTickets.add(ticket);
             }
         }

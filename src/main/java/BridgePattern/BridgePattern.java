@@ -5,9 +5,9 @@ public class BridgePattern {
 
     public static void main(String[] args) {
 	// write your code here
-        Child child = new Child("TSChild");
+        Child child = new Child("TSChild",false);
         System.out.println(child.getName() + " is " + child.getAgeGroupName());
-        Youth youth = new Youth("TSYouth");
+        Youth youth = new Youth("TSYouth",true);
         System.out.println(youth.getName() + " is " + youth.getAgeGroupName() );
 
         BigHammer bigHammer4Child = new BigHammer(child);

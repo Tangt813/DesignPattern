@@ -43,10 +43,22 @@ public class CriteriaDemo {
 
     public static void printTickets(List<Ticket> tickets) {
         for (Ticket ticket: tickets) {
-            System.out.println("Ticket : [ Name : " + ticket.getUserName() +
-                    ", Price : " + ticket.getPrice() +
-                    ", Date : " + ticket.getTime() +
-                    ", Type : " + ticket.getType() + " ] ");
+//            System.out.println("Ticket : [ Name : " + ticket.getUserName() +
+//                    ", Price : " + ticket.getPrice() +
+//                    ", Date : " + ticket.getTime() +
+//                    ", Type : " + ticket.getType() + " ] ");
+            System.out.println("================================");
+            System.out.println("|          游园联票             |");
+
+            System.out.printf("|   Name: %-5s                |\n", ticket.getUserName());
+            System.out.printf("|   Price: %-4d                |\n", ticket.getPrice());
+            System.out.printf("|   Date: %4d-%2d-%2d           |\n", ticket.getTime().getYear() + 1900, ticket.getTime().getMonth() + 1, ticket.getTime().getDate());
+            System.out.printf("|   Type: %-8s             |\n", ticket.getType());
+            System.out.println("|                              |");
+            System.out.printf("|        祝您玩得愉快！          |\n");
+
+            System.out.println("================================");
         }
+        System.out.println("######################################");
     }
 }

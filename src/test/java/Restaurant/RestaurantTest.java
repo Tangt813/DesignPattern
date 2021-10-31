@@ -1,7 +1,7 @@
 package Restaurant;
-import MVC.src.Controller.RestaurantController;
-import MVC.src.model.Restaurant;
-import MVC.src.view.RestaurantView;
+import MVC.src.RestaurantController;
+import MVC.src.Restaurant;
+import MVC.src.RestaurantView;
 import Factory.src.*;
 import org.junit.Test;
 

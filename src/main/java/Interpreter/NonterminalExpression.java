@@ -6,10 +6,10 @@ package Interpreter;
 class NonterminalExpression implements Expression {
     private Expression person = null;
     private Expression value = null;
-    public static int nowYear = 2021;
+    private static int nowYear = 2021;
 
     /**
-     * 创建3个非终结符表达式
+     * 创建3个非终结符表达式per
      *
      * @param person
      * @param value

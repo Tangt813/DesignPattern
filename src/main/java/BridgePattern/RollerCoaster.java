@@ -1,5 +1,7 @@
 package BridgePattern;
 
+import Strategy.playRollerCoaster;
+
 /**
  * @author tangshuo
  * @version 1.0.0
@@ -11,12 +13,18 @@ public class RollerCoaster extends AmusementFacility {
 
 
     public RollerCoaster(People suitablePeople) {
-        super(suitablePeople);
+        super(suitablePeople,true);
     }
 
     @Override
     public void setSuitablePeople(People suitablePeople) {
         this.suitablePeople = suitablePeople;
+    }
+
+    @Override
+    public void run() {
+        playAction = new playRollerCoaster();
+        playAction.playFacility();
     }
 
     @Override
