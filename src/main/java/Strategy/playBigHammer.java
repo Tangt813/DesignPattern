@@ -1,4 +1,4 @@
-package Strategy;
+package strategy;
 
 public class playBigHammer implements PlayAction {
     private String facility_name="BigHammer";

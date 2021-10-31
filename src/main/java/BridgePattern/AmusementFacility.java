@@ -1,6 +1,6 @@
 package BridgePattern;
 
-import Strategy.PlayAction;
+import strategy.PlayAction;
 
 /**
  * @author tangshuo
