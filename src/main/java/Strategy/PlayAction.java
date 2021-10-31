@@ -1,4 +1,4 @@
-package strategy;
+package Strategy;
 
 public interface PlayAction {
     public void playFacility();

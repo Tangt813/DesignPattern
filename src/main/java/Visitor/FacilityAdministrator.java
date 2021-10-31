@@ -11,6 +11,9 @@ public class FacilityAdministrator implements FacilityVisitor {
     @Override
     public void visit(Periscope periscope) {
         System.out.println("Checking Periscope.......Finish!");
+//        proxy.proxy_runfacility t= new proxy.proxy_runfacility("whirligig");
+//        t.run();
+//        t.run();
     }
 
     @Override

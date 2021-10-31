@@ -15,8 +15,7 @@ import FlyweightPattern.CrystallBallFactory;
 import MVC.src.RestaurantController;
 import MVC.src.Restaurant;
 import MVC.src.RestaurantView;
-import Prototype.Souvenir;
-import strategy.*;
+import Strategy.*;
 
 
 

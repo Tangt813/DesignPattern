@@ -1,6 +1,6 @@
 package BridgePattern;
 
-import strategy.playBigHammer;
+import Strategy.playBigHammer;
 
 /**
  * @author tangshuo
@@ -22,13 +22,13 @@ public class BigHammer extends AmusementFacility{
 
     @Override
     public void run() {
-        playAction = new playBigHammer();
+        playAction = (Strategy.PlayAction) new playBigHammer();
         playAction.playFacility();
     }
 
     @Override
     public String getAmusementFacilityName() {
-        return "BigHammer"+suitablePeople.getAgeGroupName();
+        return "适合" + suitablePeople.getAgeGroupName() + "的海底大摆锤";
     }
 
 }

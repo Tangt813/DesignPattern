@@ -8,6 +8,13 @@ public class Shop {
 
     public void takeOrder(Order order){
         orderList.add(order);
+//        order.execute();//执行命令
+    }
+
+    public void cancelOrder(){
+        if (orderList.isEmpty())
+            return;
+        else orderList.remove(orderList.size()-1);
     }
 
     public void placeOrders(){

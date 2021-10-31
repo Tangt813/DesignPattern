@@ -1,4 +1,4 @@
-package strategy;
+package Strategy;
 
 import java.util.Scanner;
 

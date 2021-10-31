@@ -1,8 +1,8 @@
 package BridgePattern;
 
 import Adapter.RegularTicket;
-import strategy.PlayAction;
-import strategy.playBigHammer;
+import Strategy.PlayAction;
+import Strategy.playBigHammer;
 
 import java.util.Objects;
 
@@ -67,6 +67,7 @@ public abstract class People {
     public abstract String getAgeGroupName();
 
     public Boolean take(AmusementFacility amusementFacility){
+        System.out.println(getName()+"要游玩"+amusementFacility.getAmusementFacilityName());
         if(Objects.equals(amusementFacility.getSuitablePeople(), getAgeGroupName())){
             System.out.println(getName()+",您符合当前设施的适合人群");
             if(amusementFacility.getSpecial())

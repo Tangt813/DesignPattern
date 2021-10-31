@@ -1,16 +1,17 @@
-package Prototype;
+//package Prototype;
+//
+//public class PrototypePatternDemo {
+//    public static void main(String[] args) {
+//        FoodCache.loadCache();
+//
+//        Food clonedFood = (Food) FoodCache.getSouvenir("10001");
+//        System.out.println("Food " + clonedFood.getName() + ":" + clonedFood.getPrice()+" yuan");
+//
+//        Food clonedFood2 = (Food) FoodCache.getSouvenir("10002");
+//        System.out.println("Food " + clonedFood2.getName() + ":" + clonedFood.getPrice()+" yuan");
+//
+//        Food clonedFood3 = (Food) FoodCache.getSouvenir("10003");
+//        System.out.println("Food " + clonedFood3.getName() + ":" + clonedFood.getPrice()+" yuan");
+//    }
+//}
 
-public class PrototypePatternDemo {
-    public static void main(String[] args) {
-        SouvenirCache.loadCache();
-
-        Souvenir clonedSouvenir = (Souvenir) SouvenirCache.getSouvenir("10001");
-        System.out.println("Souvenir " + clonedSouvenir.getName() + ":" + clonedSouvenir.getPrice()+" yuan");
-
-        Souvenir clonedSouvenir2 = (Souvenir) SouvenirCache.getSouvenir("10002");
-        System.out.println("Souvenir " + clonedSouvenir2.getName() + ":" + clonedSouvenir.getPrice()+" yuan");
-
-        Souvenir clonedSouvenir3 = (Souvenir) SouvenirCache.getSouvenir("10003");
-        System.out.println("Souvenir " + clonedSouvenir3.getName() + ":" + clonedSouvenir.getPrice()+" yuan");
-    }
-}

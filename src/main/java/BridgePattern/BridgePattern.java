@@ -2,22 +2,29 @@ package BridgePattern;
 
 public class BridgePattern {
 
-
     public static void main(String[] args) {
-	// write your code here
         Child child = new Child("TSChild",false);
-        System.out.println(child.getName() + " is " + child.getAgeGroupName());
+        System.out.println(child.getName() + "是" + child.getAgeGroupName());
+
         Youth youth = new Youth("TSYouth",true);
-        System.out.println(youth.getName() + " is " + youth.getAgeGroupName() );
+        System.out.println(youth.getName() + "是" + youth.getAgeGroupName() );
 
         BigHammer bigHammer4Child = new BigHammer(child);
         BigHammer bigHammer4Youth = new BigHammer(youth);
-        System.out.println(bigHammer4Child.getAmusementFacilityName());
-        System.out.println(bigHammer4Youth.getAmusementFacilityName());
 
         RollerCoaster rollerCoaster4Child = new RollerCoaster(child);
         RollerCoaster rollerCoaster4Youth = new RollerCoaster(youth);
-        System.out.println(rollerCoaster4Child.getAmusementFacilityName());
-        System.out.println(rollerCoaster4Youth.getAmusementFacilityName());
+
+        Carousel carousel4Child = new Carousel(child);
+        Carousel carousel4Youth = new Carousel(youth);
+
+        child.take(bigHammer4Child);
+        child.take(bigHammer4Youth);
+
+        youth.take(rollerCoaster4Child);
+        youth.take(rollerCoaster4Youth);
+
+        child.take(carousel4Child);
+        child.take(carousel4Youth);
     }
 }
