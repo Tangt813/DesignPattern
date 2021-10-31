@@ -5,7 +5,7 @@ import org.junit.Test;
 public class DataAccessObjectTest {
     @Test
     public void testDataAccessObject(){
-        System.out.println("# 数据访问对象模式(Data Access Object Patter)用于把低级的数据访问API或操作从高级的业务服务中分离出来.以下是数据访问对象模式的构成:");
+        System.out.println("# 数据访问对象模式(Data Access Object Patten)用于把低级的数据访问API或操作从高级的业务服务中分离出来.以下是数据访问对象模式的构成:");
         System.out.println("# 1.数据访问对象接口:该接口定义了在一个模型对象上要执行的标准操作.");
         System.out.println("# 2.数据访问对象实体类:该类实现了上述的接口:该类负责从数据源获取数据,数据源可以任意存储机制.");
         System.out.println("# 3.模型对象/数值对象:该对象是简单的java对象,包含了get/set方法来存储通过使用DAO类检索到的数据.");

@@ -31,9 +31,10 @@ public class SeniorVIPCustomer extends CustomerDecorator{
      * 购买票的详细价钱
      */
     @Override
-    public void buyTicket() {
+    public String buyTicket() {
         people.buyTicket();
         System.out.print("" + SeniorVIPFunction());
+        return " ";
     }
     /**
      * SeniorVIP独有的减钱机制

@@ -2,8 +2,8 @@ package proxy;
 
 public class WechatPayment implements Payment{
     private BankCardPayment cashPayment;
-    private int cost;
-    public WechatPayment(int cost){
+    private double cost;
+    public WechatPayment(double cost){
         this.cost=cost;
     }
     public String Pay(){
