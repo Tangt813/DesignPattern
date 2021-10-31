@@ -10,16 +10,16 @@ package BusinessDelegate;
 public class BusinessDelegatePatternTest {
     public static void main(String[] args) {
 
+        Warehouse warehouse = new Warehouse();
         WarehouseDelegate warehouseDelegate = new WarehouseDelegate();
-
-        warehouseDelegate.setServiceType(WarehouseServiceType.PickUp);
 
         WarehouseClient client = new WarehouseClient(warehouseDelegate);
 
-        client.doTask();
-
         warehouseDelegate.setServiceType(WarehouseServiceType.Storage);
-        client.doTask();
+        client.doTask(1,"red", warehouse);
+
+        warehouseDelegate.setServiceType(WarehouseServiceType.PickUp);
+        client.doTask(1,"red", warehouse);
 
         warehouseDelegate.setServiceType(WarehouseServiceType.NotFound);
         client.doTask();

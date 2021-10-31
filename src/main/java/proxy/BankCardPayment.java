@@ -1,8 +1,8 @@
 package proxy;
 
-public class CashPayment implements Payment{
+public class BankCardPayment implements Payment{
     private int cost;
-    public CashPayment(int cost){
+    public BankCardPayment(int cost){
         this.cost=cost;
         showcost();
     }
@@ -10,7 +10,7 @@ public class CashPayment implements Payment{
         System.out.println("a ticket costs "+cost+".");
     }
     public String Pay(){
-        System.out.println("Pay for a ticket.");
+
         return "Pay for a ticket";
     }
 

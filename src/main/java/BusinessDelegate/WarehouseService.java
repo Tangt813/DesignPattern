@@ -9,4 +9,6 @@ package BusinessDelegate;
  */
 public interface WarehouseService {
     public void doProcessing();
+
+    public Boolean doProcessing(int radius, String color, Warehouse warehouse);
 }

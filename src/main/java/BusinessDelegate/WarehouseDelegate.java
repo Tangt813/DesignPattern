@@ -16,7 +16,14 @@ public class WarehouseDelegate {
     }
 
     public void doTask(){
+        System.out.println("智能终端正在为你寻找你所需要的服务");
         WarehouseService warehouseService = lookUpService.getWarehouseService(serviceType);
         warehouseService.doProcessing();
+    }
+
+    public Boolean doTask(int radius,String color,Warehouse warehouse){
+        System.out.println("智能终端正在为你寻找你所需要的服务");
+        WarehouseService warehouseService = lookUpService.getWarehouseService(serviceType);
+        return warehouseService.doProcessing(radius, color, warehouse);
     }
 }
