@@ -1,5 +1,5 @@
 package Adapter;
 
 public interface Ticket {
-    public void check(String ticketType);
+    public String check(String ticketType);
 }

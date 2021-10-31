@@ -1,8 +1,8 @@
 package BridgePattern;
 
 import Adapter.RegularTicket;
-import Strategy.PlayAction;
-import Strategy.playBigHammer;
+import strategy.PlayAction;
+import strategy.playBigHammer;
 
 import java.util.Objects;
 
@@ -61,7 +61,7 @@ public abstract class People {
         else {
             type = "Regular";
         }
-        myTicket.check(type);
+        System.out.println(myTicket.check(type));
     }
 
     public abstract String getAgeGroupName();

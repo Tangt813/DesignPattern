@@ -1,5 +1,7 @@
 package Adapter;
 
+import java.util.Objects;
+
 /**
  * author:XIE YUXIANG
  */
@@ -8,15 +10,16 @@ public class TicketAdapter implements Ticket {
     private AdvancedTicket Advancedticket;
     public TicketAdapter(String ticketType)
     {
-        if(ticketType=="VIP")
+        if(Objects.equals(ticketType, "VIP"))
             this.Advancedticket=new VIPTicket();
     }
 
     @Override
-    public void check(String ticketType)
+    public String  check(String ticketType)
     {
-        if(ticketType=="VIP")
-            Advancedticket.checkVIP(ticketType);
+        if(Objects.equals(ticketType, "VIP"))
+            return Advancedticket.checkVIP(ticketType);
+        return "信息错误";
     }
 
 }

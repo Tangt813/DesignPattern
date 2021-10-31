@@ -4,7 +4,7 @@ import Iterator.*;
 
 
 public class Restaurant {
-    public String name;
+    private String name;
     private int busySeat=0;
     private int queueNum=0;
     private int speed=1;
