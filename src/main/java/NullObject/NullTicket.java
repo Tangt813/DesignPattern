@@ -33,4 +33,7 @@ public class NullTicket extends Filter.Ticket{
     public int getPrice() {
         return -1;
     }
+
+    @Override
+    public boolean isNil() {return true;}
 }
