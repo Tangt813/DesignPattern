@@ -6,6 +6,9 @@ import BusinessDelegate.Warehouse;
 import BusinessDelegate.WarehouseClient;
 import BusinessDelegate.WarehouseDelegate;
 import BusinessDelegate.WarehouseServiceType;
+import DataAccessObject.Record;
+import DataAccessObject.RecordDAO;
+import DataAccessObject.RecordDAOImpl;
 import Factory.src.*;
 import FlyweightPattern.CrystalBall;
 import FlyweightPattern.CrystallBallFactory;
@@ -13,6 +16,8 @@ import MVC.src.RestaurantController;
 import MVC.src.Restaurant;
 import MVC.src.RestaurantView;
 import Prototype.Souvenir;
+import strategy.*;
+
 
 
 import java.util.Arrays;
@@ -25,15 +30,15 @@ public class Main {
 
         Scanner mainScanner=new Scanner(System.in);
         boolean isAdmin=login();
-
         //游客模式
         if(!isAdmin){
+            boolean isVip=false;
             showmap();
             visitorMenu();
         }
         //管理员模式
         else{
-
+           Administrate();
         }
 
     }
@@ -44,8 +49,43 @@ public class Main {
                 "2、管理员登录");
         int isAdmin=scanner.nextInt();
         return isAdmin != 1;
-
     }
+
+    public static void Administrate(){
+        RecordDAO recordDAO = new RecordDAOImpl();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1.查看所有进账记录\n2.将今日进账记录存储至数据库中\n3.按Q/q退出");
+        while (true) {
+//            String command = scanner.nextLine();
+            String command = "1";
+            if(command.equals("1")){
+                System.out.println("———————————————————————");
+                System.out.println("|    Date    | Income |");
+                System.out.println("———————————————————————");
+                for(Record record:recordDAO.getAllRecords()){
+                    System.out.println("| "+record.getDate()+" |  "+record.getIncome()+"  |");
+                }
+                System.out.println("———————————————————————");
+            }
+            command = "2";
+            if(command.equals("2")){
+                Record record = new Record(3050,"2021-10-21",1);
+                System.out.println("今日营业信息:date:"+record.getDate()+",income:"+record.getIncome());
+                System.out.println("所有历史记录:\n———————————————————————");
+                System.out.println("|    Date    | Income |");
+                System.out.println("———————————————————————");
+                for(Record r:recordDAO.getAllRecords()){
+                    System.out.println("| "+r.getDate()+" |  "+r.getIncome()+"  |");
+                }
+                System.out.println("———————————————————————");
+            }
+            command = "q";
+            if(command.equals("q")|| command.equals("Q")) {
+                break;
+            }
+        }
+    }
+
     public static void visitorMenu(){
         boolean exit=false;
         int order;
@@ -69,7 +109,7 @@ public class Main {
                     ticket();
                     break;
                 case 2:
-                    facility();
+                    facilityPlay();
                     break;
                 case 3:
                     perform();
@@ -80,10 +120,14 @@ public class Main {
                 case 5:
                     souvenirShop();
                     break;
+                default:
+                    System.out.println("指令错误！");
+                    break;
 
             }
         }
     }
+
     /**
      * 餐厅模块
      */
@@ -170,8 +214,48 @@ public class Main {
     /**
     * 游乐场模块
      */
-    public static void facility(){
+    public static void facilityPlay()
+    {
+        int index=-1;
+        Scanner sc=new Scanner(System.in);
+        Tourist context=new Tourist(null);
+        while(index!=0) {
+            System.out.println("***************************************************AmusementPark***********************************************");
+            System.out.println("*                                              1->大摆锤                                                       *");
+            System.out.println("*                                              2->旋转木马                                                     *");
+            System.out.println("*                                              3->过山车                                                       *");
+            System.out.println("*                                              4->射击                                                        *");
+            System.out.println("*                                              0->离开                                                        *");
+            System.out.println("**************************************************************************************************************");
+            index=sc.nextInt();
+            switch (index){
+                case 1:
+                    context.Changemethod(new playBigHammer());
+                    context.doPlaying();
+                    break;
+                case 2:
+                    context.Changemethod(new playCarousel());
+                    context.doPlaying();
+                    break;
+                case 3:
+                    context.Changemethod(new playRollerCoaster());
+                    context.doPlaying();
+                    break;
+                case 4:
+                    context.Changemethod(new playShooting());
+                    context.doPlaying();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("指令错误！");
+                    break;
 
+            }
+
+
+        }
+        System.out.println("欢迎下次游玩！");
     }
 
     /**
@@ -189,7 +273,6 @@ public class Main {
             System.out.println("Ameis:我看这个水晶球不错啊，来个水晶球吧");
             System.out.println("店小哥:帅哥你眼光真好，我们这里的水晶球还可以定制哦" +
                     "\n自选颜色，半径大小，以及可以刻上你想要的纪念名称");
-            System.out.println("Ameis:我看这个水晶球不错啊，来个水晶球吧");
             System.out.println("店小哥:好的，那您来选择相应的半径，颜色，定制名称");
             Scanner input=new Scanner(System.in);
             System.out.println("请问您是否要购买水晶球 [Y/N]");

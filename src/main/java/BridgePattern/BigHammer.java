@@ -1,6 +1,6 @@
 package BridgePattern;
 
-import Strategy.playBigHammer;
+import strategy.playBigHammer;
 
 /**
  * @author tangshuo
