@@ -29,11 +29,10 @@ public class VIPCustomer extends CustomerDecorator{
      * 购买票的详细价钱
      */
     @Override
-    public void buyTicket() {
+    public String buyTicket() {
             String ticketBreif=this.people.getID()+","+this.getDescription();
-            ticket.getTicket(ticketBreif);
-//        people.buyTicket();
-//        System.out.print("" + VIPFunction());
+            String info = ticket.getTicket(ticketBreif);
+            return info;
     }
 
     /**

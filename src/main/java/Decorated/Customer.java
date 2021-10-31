@@ -24,9 +24,10 @@ public class Customer implements People {
      * 购买票的详细价钱
      */
     @Override
-    public void buyTicket() {
+    public String buyTicket() {
         String ticketBreif=ID+","+this.getDescription();
-        ticket.getTicket(ticketBreif);
+        String info = ticket.getTicket(ticketBreif);
+        return info;
         //System.out.print("购买票价钱：原价");
     }
 

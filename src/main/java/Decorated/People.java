@@ -17,5 +17,5 @@ public interface People {
     /**
      * 购买票的详细价钱
      */
-    public abstract void buyTicket();
+    public abstract String buyTicket();
 }
