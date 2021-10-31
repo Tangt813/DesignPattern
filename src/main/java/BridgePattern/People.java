@@ -61,7 +61,7 @@ public abstract class People {
         else {
             type = "Regular";
         }
-        myTicket.check(type);
+        System.out.println(myTicket.check(type));
     }
 
     public abstract String getAgeGroupName();

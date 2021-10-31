@@ -9,8 +9,8 @@ public class VIPTicket implements AdvancedTicket{
     {
     }
     @Override
-    public void checkVIP(String TicketType)
+    public String checkVIP(String TicketType)
     {
-        System.out.println("您为尊贵的VIP用户，凭VIP票即可游玩所有设施！");
+        return "您为尊贵的VIP用户，凭VIP票即可游玩所有";
     }
 }
