@@ -25,6 +25,8 @@ public class MediatorTest {
         wang.addGuest("大摆锤");
         li.addGuest("旋转木马");
         li.addGuest("旋转木马");
+        li.popGuest("海底总动员");
+        li.popGuest("旋转木马");
 
         System.out.println("----------------------Mediator Pattern Test End---------------------");
     }

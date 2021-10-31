@@ -18,7 +18,7 @@ public class Ticket {
     public Date time;
     public String type;
 
-    public String id;
+//    public String id;
     public Ticket(String userName, int price, Date time, String type) {
         this.userName = userName;
         this.price = price;
