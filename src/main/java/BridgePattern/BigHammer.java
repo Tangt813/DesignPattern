@@ -28,7 +28,7 @@ public class BigHammer extends AmusementFacility{
 
     @Override
     public String getAmusementFacilityName() {
-        return "BigHammer"+suitablePeople.getAgeGroupName();
+        return "适合" + suitablePeople.getAgeGroupName() + "的海底大摆锤";
     }
 
 }

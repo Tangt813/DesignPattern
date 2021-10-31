@@ -19,7 +19,7 @@ public class Child extends People {
 
     @Override
     public String getAgeGroupName() {
-        return "Child";
+        return "儿童";
     }
 
 }
