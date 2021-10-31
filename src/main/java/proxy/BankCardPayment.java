@@ -1,8 +1,8 @@
 package proxy;
 
 public class BankCardPayment implements Payment{
-    private int cost;
-    public BankCardPayment(int cost){
+    private double cost;
+    public BankCardPayment(double cost){
         this.cost=cost;
         showcost();
     }

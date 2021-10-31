@@ -25,10 +25,7 @@ public class Restaurant {
         menu.appendDish(new SnackDish("橙汁",5.0));
         menu.appendDish(new SnackDish("牛奶",5.0));
         Iterator MI=menu.iterator();
-
-        //return new Restaurant(10,"海皇大酒店",MI);
-
-        return new Restaurant("一起吃",MI);
+        return new Restaurant("海皇大酒店",MI);
 
     }
     public void setName(String name)

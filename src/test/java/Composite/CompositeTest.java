@@ -7,7 +7,6 @@ public class CompositeTest {
     public void testComposite(){
         Composite root = new Composite("海底世界总园区");
         root.add(new Leaf("售票处"));
-        root.add(new Leaf("餐厅"));
         root.add(new Leaf("安保部"));
 
         Composite castle = new Composite("海底世界城堡区");
