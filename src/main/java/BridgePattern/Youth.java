@@ -13,8 +13,8 @@ public class Youth extends People {
         super();
     }
 
-    public Youth(String name) {
-        super(name);
+    public Youth(String name,Boolean isVip) {
+        super(name,isVip);
     }
 
     @Override

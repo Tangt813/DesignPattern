@@ -1,5 +1,7 @@
 package BridgePattern;
 
+import Strategy.playBigHammer;
+
 /**
  * @author tangshuo
  * @version 1.0.0
@@ -10,12 +12,18 @@ package BridgePattern;
 public class BigHammer extends AmusementFacility{
 
     public BigHammer(People suitablePeople) {
-        super(suitablePeople);
+        super(suitablePeople,true);
     }
 
     @Override
     public void setSuitablePeople(People suitablePeople) {
         this.suitablePeople = suitablePeople;
+    }
+
+    @Override
+    public void run() {
+        playAction = new playBigHammer();
+        playAction.playFacility();
     }
 
     @Override

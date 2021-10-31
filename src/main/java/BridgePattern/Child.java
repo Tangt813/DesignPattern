@@ -13,8 +13,8 @@ public class Child extends People {
         super();
     }
 
-    public Child(String name) {
-        super(name);
+    public Child(String name,Boolean isVip) {
+        super(name,isVip);
     }
 
     @Override

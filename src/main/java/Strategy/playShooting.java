@@ -1,10 +1,10 @@
-package strategy;
+package Strategy;
 
 public class playShooting implements PlayAction {
     private String facility_name="Shooting";
 
     @Override
-    public void play_facility(){
+    public void playFacility(){
         System.out.println("let's play "+facility_name);
         try {
             Thread.sleep(1000);
@@ -44,6 +44,6 @@ public class playShooting implements PlayAction {
     }
     public static void main(String []args){
        playShooting t=new playShooting();
-       t.play_facility();
+       t.playFacility();
     }
 }
