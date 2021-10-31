@@ -1,4 +1,4 @@
-package strategy;
+package Strategy;
 
 public class playCarousel implements PlayAction {
     private String facility_name="Carousel";
