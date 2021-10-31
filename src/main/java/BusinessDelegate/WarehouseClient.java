@@ -19,7 +19,7 @@ public class WarehouseClient {
         warehouseService.doTask();
     }
 
-    public void doTask(int radius, String color, Warehouse warehouse){
-        warehouseService.doTask(radius, color, warehouse);
+    public Boolean doTask(int radius, String color, Warehouse warehouse){
+        return warehouseService.doTask(radius, color, warehouse);
     }
 }
