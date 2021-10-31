@@ -18,4 +18,8 @@ public class WarehouseClient {
     public void doTask(){
         warehouseService.doTask();
     }
+
+    public void doTask(int radius, String color, Warehouse warehouse){
+        warehouseService.doTask(radius, color, warehouse);
+    }
 }

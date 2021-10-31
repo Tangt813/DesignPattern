@@ -10,6 +10,12 @@ package BusinessDelegate;
 public class WarehouseNotFoundService implements WarehouseService {
     @Override
     public void doProcessing(){
-        System.out.println("The service you need is not found");
+        System.out.println("你所需要的服务暂时还未提供");
+    }
+
+    @Override
+    public Boolean doProcessing(int radius, String color,Warehouse warehouse) {
+        System.out.println("你所需要的服务暂时还未提供");
+        return true;
     }
 }
