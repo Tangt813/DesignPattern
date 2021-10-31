@@ -24,6 +24,7 @@ public class SouvenirShop {
         shop.placeOrders();//执行命令
 
         Warehouse warehouse = new Warehouse(radiusAll,colorsAll);
+
         WarehouseDelegate warehouseDelegate = new WarehouseDelegate();
         WarehouseClient client = new WarehouseClient(warehouseDelegate);
         warehouseDelegate.setServiceType(WarehouseServiceType.PickUp);
