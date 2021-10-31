@@ -13,7 +13,7 @@ public class CommandTest {
         SellGoods sellGoodsOrder = new SellGoods(abcGoods);
 
         Shop shop = new Shop();
-        System.out.print("商店接到了可乐进货的命令\n");;
+        System.out.print("商店接到了可乐进货的命令\n");
         shop.takeOrder(buyStockOrder);
         System.out.print("商店接到了对可乐售卖的命令\n");
         shop.takeOrder(sellGoodsOrder);
