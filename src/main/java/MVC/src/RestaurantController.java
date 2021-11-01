@@ -28,6 +28,7 @@ public class RestaurantController {
     {
         restaurant.setSpeed(speed);
     }
+    public int getQueue(){return restaurant.getQueue();}
     public void updateView()
     {
         RV.show(restaurant.getName(),restaurant.getTime(),restaurant.getQueue(),restaurant.getFree());

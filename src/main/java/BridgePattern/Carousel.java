@@ -1,7 +1,6 @@
 package BridgePattern;
 
 import Strategy.playCarousel;
-import Strategy.playRollerCoaster;
 
 /**
  * @author tangshuo
@@ -23,7 +22,7 @@ public class Carousel extends AmusementFacility{
 
     @Override
     public void run() {
-        playAction = new playRollerCoaster();
+        playAction = new playCarousel();
         playAction.playFacility();
     }
 

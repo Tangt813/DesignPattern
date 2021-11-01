@@ -5,7 +5,8 @@ public class playCarousel implements PlayAction {
     @Override
     public void playFacility(){
         String ans="play:"+this.facility_name;
-        System.out.println("let's play "+facility_name);
+        //System.out.println("let's play "+facility_name);
+        System.out.println("请尽情享受在旋转木马上的欢乐时光！");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

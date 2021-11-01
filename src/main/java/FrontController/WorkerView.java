@@ -5,6 +5,6 @@ package FrontController;
  */
 public class WorkerView {
     public void show(){
-        System.out.println("Displaying Worker Page");
+        System.out.println("is entering admin page...");
     }
 }
