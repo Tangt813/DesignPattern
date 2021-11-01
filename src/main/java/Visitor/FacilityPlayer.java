@@ -4,21 +4,21 @@ public class FacilityPlayer implements FacilityVisitor {
 
     @Override
     public void visit(RecreationFacility recreationFacility) {
-        System.out.println("Recreation facility ready!\n");
+        System.out.println("当前访问者为游客\n开始游玩");
     }
 
     @Override
     public void visit(Periscope periscope) {
-        System.out.println("Playing Periscope.");
+        System.out.println("游客游玩潜望镜设施");
     }
 
     @Override
     public void visit(Fountain fountain) {
-        System.out.println("Playing Fountain.");
+        System.out.println("游客游玩喷泉设施");
     }
 
     @Override
     public void visit(RollerCoaster rollerCoaster) {
-        System.out.println("Playing RollerCoaster.");
+        System.out.println("游客游玩过山车设施");
     }
 }

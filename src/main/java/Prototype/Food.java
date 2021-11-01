@@ -6,6 +6,9 @@ public abstract class Food implements Cloneable {
     public String name;
     protected double price;
 
+
+
+
     public double getPrice(){
         return price;
     }
