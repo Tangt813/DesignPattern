@@ -20,7 +20,7 @@ public class SerialNumberObject {
            newnum=(long)((double)(Math.random()*9+1)*100000);
        }
        sernum.add(newnum);
-      System.out.println("The serial number:"+newnum);
+      System.out.println("门票序列号:"+newnum);
       return newnum;
     }
 

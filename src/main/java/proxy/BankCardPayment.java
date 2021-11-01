@@ -7,11 +7,11 @@ public class BankCardPayment implements Payment{
         showcost();
     }
     private void showcost(){
-        System.out.println("a ticket costs "+cost+".");
+        System.out.println("一张门票价格为 "+cost+"元.");
     }
     public String Pay(){
 
-        return "Pay for a ticket";
+        return "支付一张门票.";
     }
 
 }

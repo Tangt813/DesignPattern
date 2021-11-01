@@ -1,4 +1,8 @@
-package proxy;
+package Proxy;
+
+import proxy.BankCardPayment;
+import proxy.Payment;
+import proxy.WechatPayment;
 
 import java.util.Scanner;
 
