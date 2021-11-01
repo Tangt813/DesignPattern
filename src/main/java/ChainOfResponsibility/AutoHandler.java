@@ -19,16 +19,11 @@ public class AutoHandler extends BaseHandler {
         LocalDate today = LocalDate.now();
         LocalDate buyDate = LocalDate.ofInstant(request.getBuyDate().toInstant(), ZoneId.systemDefault());
         Long duration = today.toEpochDay() - buyDate.toEpochDay();
-        if(request.getPrice() <= 100 && duration <= 14){
+        if(duration <= 14){
             System.out.println("自动退票办理成功！");
             return Boolean.TRUE;
         }
-        if(request.getPrice() > 100){
-            System.out.println("您的订单金额过大，请前往人工柜台办理。");
-        }
-        if(duration > 14){
-            System.out.println("您的订单不满足14天自动退票条件，请前往人工柜台办理。");
-        }
+        System.out.println("您的订单不满足14天自动退票条件，请前往人工柜台办理。");
         System.out.println("进入人工审核流程。");
         return artificialHandler.handle(request);
     }

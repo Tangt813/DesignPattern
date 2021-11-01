@@ -1,19 +1,19 @@
 package BridgePattern;
 
+import Strategy.playCarousel;
 import Strategy.playRollerCoaster;
 
 /**
  * @author tangshuo
  * @version 1.0.0
- * @ClassName rollerCoaster.java
- * @Description 过山车类
- * @createTime 2021年10月12日 11:32:00
+ * @ClassName Carousel.java
+ * @Description TODO
+ * @createTime 2021年10月31日 22:04:00
  */
-public class RollerCoaster extends AmusementFacility {
+public class Carousel extends AmusementFacility{
 
-
-    public RollerCoaster(People suitablePeople) {
-        super(suitablePeople,true);
+    public Carousel(People suitablePeople) {
+        super(suitablePeople,false);
     }
 
     @Override
@@ -29,6 +29,7 @@ public class RollerCoaster extends AmusementFacility {
 
     @Override
     public String getAmusementFacilityName() {
-        return "适合" + suitablePeople.getAgeGroupName() + "的海底过山车";
+        return "适合" + suitablePeople.getAgeGroupName() + "的海底旋转木马";
     }
+
 }
