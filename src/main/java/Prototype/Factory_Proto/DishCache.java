@@ -44,8 +44,6 @@ public class DishCache {
         dishMap.put("汉堡",Main_Fac.produceDish("汉堡", 22));
         dishMap.put("薯条",Snack_Fac.produceDish("薯条", 12));
         dishMap.put("可乐",Drink_Fac.produceDish("可乐", 10));
-//        Main_Fac.produceDish(service.getMain(), 22);
-//        Snack_Fac.produceDish(service.getSnack(), 12);
-//        Drink_Fac.produceDish(service.getDrink(), 10);
+
     }
 }

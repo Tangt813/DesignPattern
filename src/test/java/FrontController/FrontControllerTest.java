@@ -1,5 +1,6 @@
 package FrontController;
 import org.junit.Test;
+
 public class FrontControllerTest {
     @Test
     public void testFrontController(){
