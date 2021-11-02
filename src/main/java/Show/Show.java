@@ -108,4 +108,9 @@ public class Show {
         System.out.println("|     调用了模板模式哦     |");
         System.out.println("*-----------------------*\33[0m");
     }
+
+    public static void main(String[] args) {
+        Show show = new Show();
+        show.show();
+    }
 }
