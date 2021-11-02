@@ -1,5 +1,7 @@
 package Prototype;
 
+
+
 import java.util.Hashtable;
 
 public class FoodCache {
@@ -7,23 +9,25 @@ public class FoodCache {
     private static Hashtable<String, Food> foodMap
             = new Hashtable<String, Food>();
 
-    public static Food getFood(String foodId) {
-        Food cachedFood = foodMap.get(foodId);
+    public static Food getFood(String foodName) {
+        Food cachedFood = foodMap.get(foodName);
         return (Food) cachedFood.clone();
     }
 
-    // 对每种形状都运行数据库查询，并创建该形状
-    // foodMap.put(foodKey, food);
-    // 例如，我们要添加三种形状
-
     public static void loadCache() {
-        Chicken foodBadge = new Chicken();
-        foodMap.put(foodBadge.getId(), foodBadge);
+        Chicken chicken = new Chicken();
+        foodMap.put(chicken.getName(), chicken);
 
-        Hamburger square = new Hamburger();
-        foodMap.put(square.getId(),square);
+        Hamburger hamburger = new Hamburger();
+        foodMap.put(hamburger.getName(),hamburger);
 
-        Noodles rectangle = new Noodles();
-        foodMap.put(rectangle.getId(),rectangle);
+        Noodles noodles = new Noodles();
+        foodMap.put(noodles.getName(),noodles);
+    }
+
+
+
+    public static void showCache(){
+        System.out.println("当前备餐："+foodMap.keySet());
     }
 }
