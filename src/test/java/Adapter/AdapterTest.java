@@ -13,7 +13,7 @@ public class AdapterTest
 {
     @Test
     public void adapterTest() {
-        System.out.println("Test Adapter");
+        System.out.println("-------------------Test Adapter---------------------");
 
         try {
             Thread.sleep(1000);
@@ -32,6 +32,7 @@ public class AdapterTest
 
         System.out.println("所以为了能够适配各种各样的票的类型，实现了适配器类，来让门票检验允许与所有票类型对接");
         RegularTicket myTicket=new RegularTicket();
+        System.out.println("-----------------------------------------------------------------");
         System.out.println("首先我们测试普通票：");
         System.out.println(myTicket.check("Regular"));
         try {
@@ -39,6 +40,7 @@ public class AdapterTest
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("-----------------------------------------------------------------");
         System.out.println("下面我们测试VIP票：");
         System.out.println(myTicket.check("VIP"));
 

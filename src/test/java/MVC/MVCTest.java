@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class MVCTest {
     @Test
     public static void main(String[] args) {
-        System.out.println("MVC模式 Test");
+        System.out.println("---------------------------MVC模式 Test---------------------------");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -22,6 +22,7 @@ public class MVCTest {
         System.out.println("View是展示的界面，即餐厅大屏幕");
         System.out.println("Controller调用接口来实现属性的改变");
         System.out.println("Model实现函数，实现属性变化过程");
+        System.out.println("-----------------------------------------------------------------");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -31,12 +32,12 @@ public class MVCTest {
         Restaurant restaurant = Restaurant.getRestaurant();
         RestaurantView RV = new RestaurantView();
         RestaurantController RC = new RestaurantController(restaurant, RV);
+        System.out.println("当然，当有顾客前来，或者顾客离去，以及各种对属性产生影响时，餐厅管理员可以通过Controller的不同接口");
+        System.out.println("实现属性的改变，更新好后的信息将会重新打印");
         while (true) {
             System.out.println("一开始我们直接在View展示出所有信息");
             RC.updateView();
             //RC.showMenu();
-            System.out.println("当然，当有顾客前来，或者顾客离去，以及各种对属性产生影响时，餐厅管理员可以通过Controller的不同接口");
-            System.out.println("实现属性的改变，更新好后的信息将会重新打印");
             System.out.println("请输入你要执行的要求：(1.更改店名。2.增加顾客。3.顾客离开。4.显示当前信息。0.退出)");
             Scanner scan = new Scanner(System.in);
             int choice = scan.nextInt();
