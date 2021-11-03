@@ -10,6 +10,11 @@ import java.util.Date;
 import java.util.List;
 
 public class CriteriaDemo {
+    /**
+     * @Desc: Demo测试函数
+     * @Param: 可以无
+     * @Return: 无
+     */
     public static void main(String[] args) {
         List<Ticket> tickets = new ArrayList<Ticket>();
         tickets.add(new Ticket("Tom", 380, new Date(), "adult"));
@@ -41,6 +46,11 @@ public class CriteriaDemo {
 
     }
 
+    /**
+     * @Desc: 打印tickets列表
+     * @Param: tickets列表
+     * @Return: 空
+     */
     public static void printTickets(List<Ticket> tickets) {
         for (Ticket ticket: tickets) {
 //            System.out.println("Ticket : [ Name : " + ticket.getUserName() +

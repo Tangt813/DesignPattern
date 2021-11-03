@@ -5,6 +5,12 @@ package Mediator;/*
  * @Version 1.0
  */
 
+
+/**
+ * @Desc: 中介者测试Demo
+ * @Param: 无
+ * @Return: 无
+ */
 public class MediatorPatternDemo {
     public static void main(String[] args) {
         Admin wang = new Admin("Wang");

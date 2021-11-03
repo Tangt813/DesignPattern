@@ -7,9 +7,17 @@ package NullObject;/*
 
 import Filter.Ticket;
 
+
+/*
+ * 票务工厂，根据数据库中是否存在票务信息返回真或假对象
+ */
 public class TicketFactory {
     public static final String[] names = {"Tom", "Jerry", "Bert"};
-
+    /**
+     * @Desc: 票务工厂，根据数据库中是否存在票务信息返回真或假对象
+     * @Param: 购票人名称
+     * @Return: 如果是存在的，就返回真对象，否则返回空对象
+     */
     public static Ticket getTicket(String name) {
         for (String lName:  names) {
             if (lName.equalsIgnoreCase(name)) {

@@ -5,7 +5,8 @@ public class playShooting implements PlayAction {
 
     @Override
     public void playFacility(){
-        System.out.println("let's play "+facility_name);
+        //System.out.println("let's play "+facility_name);
+        System.out.println("开枪吧，神射手！");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

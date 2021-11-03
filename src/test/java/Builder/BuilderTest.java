@@ -6,22 +6,13 @@ public class BuilderTest {
     @Test
     public void builderTest() {
         System.out.println("--------------------Builder Pattern Test Start--------------------");
+        System.out.println("这里是建造者模式的演示，本场景的内容是餐厅备餐，服务员将依次把准备好的主食、小吃、饮料放入餐盘中，组装成顾客所需要的套餐。");
         BaseRestaurantManager restaurantManager = new RestaurantManager();
         restaurantManager.addWaiter(new RestaurantWaiter());
-//        System.out.println("一名顾客在餐厅购买了一份套餐，包括一份汉堡，一份薯条与一杯可乐。");
-//        restaurant.prepareMeal("汉堡", "薯条", "可乐");
-        MainFoodFactory mainFoodFactory=new MainFoodFactory();
-        SnackFactory snackFactory=new SnackFactory();
-        DrinkDishFactory drinkDishFactory=new DrinkDishFactory();
-        //新建订单
-        DishOrderService order=new DishOrderService();
-        String mainFoodName=order.getMain();
-        String snackName=order.getSnack();
-        String drinkName=order.getDrink();
         //生产食品
-        MainDish mainDish = mainFoodFactory.produceDish(mainFoodName, 60);
-        SnackDish snackDish = snackFactory.produceDish(snackName, 40);
-        DrinkDish drinkDish = drinkDishFactory.produceDish(drinkName, 20);
+        MainDish mainDish = new MainDish("汉堡", 60);
+        SnackDish snackDish = new SnackDish("薯条", 40);
+        DrinkDish drinkDish = new DrinkDish("可乐", 20);
         restaurantManager.prepareMeal(mainDish, snackDish, drinkDish);
         System.out.println("顾客收到了餐品。");
         System.out.println("--------------------Builder Pattern Test End--------------------");

@@ -22,7 +22,6 @@ public class SouvenirShop {
         System.out.println("商店接到了水晶球进货的命令");
         shop.takeOrder(buyOrder);
         shop.placeOrders();//执行命令
-
         Warehouse warehouse = new Warehouse(radiusAll,colorsAll);
 
         WarehouseDelegate warehouseDelegate = new WarehouseDelegate();

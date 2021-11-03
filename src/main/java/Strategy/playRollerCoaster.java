@@ -5,7 +5,8 @@ private String facility_name="RollerCoaster";
 @Override
     public void playFacility(){
     String ans="play:"+this.facility_name;
-    System.out.println("let's play "+facility_name);
+    //System.out.println("let's play "+facility_name);
+    System.out.println("让人心跳加速的过山车即将启动！");
     try {
         Thread.sleep(1000);
     } catch (InterruptedException e) {

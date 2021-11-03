@@ -8,8 +8,13 @@ package NullObject;/*
 import Filter.Ticket;
 import org.junit.Test;
 
+
 public class NullObjectTest {
     @Test
+    /*
+    * 空对象模式测试函数。
+    * 场景为出票，有游客购买了黄牛票、过期票等不合法等票。如果票务信息合法则直接返回正常对象，否则返回空对象。
+    * */
     public void TestNullObject() {
         System.out.println("----------------------Null Object Pattern Test Start--------------------");
 

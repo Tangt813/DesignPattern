@@ -10,7 +10,7 @@ public class WechatPayment implements Payment{
         if(cashPayment==null){
             cashPayment=new BankCardPayment(cost);
         }
-        String payment=cashPayment.Pay()+" on Wecaht.";
+        String payment="用微信"+cashPayment.Pay();
         return payment;
 
     }

@@ -4,7 +4,8 @@ public class playBigHammer implements PlayAction {
     private String facility_name="BigHammer";
     @Override
     public void playFacility(){
-        System.out.println("let's play "+facility_name);
+        //System.out.println("let's play "+facility_name);
+        System.out.println("惊险刺激的大摆锤即将开始！");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
