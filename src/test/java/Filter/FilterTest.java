@@ -15,7 +15,15 @@ import static Filter.CriteriaDemo.printTickets;
 
 public class FilterTest {
     @Test
+
+    /*
+    * 过滤器测试函数
+    * 场景为出票时过滤各种门票。
+    * */
     public void TestFilter() {
+        
+        System.out.println("# 过滤器模式允许开发人员使用不同的标准来过滤一组对象，通过逻辑运算以解耦的方式把它们连接起来。\n" +
+                "# 这种类型的设计模式属于结构型模式，它结合多个标准来获得单一标准。");
         System.out.println("----------------------Filter Pattern Test Start--------------------");
 
         List<Ticket> tickets = new ArrayList<Ticket>();

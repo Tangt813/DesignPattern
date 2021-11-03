@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CriteriaOlder implements Criteria{
+
+    /**
+     * @Desc: 老人票筛选器
+     * @Param: Tickets列表
+     * @Return: 符合老人标准的tickets列表
+     */
     @Override
     public List<Ticket> meetCriteria(List<Ticket> tickets) {
         List<Ticket> oldTickets = new ArrayList<Ticket>();
