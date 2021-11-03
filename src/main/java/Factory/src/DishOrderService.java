@@ -2,7 +2,7 @@ package Factory.src;/*
 @version : 
 @author：张世铎
 @date:
-@description:
+@description:点餐操作在内的类
 */
 
 import java.util.Scanner;
@@ -14,6 +14,7 @@ public class DishOrderService {
     private String snack;
     private String drink;
 
+    //默认构造函数
     public DishOrderService()
     {
         System.out.println("请选择主食：");
@@ -26,8 +27,10 @@ public class DishOrderService {
         this.drink=sc.next();
 //        this.drink="可乐";
     }
-
+    //获取主食类别
     public String getMain(){return mainfood;}
+    //获取小吃类别
     public String getSnack(){return snack;}
+    //获取饮料类别
     public String getDrink(){return drink;}
 }

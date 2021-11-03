@@ -20,11 +20,13 @@ public class TotalGuide {
     private Ticket ticket;
     private String gName="小P";
 
+    //构造函数为导游命名
     public TotalGuide(String gName)
     {
         this.gName=gName;
     }
 
+    //导游帮助游客购票
     public void buyTicket(){
         System.out.println("亲爱的游客，请您告诉我您的ID方便我为您购票哦~");
         this.vID=sc.nextLine();
@@ -56,6 +58,7 @@ public class TotalGuide {
         drawTickets.run(num, price, info);
     }
 
+    //导游带领游客游玩游乐场
     public void play(){
         Tourist context=new Tourist(null);
         System.out.println("我们接下来去海底世界游乐场哦~祝您玩的愉快\n");
@@ -89,6 +92,7 @@ public class TotalGuide {
         System.out.println("游客"+this.vID+"表示在导游"+this.gName+"的带领下玩的很开心");
     }
 
+    //导游带领游客观看表演
     public void watch(){
         System.out.println("亲爱的游客，欢迎来到海底大剧场~请欣赏下一场表演\n");
         for(int i=0;i<2;i++){
@@ -132,6 +136,8 @@ public class TotalGuide {
         System.out.println("游客"+this.vID+"表示表演非常精彩！\n");
     }
 
+
+    //参观服务结束后的调用
     public void end(){ for(int i=0;i<2;i++){
         try {
             Thread.sleep(1000);

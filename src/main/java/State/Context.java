@@ -13,6 +13,8 @@ public class Context {
     public Context(){
         this.currentState=Un;
     }
+
+    //context实例执行的入园函数，根据状态不同有不同的动作
     public void enter(){
         if(this.currentState.getState().equals("Enable"))
             System.out.println("已购票，可进入园区");
@@ -31,6 +33,7 @@ public class Context {
             setCurrentState(En);}
     }
 
+    //设置当前状态
     public void setCurrentState(State state)
     {
         this.currentState=state;

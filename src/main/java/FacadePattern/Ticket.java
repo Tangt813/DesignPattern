@@ -10,6 +10,7 @@ public class Ticket {
     private String ticketId;
     private String userId;
 
+    //设置票的id
     public void setTicketId(){
         Random r=new Random();
         int first=r.nextInt(100);

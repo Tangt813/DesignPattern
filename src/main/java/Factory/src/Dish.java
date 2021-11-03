@@ -9,27 +9,25 @@ public abstract class Dish {
     protected String name;
     protected double price;
 
-    public enum produceState {toBeStarted, producing, complete}
-
-    ;//生产状态
-//    protected produceState state;
-
+    public enum produceState {toBeStarted, producing, complete};//生产状态
+    //protected produceState state;
+    //默认构造函数
     Dish() {
     }
-
+    //重构含参构造函数
     Dish(String name, Integer price) {
         this.name = name;
         this.price = price;
     }
-
+    //设置菜品名称
     public void setName(String name) {
         this.name = name;
     }
-
+    //获取菜品名称
     public String getName() {
         return name;
     }
-
+    //获取菜品价格
     public double getPrice() {
         return price;
     }
