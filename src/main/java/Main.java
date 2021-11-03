@@ -1,5 +1,6 @@
 
 
+import FacadePattern.TotalGuide;
 import FrontController.FrontController;
 import BuyTicketsSubsystem.*;
 import Show.Show;
@@ -21,12 +22,18 @@ public class Main {
 
         Scanner mainScanner=new Scanner(System.in);
         boolean isAdmin = login();
+        boolean needGuide=false;
 
         //游客模式
         if(!isAdmin){
             frontControl(1);
             showmap();
-            visitorMenu();
+            needGuide=needGuide();
+            //导游代理模式
+            if(needGuide)
+                Guide();
+            else
+                visitorMenu();
         }
         //管理员模式
         else{
@@ -35,6 +42,29 @@ public class Main {
         }
 
     }
+
+    /**
+     * 是否需要导游
+     */
+    public static boolean needGuide(){
+        System.out.println("本次嘉年华提供向导服务，请问您是否需要导游？\n" +
+                "1、需要导游\n" +
+                "2、不需要导游\n");
+        Scanner scanner=new Scanner(System.in);
+        return scanner.nextInt()==1;
+    }
+
+    /**
+     * 导游执行
+     */
+    public static void Guide(){
+        TotalGuide guide=new TotalGuide("阿P");
+        guide.buyTicket();
+        guide.play();
+        guide.watch();
+        guide.end();
+    }
+
 
     /**
      * 前端控制器
@@ -187,64 +217,44 @@ public class Main {
      */
     public static void showmap(){
      System.out.format("\33[%dm%s",96,"");
-     System.out.println("                                                                                                ______________,_,,,,,,,paauuamwmmmmmmmmmmmmmmmmemmm**m**********mmmmqp,__                                   \n" +
-             "                                  _______,,,aaaanmaaamaaa,_p,,,,,,aaaaummmmmw*****NMMM~~\"~~~~~~~~~~~^```^`` `                                                          `^~9*mu,_                            \n" +
-             "               ___,awmmm***MM~~~~~\"~~```                                                                                                                                       ^~~M*mq,_                    \n" +
-             "           _m*~~`                                                                                                                                                                      `~*m,                \n" +
-             "         p#`                                                                                                                                                                               \"Mq              \n" +
-             "        p~                                                                                                                                                          __                       `#,            \n" +
-             "       gT                                                                                                                                                          j                           Mg           \n" +
-             "      jH                                                                                                                                                         qAk#m                          \"&          \n" +
-             "      0                                                                                                                                                         ,    x \\                         ~#         \n" +
-             "     ]&                                                                                                                                                 __,__,____p,__gL__qg,__                   `&        \n" +
-             "     #6                                                                                                                                                 ~9M9~\"*\"~7\"*\"~P^*\"~\"9YM                    ^0       \n" +
-             "     #                                                                                                                                                    #Mx  Np#:- _NQ   qM6                      ~&      \n" +
-             "     #                                                                                                                                                    MM                K&f                       `&     \n" +
-             "    ]f                                                                                                                                                    QB                RB&                        ]&    \n" +
-             "    #                                                                                                                                                    gD  ,8f   _  j~?&  DQ                         #6   \n" +
-             "    #                                                                                                                                                   _M  05WrB00N##0&MxD  \"$                         0   \n" +
-             "   ]f                                                              asasds0ad2,                                                                                   表演会场                        ]&  \n" +
-             "   #                                                           x :.'        ',$ s                                                                                                                                #  \n" +
-             "   #                                                            -^^   _au_   *+                                                                                                                          ]& \n" +
-             "   0                                                         a-  ,    #qj@        =                                                                                                                       0 \n" +
-             "   &                                                         \\E \"    pF   \"&,   f #N                                                                                                                       B \n" +
-             "   &                                                            _  yM      \"m,                                                                                                                            0 \n" +
-             "  ]&                                                            .gM^s       ~#p !                                                                                                                         0 \n" +
-             "  ]A                                                            #M\"~  t,\\ :   ~Mx                                                                                                                         # \n" +
-             "  Q&                                                             ^       ^                                                                                                                              jA \n" +
-             "  #5                                    ga                   =&**+**+***==*=********                                        #WM#&#                                                                      0  \n" +
-             "  #                            a#        _0                           摩天轮                                                 gNM#00h                                                                     jf  \n" +
-             "  0                           p:h_      _]3                                                                           ,&q,  4F4#@Nf _j0p                                                                B   \n" +
-             "  0                          F  \\B,    ,,M:                                                                           #0d,,_JQNN&NL,,dNS                                                               ]#   \n" +
-             "  #                        ,P    `~k -,*0'                                                                            Q0M0           &&R&                                                               Q6   \n" +
-             "  0                       p~       W#pM^                                                                              #uK0           0#p&                                                               #    \n" +
-             "  #                     _4    ,,_    7 _                                                                              0&NQ           0&RN                                                              ]F    \n" +
-             "  ]&                 +0&#3MSDN&Rr&3@&8^P&M                                                                            kD&ANM&#00K&0##8#MA                                                             #     \n" +
-             "   0                          大摆锤                      __mN0MM4MNpqg_                                               J0MNZ&0M###00MNMN#0                                                             ]#     \n" +
-             "   M6                                                 ,eN3\"=        7Nkg                                                    餐厅                                                                    #      \n" +
-             "    #                                               _NM\"               ~Q,                                                                                                                          jF      \n" +
-             "     &                                              NC~                 ~#                                                                                                                         _#       \n" +
-             "     ]&                                             0#           _,r*\"~^~Nn_                                                                                                                       #        \n" +
-             "      ~&                                         ___0Q`         t~~     y#  #g                                                                                                                    p^        \n" +
-             "        0q                                     0@^^\"~MNp,    y+`       g0E   &                                                                                                                   #f         \n" +
-             "         \"&                                   #1      ^0&Mq&~       _mM\" ,  m!                                                                                                                  0^          \n" +
-             "           Mq_                                 btm,, =m*\"~D00O#vv*EE$&mxw0BP^                                                                                                                 _0^           \n" +
-             "             ~Nq_                                  ~             ^                                                                                                                           p0             \n" +
-             "                ^~*mm,__                                     过山车                                                                                                       _,mm***M**mmug,,_,M~              \n" +
-             "                      `~~\"@*mmq,__                                                                                                                                  __,pM~^               ``                \n" +
-             "                                `~~M**mwq,____                                                                                                                _pmM~~~`                                      \n" +
-             "                                          ``~~~~~\"MMM*****mmmmuaaaa,________                                                                                gF~                                             \n" +
-             "                                                                      ```~~~~~~~~MP****mmma,,__                                                            #'                                               \n" +
-             "                                                                                             `^~MMmq_                                                     jf                T                               \n" +
-             "                                                                                                    `~Mmq_                                                #                 -                               \n" +
-             "                                                                                                         ^~Nq                                             0                - \"                              \n" +
-             "                                                                                                             \"Q_                                          0          _    gp*p                              \n" +
-             "                                                                                                               ^Q_                                        4p        :~--- W%,N    #  ^                      \n" +
-             "                                                                                                                 Mg                                        #         p   :        -yg                        \n" +
-             "                                                                                                                  #,                                       0         F  bz:      {d \"~                        \n" +
-             "                                                                                                                  ]f                                       #          - %: DQ6:T~                           \n" +
-             "                                                                                                                  ]&                                       ~       \"^~~~~~~\"~\"~\"\"\"^~~                       \n" +
-             "                                                                                                                 _0'                                                      票务中心                           ");
+     System.out.println(" " +
+             " mm m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m\n" +
+             " M                                                                                                              M \n" +
+             " #                                                                                                              # \n" +
+             " #                                                                                                              # \n" +
+             " #                                                                                         |-|                  # \n" +
+             " #                                                                                         T D                  # \n" +
+             " #                                                                                  0 * * * m e * m * v         # \n" +
+             " #                                                                                      #  Y 4 4 M              # \n" +
+             " #           , ,                                                                        9 , %   T *             # \n" +
+             " #         ;  - }                                                                         ~ ' ^ 0 %             # \n" +
+             " #        ' ^  J                                                                           表演会场              # \n" +
+             " #       (  Q ] '               - - -*                                                                          # \n" +
+             " #        __ } ,              (     ;  )                                                                        # \n" +
+             " #       ^~~^ ^ ^ ^          (     *  y  )                                                                      # \n" +
+             " #        大摆锤                (7'   ^ )                                                                        # \n" +
+             " #                          === * + *= ===                                                                      # \n" +
+             " #                             摩天轮                                                                            # \n" +
+             " #                 x * * x                                                                                      # \n" +
+             " #                E        l                                                 ] q g |                            # \n" +
+             " #                6  ,- \\ *                                              j ] S M M j                           # \n" +
+             " #              +~\\,/  ///                                               F g r * 7 g  0                        # \n" +
+             " #              ]- - ^ * * & = '                                            DQG_4#G                             # \n" +
+             " #                  过山车                                                   B0D#0#g                             # \n" +
+             " #                                                                          +*@*M+\"*-                          # \n" +
+             " #                                                                             餐厅                              # \n" +
+             " #                                                                                                              # \n" +
+             " #                                                                                                              # \n" +
+             " #                                                                                                              # \n" +
+             " #                                                                                                              # \n" +
+             " #                                                                                              ] l .           # \n" +
+             " #                                                                                            n @ & ,           # \n" +
+             " #                                                                                              mX1             # \n" +
+             " #                                                                                            ~ ~ ~^ ^          # \n" +
+             " #                                                                             *GATE*          票务中心          # \n" +
+             " #                                                                             *    *                           # \n" +
+             " ]g                                                                            *    *                           y' \n" +
+             "  ^9 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *    * * * * * * * * * * * * * * *");
      System.out.format("\33[%dm%s",0,"");
     }
 

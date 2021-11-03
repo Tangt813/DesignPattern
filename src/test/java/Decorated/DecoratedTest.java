@@ -1,4 +1,5 @@
 package Decorated;
+
 import org.junit.Test;
 public class DecoratedTest {
     @Test
