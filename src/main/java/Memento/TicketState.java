@@ -4,6 +4,7 @@ public class TicketState {
     private int leftTickets;//剩余门票数
     private int balance;//账户余额
 
+    //构造函数
     public TicketState(int leftTickets,int balance){
         this.balance=balance;
         this.leftTickets=leftTickets;
@@ -26,6 +27,7 @@ public class TicketState {
         this.balance+=50;
     }
 
+    //展示当前信息
     public void display(){
         System.out.println("Left Tickets:"+this.leftTickets);
     }

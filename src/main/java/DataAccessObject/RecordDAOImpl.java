@@ -3,6 +3,7 @@ package DataAccessObject;
 import java.util.ArrayList;
 import java.util.List;
 
+//接口类实现类
 public class RecordDAOImpl implements RecordDAO{
     List<Record> records;
 
@@ -17,22 +18,26 @@ public class RecordDAOImpl implements RecordDAO{
 
     }
 
+    //删除一条记录
     @Override
     public void deleteRecord(Record record){
         records.remove(record.getDate());
         System.out.println("Record delete: date"+record.getDate()+" income:"+record.getIncome()+" has been deleted");
     }
 
+    //获取所有记录
     @Override
     public List<Record> getAllRecords(){
         return records;
     }
 
+    //获取特定记录
     @Override
     public Record getRecord(int recordNo){
         return records.get(recordNo);
     }
 
+    //更新一条记录
     @Override
     public void updateRecord(Record record){
         records.get(record.getRecordNo()).setDate(record.getDate());
@@ -40,6 +45,7 @@ public class RecordDAOImpl implements RecordDAO{
         System.out.println("Record update: date"+record.getDate()+" income:"+record.getIncome()+" has been updated");
     }
 
+    //插入一条记录
     @Override
     public void insertRecord(Record record){
         record.setRecordNo(records.size());
