@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Show {
-    public void show() {
+    public void show() throws InterruptedException {
         System.out.println("唐烁baby走着走着，走到了马戏团表演场");
         System.out.println("管理员:帅哥你好，请问您是来看马戏团表演的吗？");
         System.out.println("唐烁:是的");
@@ -133,7 +133,7 @@ public class Show {
         System.out.println("*-----------------------*\33[0m");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Show show = new Show();
         show.show();
     }
