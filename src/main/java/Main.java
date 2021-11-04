@@ -216,7 +216,7 @@ public class Main {
      * 地图显示
      */
     public static void showmap(){
-     System.out.format("\33[%dm%s",0,"");
+     System.out.format("\33[%dm%s",96,"");
      System.out.println(" " +
              " mm m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m m\n" +
              " M                                                                                                              M \n" +

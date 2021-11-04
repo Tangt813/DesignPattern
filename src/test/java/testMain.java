@@ -78,17 +78,22 @@ public class testMain {
         while(sc.nextInt()!=1);
     }
     public void show(String pattern){
-        System.out.println("===============\n" +
+        System.out.format("\33[%dm%s",94,"");
+        System.out.println(
+                "===============\n" +
                 "* "+pattern+"展示 *\n" +
                 "===============\n");
+        System.out.format("\33[%dm%s",0,"");
     }
 
     @Test
 
-    public void Test() throws ParseException {
+    public void Test() throws ParseException, InterruptedException {
+        System.out.format("\33[%dm%s",96,"");
         System.out.println("=====================\n" +
                            "* 23个经典设计模式展示 *\n" +
                            "=====================\n");
+        System.out.format("\33[%dm%s",0,"");
 
         Pause();
         show("工厂模式");
@@ -183,12 +188,15 @@ public class testMain {
         show("策略模式");
         this.Strategy.strategyTest();
 
+        System.out.format("\33[%dm%s",94,"");
+
         System.out.println("=====================\n" +
                 "* 经典设计模式展示完毕 *\n" +
                 "=====================\n");
         System.out.println("====================\n" +
                 "* 7个扩展设计模式展示 *\n" +
                 "====================\n");
+        System.out.format("\33[%dm%s",0,"");
 
 
         Pause();
@@ -220,9 +228,11 @@ public class testMain {
         this.DataAccessObject.testDataAccessObject();
 
         Pause();
+        System.out.format("\33[%dm%s",94,"");
         System.out.println("=====================\n" +
                 "* 所有设计模式展示完毕 *\n" +
                 "=====================\n");
+        System.out.format("\33[%dm%s",0,"");
 
     }
 }

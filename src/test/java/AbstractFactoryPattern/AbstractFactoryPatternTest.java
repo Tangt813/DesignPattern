@@ -16,7 +16,7 @@ public class AbstractFactoryPatternTest {
                 "当然，生产椅子、桌子分别可以采用工厂模式，但不同场景中，桌子椅子风格要求是不同的，但我们购买的时候\n" +
                 "桌椅想要同一种风格，就比如家具店，他会将一套风格的桌子放在一起，方便购买，这时候抽象工厂模式就应运而生\n");
         try {
-            Thread.sleep(6000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -24,7 +24,7 @@ public class AbstractFactoryPatternTest {
                 "通过调用工厂模式来生产每一个小物品，但他因为把一套物品抽象了出来，因此想要生成其他物件时\n" +
                 "可以方便的生产风格一致的一套物品，方便客户购买\n");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

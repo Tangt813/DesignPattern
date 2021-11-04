@@ -15,9 +15,9 @@ public class ShowTest {
 
         Youth youth = new Youth("TSGirlbaby",true);
         youth.getSpecialTicket();
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|    调用了适配器模式哦    |");
-        System.out.println("*-----------------------*\33[0m");
+//        System.out.println("\33[96m*-----------------------*");
+//        System.out.println("|    调用了适配器模式哦    |");
+//        System.out.println("*-----------------------*\33[0m");
 
         System.out.println("\n经纪人:演员现在在哪里？在哪里？做好准备，马上要入场了\n负责人，告诉我演员都在哪里");
         ServiceDetails seaHouse = new ServiceDetails("海马","海马小馆",false);
@@ -62,9 +62,9 @@ public class ShowTest {
         ServiceLocator.listDetails();
         System.out.println("*-----------------------*");
         System.out.println("负责人:老板，演员已就位");
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|  调用了服务定位器模式哦  |");
-        System.out.println("*-----------------------*\33[0m");
+//        System.out.println("\33[96m*-----------------------*");
+//        System.out.println("|  调用了服务定位器模式哦  |");
+//        System.out.println("*-----------------------*\33[0m");
 
         System.out.println("\n负责人:女生们和先生们，马戏团表演即将开始，有我们的演员登场！");
         System.out.println("     \n" +
@@ -99,8 +99,8 @@ public class ShowTest {
         for(BasePerformance p: performances) {
             p.performProcess();
         }
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|     调用了模板模式哦     |");
-        System.out.println("*-----------------------*\33[0m");
+//        System.out.println("\33[96m*-----------------------*");
+//        System.out.println("|     调用了模板模式哦     |");
+//        System.out.println("*-----------------------*\33[0m");
     }
 }

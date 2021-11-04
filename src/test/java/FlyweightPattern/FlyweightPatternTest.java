@@ -53,9 +53,20 @@ public class FlyweightPatternTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            int raduis1;
-            System.out.print("半径:");
-            raduis1=input.nextInt();
+            int raduis1=6;
+//            System.out.print("半径:");
+            boolean isTrue=false;
+            while (!isTrue){
+                System.out.print("半径:");
+                input= new Scanner(System.in);
+                isTrue=input.hasNextInt();
+                if(isTrue){
+                    raduis1=input.nextInt();
+                }
+                else{
+                    System.out.println("请输入整数哦！");
+                }
+            }
             System.out.print("颜色:");
             String color1=input.next();
             System.out.print("图案:");
