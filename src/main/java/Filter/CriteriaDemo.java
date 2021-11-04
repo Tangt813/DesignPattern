@@ -53,7 +53,7 @@ public class CriteriaDemo {
      */
     public static void printTickets(List<Ticket> tickets) {
         for (Ticket ticket: tickets) {
-//            System.out.println("Ticket : [ Name : " + ticket.getUserName() +
+            //            System.out.println("Ticket : [ Name : " + ticket.getUserName() +
 //                    ", Price : " + ticket.getPrice() +
 //                    ", Date : " + ticket.getTime() +
 //                    ", Type : " + ticket.getType() + " ] ");
@@ -68,7 +68,12 @@ public class CriteriaDemo {
             System.out.printf("|        祝您玩得愉快！          |\n");
 
             System.out.println("================================");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-        System.out.println("######################################");
+//        System.out.println("######################################");
     }
 }

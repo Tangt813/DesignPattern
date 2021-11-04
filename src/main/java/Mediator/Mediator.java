@@ -22,16 +22,36 @@ public class Mediator {
      * @Return: 无
      */
     public static void addNewGuy(Admin admin, String facility) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println(new Date().toString() + " [" +
         admin.getName() + "] : " + facility + " 多了一位排队客户.");
+        try {
+            Thread.sleep(400);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (memo.containsKey(facility)) {
             memo.put(facility, memo.get(facility) + 1);
         }
         else {
             memo.put(facility, 1);
         }
+        try {
+            Thread.sleep(400);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 //        System.out.println(memo.get(facility));
         showQueueProcess();
+        try {
+            Thread.sleep(400);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -41,13 +61,28 @@ public class Mediator {
      * @Return: 无
      */
     public static void removeNewGuy(Admin admin, String facility) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println(new Date().toString() + " [" +
                 admin.getName() + "] : " + facility + " 删除了一位排队客户.");
+        try {
+            Thread.sleep(400);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (memo.containsKey(facility)) {
             memo.put(facility, memo.get(facility) - 1);
         }
         else {
             memo.put(facility, 0);
+        }
+        try {
+            Thread.sleep(400);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 //        System.out.println(memo.get(facility));
         showQueueProcess();
@@ -63,6 +98,9 @@ public class Mediator {
         System.out.println("==============================");
         System.out.println("        实时排队进程        ");
         for (String fac : memo.keySet()) {
+            if (memo.get(fac) == 0) {
+                continue;
+            }
             System.out.printf("%s:%-7d  \n", fac, memo.get(fac));
         }
         System.out.println("==============================");

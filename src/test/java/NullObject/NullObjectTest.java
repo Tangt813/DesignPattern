@@ -21,9 +21,13 @@ public class NullObjectTest {
         System.out.println("数据库中有三个有效票务名称: Tom, Jerry和Bert.");
         System.out.println("Yili向票务工厂请求出票。");
         showTicket(TicketFactory.getTicket("Yili"));
-        System.out.println("\n\n");
-
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("Tom向票务工厂请求出票。");
+
         showTicket(TicketFactory.getTicket("Tom"));
 
 
@@ -32,6 +36,11 @@ public class NullObjectTest {
     }
 
     public void showTicket(Ticket ticket) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (ticket.isNil()) {
             System.out.println("工作人员称: 你的票务信息在数据库中没有录入。");
             return ;
