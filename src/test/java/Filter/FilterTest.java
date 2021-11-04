@@ -23,9 +23,10 @@ public class FilterTest {
     * 场景为出票时过滤各种门票。
     * */
     public void TestFilter() throws InterruptedException {
-        
-        System.out.println("# 过滤器模式允许开发人员使用不同的标准来过滤一组对象，通过逻辑运算以解耦的方式把它们连接起来。\n" +
-                "# 这种类型的设计模式属于结构型模式，它结合多个标准来获得单一标准。");
+        System.out.println("大家好，欢迎来到过滤器模式展示～");
+        System.out.println("过滤器模式允许开发人员使用不同的标准来过滤一组对象，通过逻辑运算以解耦的方式把它们连接起来。");
+        System.out.println("接下来我们通过票务筛选的业务来感受过滤器的使用");
+        System.out.println("我们知道，很多时候需要对老人、小孩、学生票等特殊票种进行筛选，而手动判断票种是否满足某一规则会使得代码耦合度增加。因此引入一个过滤器的接口可以大大降低耦合性。");
         System.out.println("----------------------Filter Pattern Test Start--------------------");
         Thread.sleep(2000);
         List<Ticket> tickets = new ArrayList<Ticket>();
