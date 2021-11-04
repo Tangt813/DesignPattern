@@ -3,7 +3,7 @@ package Strategy;
 import java.util.Scanner;
 
 public class StrategyPatternDemo {
-    public static void main(String[] args){
+    public void strategyTest(){
      int index=-1;
         Scanner sc=new Scanner(System.in);
         Tourist context=new Tourist(null);

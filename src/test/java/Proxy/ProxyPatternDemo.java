@@ -7,7 +7,7 @@ import proxy.WechatPayment;
 import java.util.Scanner;
 
 public class ProxyPatternDemo {
-    public static void main(String[] args){
+    public void proxyTest(){
         int cost=100;
         Payment Wechat_Payment=null;
         Payment BankCard_Payment=null;

@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class MVCTest {
     @Test
-    public static void main(String[] args) {
+    public void mvcTest() {
         System.out.println("---------------------------MVC模式 Test---------------------------");
         try {
             Thread.sleep(2000);
