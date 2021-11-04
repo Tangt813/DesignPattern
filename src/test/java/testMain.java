@@ -75,7 +75,8 @@ public class testMain {
     Scanner sc=new Scanner(System.in);
     public void Pause(){
         System.out.println("按1继续...\n");
-        while(sc.nextInt()!=1);
+        while (!sc.nextLine().equals("1"));
+        //while(sc.nextInt()!=1);
     }
     public void show(String pattern){
         System.out.format("\33[%dm%s",94,"");

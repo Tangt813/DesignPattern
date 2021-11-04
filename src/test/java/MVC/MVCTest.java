@@ -50,6 +50,7 @@ public class MVCTest {
 
                 System.out.println("请输入来用餐的顾客人数：");
                 scan = new Scanner(System.in);
+               
                 int number = scan.nextInt();
                 RC.add(number);
             } else if (choice == 3) {
