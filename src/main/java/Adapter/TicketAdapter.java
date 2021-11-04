@@ -18,7 +18,7 @@ public class TicketAdapter implements Ticket {
     public String  check(String ticketType)
     {
         if(Objects.equals(ticketType, "VIP"))
-            return Advancedticket.checkVIP(ticketType);
+            return Advancedticket.checkVIP();
         return "信息错误";
     }
 

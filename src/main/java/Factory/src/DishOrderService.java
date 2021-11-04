@@ -18,13 +18,13 @@ public class DishOrderService {
     public DishOrderService()
     {
         System.out.println("请选择主食：");
-        this.mainfood=sc.next();
+        this.mainfood=sc.nextLine();
 //        this.mainfood="汉堡";
         System.out.println("请选择小吃：");
-        this.snack=sc.next();
+        this.snack=sc.nextLine();
 //        this.snack="薯条";
         System.out.println("请选择饮料：");
-        this.drink=sc.next();
+        this.drink=sc.nextLine();
 //        this.drink="可乐";
     }
     //获取主食类别

@@ -11,7 +11,10 @@ import java.util.Scanner;
 
 public class MVCTest {
     @Test
-    public static void main(String[] args) {
+    public void mvcTest() {
+        System.out.println("MVC模式代表 Model-View-Controller（模型-视图-控制器） 模式");
+        System.out.println("使用MVC的目的是将Model和View的实现代码分离，从而使同一个程序可以使用不同的表现形式");
+        System.out.println("Controller存在的目的则是确保Model和View的同步，一旦Model改变，View应该同步更新。这种模式用于应用程序的分层开发");
         System.out.println("---------------------------MVC模式 Test---------------------------");
         try {
             Thread.sleep(2000);
@@ -34,34 +37,52 @@ public class MVCTest {
         RestaurantController RC = new RestaurantController(restaurant, RV);
         System.out.println("当然，当有顾客前来，或者顾客离去，以及各种对属性产生影响时，餐厅管理员可以通过Controller的不同接口");
         System.out.println("实现属性的改变，更新好后的信息将会重新打印");
+        System.out.println("一开始我们直接在View展示出所有信息");
+        RC.updateView();
         while (true) {
-            System.out.println("一开始我们直接在View展示出所有信息");
-            RC.updateView();
-            //RC.showMenu();
             System.out.println("请输入你要执行的要求：(1.更改店名。2.增加顾客。3.顾客离开。4.显示当前信息。0.退出)");
             Scanner scan = new Scanner(System.in);
-            int choice = scan.nextInt();
-            if (choice == 1) {
+            String  choice = scan.nextLine();
+            if (choice.equals("1")) {
                 System.out.println("请输入新店名：");
                 scan = new Scanner(System.in);
                 String newName = scan.nextLine();
                 RC.setName(newName);
-            } else if (choice == 2) {
+            } else if (choice.equals("2")) {
 
                 System.out.println("请输入来用餐的顾客人数：");
                 scan = new Scanner(System.in);
-                int number = scan.nextInt();
-                RC.add(number);
-            } else if (choice == 3) {
+                if(scan.hasNextInt())
+                {
+                    int number = scan.nextInt();
+                    RC.add(number);
+                }
+                else
+                {
+                    System.out.println("输入错误，请输入整数！");
+                    continue;
+                }
+
+            } else if (choice.equals("3")) {
                 System.out.println("请输入离开的顾客人数：");
                 scan = new Scanner(System.in);
-                int number = scan.nextInt();
-                RC.clear(number);
-            } else if (choice == 5) {
+                if(scan.hasNextInt())
+                {
+                    int number = scan.nextInt();
+                    RC.clear(number);
+                }
+                else
+                {
+                    System.out.println("输入错误，请输入整数！");
+                    continue;
+                }
+
+            } else if (choice.equals("5")) {
                 RC.showMenu();
-            } else if (choice == 0) {
+            } else if (choice.equals("0")) {
                 break;
             }
+            RC.updateView();
         }
     }
 

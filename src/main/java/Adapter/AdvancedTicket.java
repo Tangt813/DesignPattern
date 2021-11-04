@@ -1,5 +1,5 @@
 package Adapter;
 
 public interface AdvancedTicket {
-    public String checkVIP(String ticketType);
+    public String checkVIP();
 }

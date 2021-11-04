@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Show {
-    public void show() {
+    public void show() throws InterruptedException {
         System.out.println("唐烁baby走着走着，走到了马戏团表演场");
         System.out.println("管理员:帅哥你好，请问您是来看马戏团表演的吗？");
         System.out.println("唐烁:是的");
@@ -23,7 +23,13 @@ public class Show {
         System.out.println("\33[96m*-----------------------*");
         System.out.println("|    调用了适配器模式哦    |");
         System.out.println("*-----------------------*\33[0m");
-
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         System.out.println("\n经纪人:演员现在在哪里？在哪里？做好准备，马上要入场了\n负责人，告诉我演员都在哪里");
         ServiceDetails seaHouse = new ServiceDetails("海马","海马小馆",false);
         ServiceDetails shark = new ServiceDetails("大白鲨","大白鲨馆",false);
@@ -35,11 +41,9 @@ public class Show {
         ServiceLocator.listDetails();
         System.out.println("*-----------------------*");
         System.out.println("经纪人:所有演员尽快赶来马戏团，表演要开始了");
-        int i=0;
-        for(i=0;i<2;i++){
-            System.out.println("            |");
+        for(int i=0;i<2;i++){
             try {
-                Thread.sleep(300);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -47,10 +51,9 @@ public class Show {
         System.out.println("*-----------------------*");
         System.out.println("|   经过5min演员迅速赶来   |");
         System.out.println("*-----------------------*");
-        for(i=0;i<2;i++){
-            System.out.println("            |");
+        for(int i=0;i<2;i++){
             try {
-                Thread.sleep(300);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -70,6 +73,13 @@ public class Show {
         System.out.println("\33[96m*-----------------------*");
         System.out.println("|  调用了服务定位器模式哦  |");
         System.out.println("*-----------------------*\33[0m");
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
         System.out.println("\n负责人:女生们和先生们，马戏团表演即将开始，有我们的演员登场！");
         System.out.println("     \n" +
@@ -97,10 +107,24 @@ public class Show {
                 "    ,g&MMMMNM0@M0M0B00MNMMM&N000MMM0MM0N&MMMMNM0@M0M0B00MNMMM&N000MMM0MMMMM0MM0MNMMM&N000MMM0MMMMM0MM0NMM0MM0Nm  \n" +
                 "  MM0MNMMMMMMM0MNMNMNMMN0MM0NM0MMNM0MMNMM0MNMMMMMMM0MNMNMNMMN0MM0NM0MMNM0MMNMNMMNMMN0MM0NM0MMNM0MMNMNMM#8MM#M#8MM#8\n");
         List<BasePerformance> performances = new ArrayList<BasePerformance>();
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         performances.add(new DolphinPerformance());
         performances.add(new SealPerformance());
         performances.add(new SeaLionPerformance());
 
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         for(BasePerformance p: performances) {
             p.performProcess();
         }
@@ -109,7 +133,7 @@ public class Show {
         System.out.println("*-----------------------*\33[0m");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Show show = new Show();
         show.show();
     }
