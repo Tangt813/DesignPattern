@@ -3,7 +3,7 @@ package Singleton;
 import java.util.Scanner;
 
 public class SingletonPatternDemo {
-    public static void main(String[] args){
+    public void singletonTest(){
         SerialNumberObject getSerialNumber=SerialNumberObject.getInstance();
         Scanner sc=new Scanner(System.in);
         int index=-1;

@@ -45,7 +45,7 @@ public class FlyweightPatternTest {
             e.printStackTrace();
         }
         System.out.println("温馨提示：为了更人性化，水晶球可以自己选择图案哦~甚至可以打上你的名字");
-        for(int i=0; i < 5; ++i) {
+        for(int i=0; i < 3; ++i) {
             System.out.println("\n此时模子的数量为："+CrystallBallFactory.numMuzi());
             System.out.println("请输入你想要的水晶球半径，颜色，及图案");
             try {
