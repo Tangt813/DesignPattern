@@ -1,13 +1,16 @@
 package FlyweightPattern;
 
+import FlyweightPattern.*;
+import org.junit.Test;
+
 import java.util.Scanner;
 
-public class Main {
+public class FlyweightPatternTest {
     public static int radius[] = { 6,8,10,12 };
     public static String colors[] = { "blue", "yellow", "red", "white", "green" };
     public static String names[] = { "**","++","Ameis", "Wang", "China"};
-
-    public static void main(String[] args) {
+    @Test
+    public void testFlyweightPattern() {
         System.out.println("大家好，欢迎来到享元模式展示~");
         Scanner input=new Scanner(System.in);
 //        String str=input.next();
@@ -42,7 +45,7 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println("温馨提示：为了更人性化，水晶球可以自己选择图案哦~甚至可以打上你的名字");
-        for(int i=0; i < 5; ++i) {
+        for(int i=0; i < 3; ++i) {
             System.out.println("\n此时模子的数量为："+CrystallBallFactory.numMuzi());
             System.out.println("请输入你想要的水晶球半径，颜色，及图案");
             try {

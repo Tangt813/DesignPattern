@@ -15,9 +15,15 @@ import java.text.SimpleDateFormat;
  */
 public class ChainOfResponsibilityTest {
     @Test
-    public void performTest() throws ParseException {
+    public void performTest() throws ParseException, InterruptedException {
+        System.out.println("这里是责任链模式的演示，责任链模式将多个处理者连成一根链，让发出的请求被责任链上的处理者依次处理。");
+        Thread.sleep(1500);
+        System.out.println("本场景的内容是游客退票，为了减轻人工退票服务的压力，我们引入了自动退票系统，\n游客的退票请求将在责任链上传递，依次由自动退票服务与人工退票服务处理。");
+        Thread.sleep(1500);
+        System.out.println("我们将多个处理步骤抽象成为处理者，它们都继承自BaseHandler基类，这意味着我们可以以更灵活的方式来调整处理流程。");
+        Thread.sleep(1500);
+        System.out.println("例如，我们可以轻松地添加一名新的处理者，也可以调整链上的处理者的顺序，或者在处理者的处理函数中灵活地指定下一名处理者，这给我们的程序带来了巨大的灵活性与拓展性。");
         System.out.println("--------------------Chain of Responsibility Pattern Test Start--------------------");
-        System.out.println("这里是责任链模式的演示，本场景的内容是游客退票，游客的退票请求将在责任链上传递，依次由自动退票服务与人工退票服务处理。");
         BaseHandler autoHandler = new AutoHandler();
         System.out.println("一名游客准备办理退票，他的购票信息如下。");
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

@@ -1,7 +1,10 @@
 package AbstractFactoryPattern;
 
-public class Main {
-    public static void main(String[] args) {
+import org.junit.Test;
+
+public class AbstractFactoryPatternTest {
+    @Test
+    public void testAbstractFactoryPattern(){
         System.out.println("大家好，欢迎来到抽象工厂模式展示~");
         try {
             Thread.sleep(1000);
