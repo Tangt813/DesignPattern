@@ -205,7 +205,7 @@ public class Main {
     /**
      * 表演模块
      */
-    public static void perform(){
+    public static void perform() throws InterruptedException {
         Show perform=new Show();
         perform.show();
         System.out.println("欢迎下次光临！");
