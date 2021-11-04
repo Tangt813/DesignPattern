@@ -9,12 +9,12 @@ public class FacilityPlayer implements FacilityVisitor {
 
     @Override
     public void visit(Periscope periscope) {
-        System.out.println("游客游玩潜望镜设施");
+        System.out.println("游客游玩摩天轮设施");
     }
 
     @Override
     public void visit(Fountain fountain) {
-        System.out.println("游客游玩喷泉设施");
+        System.out.println("游客游玩旋转木马设施");
     }
 
     @Override

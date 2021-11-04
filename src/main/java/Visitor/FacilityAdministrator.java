@@ -10,12 +10,12 @@ public class FacilityAdministrator implements FacilityVisitor {
 
     @Override
     public void visit(Periscope periscope) {
-        System.out.println("检查潜望镜设施......完成！");
+        System.out.println("检查大摆锤设施......完成！");
     }
 
     @Override
     public void visit(Fountain fountain) {
-        System.out.println("检查喷泉设施......完成！");
+        System.out.println("检查旋转木马设施......完成！");
     }
 
     @Override

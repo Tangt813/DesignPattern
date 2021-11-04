@@ -10,7 +10,7 @@ public class VisitorTest {
         System.out.println("#访问者模式属于行为型模式");
         System.out.println("----------------------Visitor Pattern Test Start--------------------");
         Facility facility = new RecreationFacility();
-        System.out.println("海底世界的娱乐设施有喷泉、潜望镜、过山车等游乐设施\n");
+        System.out.println("海底世界的娱乐设施有摩天轮、旋转木马、过山车等游乐设施\n");
         System.out.println("设施管理员前来检查设施");
         facility.accept(new FacilityAdministrator());
         System.out.println("=======================");
