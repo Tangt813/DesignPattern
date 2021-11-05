@@ -26,7 +26,7 @@ public class InterpreterTest {
         System.out.println("VIP用户的信息：");
         ticket.getTicket("441623200108132010,VIP");//6:9
         try {
-            Thread.sleep(4000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

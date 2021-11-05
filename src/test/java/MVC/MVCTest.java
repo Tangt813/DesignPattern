@@ -14,7 +14,7 @@ public class MVCTest {
     public void mvcTest() {
         System.out.println("MVC模式代表 Model-View-Controller（模型-视图-控制器） 模式");
         System.out.println("使用MVC的目的是将Model和View的实现代码分离，从而使同一个程序可以使用不同的表现形式");
-        System.out.println("Controller存在的目的则是确保Model和View的同步，一旦Model改变，View应该同步更新。这种模式用于应用程序的分层开发");
+        System.out.println("Controller存在的目的则是确保Model和View的同步，一旦Model改变，View应该同步更新。");
         System.out.println("---------------------------MVC模式 Test---------------------------");
         try {
             Thread.sleep(2000);
