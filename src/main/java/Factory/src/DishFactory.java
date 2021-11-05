@@ -6,6 +6,7 @@ package Factory.src;/*
 */
 
 public interface DishFactory {
+    //菜品工厂生产对应菜品
     Dish produceDish(String name, Integer price);
 }
 

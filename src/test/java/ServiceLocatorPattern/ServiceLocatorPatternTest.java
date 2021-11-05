@@ -1,9 +1,11 @@
 package ServiceLocatorPattern;
 
-public class Main {
+import org.junit.Test;
 
-    public static void main(String[] args) {
-//         write your code here
+import java.util.Scanner;
+public class ServiceLocatorPatternTest {
+    @Test
+    public void testServiceLocatorPattern(){
         System.out.println("大家好，欢迎来到服务定位器模式展示~");
         try {
             Thread.sleep(1000);
@@ -95,6 +97,5 @@ public class Main {
         System.out.println("*-----------------------*");
         serviceDetail1.printDetails();
         System.out.println("*-----------------------*");
-
     }
 }

@@ -1,6 +1,7 @@
 package Interpreter;
 
 /**
+ * @author:XieYuxiang
  * 文本
  */
 public class Context {
@@ -14,6 +15,10 @@ public class Context {
         personValue = new NonterminalExpression(age, value);
     }
 
+    /**
+     * @param info 待解释的语句
+     * @return 返回门票折扣类型
+     */
     public String getTicket(String info) {
         if (personValue.interpret(info) == 2) {
             System.out.println("您享受免费服务, 本次入园免费！");

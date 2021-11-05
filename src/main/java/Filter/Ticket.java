@@ -18,14 +18,22 @@ public class Ticket {
     public Date time;
     public String type;
 
-//    public String id;
+    /**
+     * @Desc: 构造函数
+     * @Param: 用户名、票价、票的日期、票种
+     * @Return: 无
+     */
     public Ticket(String userName, int price, Date time, String type) {
         this.userName = userName;
         this.price = price;
         this.time = time;
         this.type = type;
     }
-
+    /**
+     * @Desc: 构造函数重载
+     * @Param: 用户名
+     * @Return: 无
+     */
     public Ticket(String userName) {
         this.price = 100;
         this.time = new Date();
@@ -33,10 +41,20 @@ public class Ticket {
         this.userName = userName;
     }
 
+    /**
+     * @Desc: 获得用户名
+     * @Param: 无
+     * @Return: 用户名
+     */
     public String getUserName() {
         return userName;
     }
 
+    /**
+     * @Desc: 获得票价
+     * @Param: 无
+     * @Return: 票价
+     */
     public int getPrice() {
         if (this.getType().equalsIgnoreCase("OLD")) {
             return 0;
@@ -49,14 +67,29 @@ public class Ticket {
         return price;
     }
 
+    /**
+     * @Desc: 获取票务日期
+     * @Param: 无
+     * @Return: 日期
+     */
     public Date getTime() {
         return time;
     }
 
+    /**
+     * @Desc: 获得票种
+     * @Param: 无
+     * @Return: 票种
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     * @Desc: 判断票务是否为空对象
+     * @Param: 无
+     * @Return: 假
+     */
     public boolean isNil() {
         return false;
     }

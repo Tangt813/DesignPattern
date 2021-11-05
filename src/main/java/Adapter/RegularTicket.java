@@ -3,7 +3,7 @@ package Adapter;
 import java.util.Objects;
 
 /**
- * author:XIE YUXIANG
+ * @author:XieYuxiang
  */
 public class RegularTicket implements Ticket{
     //普通用户
@@ -12,6 +12,10 @@ public class RegularTicket implements Ticket{
 
     }
 
+    /**
+     * @param ticketType:读入票的类型
+     * @return 返回判断语句
+     */
     @Override
     public String check(String ticketType) {
         if(Objects.equals(ticketType, "Regular"))
@@ -23,8 +27,6 @@ public class RegularTicket implements Ticket{
             TicketAdapter ticketadapter=new TicketAdapter(ticketType);
             return ticketadapter.check(ticketType);
         }
-
-
         return "信息错误";
     }
 

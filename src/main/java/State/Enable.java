@@ -13,11 +13,13 @@ public class Enable implements State {
         this.state="Enable";
     }
 
+    //重写可进入状态下的入园函数
     @Override
     public void enter(Context context){
         context.enter();
     };
 
+    //获取当前状态
     @Override
     public String getState(){
         return this.state;

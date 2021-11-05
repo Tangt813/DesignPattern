@@ -19,6 +19,8 @@ public class OrderForm {
     public boolean run() {
         TicketState ticketsState = new TicketState(50, 1000);
         TicketsStateCaretaker ticketsStateCaretaker = new TicketsStateCaretaker();
+
+        //备忘录模式，存档
         ticketsStateCaretaker.setTicketsStateMemento(ticketsState.saveState());
 
         System.out.println("\n# 以下为后台显示信息");
@@ -56,6 +58,8 @@ public class OrderForm {
             return true;
         } else {
             System.out.println("您已取消支付...");
+
+            //备忘录模式，读档，恢复至之前的状态
             ticketsState.recoveryState(ticketsStateCaretaker.getTicketsStateMemento());
             System.out.println("\n# 以下为后台显示信息");
             ticketsState.display();

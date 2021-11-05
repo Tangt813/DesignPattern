@@ -8,11 +8,11 @@ package Factory.src;/*
 public class DrinkDishFactory implements DishFactory {
     private String drinkName;
     private Integer price;
-
+    //设置所生产饮料名称
     public void setName(String name) {
         this.drinkName = name;
     }
-
+    //重写菜品工厂生产菜品函数
     @Override
     public DrinkDish produceDish(String drinkName, Integer price) {
         System.out.println("一份"+drinkName+"已经制作完成");

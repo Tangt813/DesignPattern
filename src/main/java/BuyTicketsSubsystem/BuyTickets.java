@@ -32,6 +32,12 @@ public class BuyTickets {
                 System.out.println("请输入你的ID");
                 String id;
                 id = scanner.nextLine();
+                while(id.length()<10||id.length()>16)
+                {
+                    System.out.println("您的ID输入有误请重新输入！\n");
+                    System.out.println("请重新输入你的ID");
+                    id=scanner.nextLine();
+                }
                 People user = new Customer(id);
                 if (id.charAt(0) == '1') {
                     user = new VIPCustomer(user);
@@ -68,6 +74,12 @@ public class BuyTickets {
                 System.out.println("请输入你的ID：");
                 String id;
                 id = scanner.nextLine();
+                while(id.length()<10||id.length()>16)
+                {
+                    System.out.println("您的ID输入有误请重新输入！\n");
+                    System.out.println("请重新输入你的ID");
+                    id=scanner.nextLine();
+                }
                 People user = new Customer(id);
                 if (id.charAt(0) == '1') {
                     user = new VIPCustomer(user);
@@ -82,6 +94,12 @@ public class BuyTickets {
                 }
                 System.out.println("请输入您的购票日期（yyyy-MM-dd）：");
                 String dateString = scanner.nextLine();
+                while(dateString.length()!=10)
+                {
+                    System.out.println("日期格式输入有误！\n");
+                    System.out.println("请重新输入您的购票日期（yyyy-MM-dd）：");
+                    dateString = scanner.nextLine();
+                }
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 Ticket ticket = new Ticket(name, (int)price, dateFormat.parse(dateString), info);
                 System.out.println("您的购票信息如下：");

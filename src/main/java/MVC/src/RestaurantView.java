@@ -3,6 +3,13 @@ package MVC.src;
 import Prototype.Factory_Proto.DishCache;
 
 public class RestaurantView {
+    /**
+     * 展示餐厅信息
+     * @param name
+     * @param needTime
+     * @param queueNum
+     * @param freeSeat
+     */
     public void show(String name,int needTime,int queueNum,int freeSeat)
     {
         System.out.println("");

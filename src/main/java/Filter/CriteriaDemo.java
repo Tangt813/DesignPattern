@@ -10,6 +10,11 @@ import java.util.Date;
 import java.util.List;
 
 public class CriteriaDemo {
+    /**
+     * @Desc: Demo测试函数
+     * @Param: 可以无
+     * @Return: 无
+     */
     public static void main(String[] args) {
         List<Ticket> tickets = new ArrayList<Ticket>();
         tickets.add(new Ticket("Tom", 380, new Date(), "adult"));
@@ -41,9 +46,14 @@ public class CriteriaDemo {
 
     }
 
+    /**
+     * @Desc: 打印tickets列表
+     * @Param: tickets列表
+     * @Return: 空
+     */
     public static void printTickets(List<Ticket> tickets) {
         for (Ticket ticket: tickets) {
-//            System.out.println("Ticket : [ Name : " + ticket.getUserName() +
+            //            System.out.println("Ticket : [ Name : " + ticket.getUserName() +
 //                    ", Price : " + ticket.getPrice() +
 //                    ", Date : " + ticket.getTime() +
 //                    ", Type : " + ticket.getType() + " ] ");
@@ -58,7 +68,12 @@ public class CriteriaDemo {
             System.out.printf("|        祝您玩得愉快！          |\n");
 
             System.out.println("================================");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-        System.out.println("######################################");
+//        System.out.println("######################################");
     }
 }

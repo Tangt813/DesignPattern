@@ -1,87 +1,107 @@
-package Show;
-
-import BridgePattern.Youth;
-import ServiceLocatorPattern.ServiceDetails;
-import ServiceLocatorPattern.ServiceLocator;
+package FacadePattern;/*
+@version : 
+@author：张世铎
+@date:
+@description:用于整体场景的导游类
+*/
+import BuyTicketsSubsystem.DrawTickets;
+import Filter.Ticket;
+import Singleton.SerialNumberObject;
+import Strategy.*;
 import Template.BasePerformance;
-import Template.DolphinPerformance;
-import Template.SeaLionPerformance;
-import Template.SealPerformance;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class Show {
-    public void show() throws InterruptedException {
-        System.out.println("唐烁baby走着走着，走到了马戏团表演场");
-        System.out.println("管理员:帅哥你好，请问您是来看马戏团表演的吗？");
-        System.out.println("唐烁:是的");
-        System.out.println("管理员:好的帅哥，请出示您的票务");
+public class TotalGuide {
+    Scanner sc=new Scanner(System.in);
+    private String vID;
+    private Ticket ticket;
+    private String gName="小P";
 
-        Youth youth = new Youth("TSGirlbaby",true);
-        youth.getSpecialTicket();
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|    调用了适配器模式哦    |");
-        System.out.println("*-----------------------*\33[0m");
-        for(int i=0;i<2;i++){
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println("\n经纪人:演员现在在哪里？在哪里？做好准备，马上要入场了\n负责人，告诉我演员都在哪里");
-        ServiceDetails seaHouse = new ServiceDetails("海马","海马小馆",false);
-        ServiceDetails shark = new ServiceDetails("大白鲨","大白鲨馆",false);
-        ServiceDetails paidaxing = new ServiceDetails("派大星","派大星小屋",false);
-        ServiceLocator.addService(seaHouse);
-        ServiceLocator.addService(shark);
-        ServiceLocator.addService(paidaxing);
-        System.out.println("*-----------------------*");
-        ServiceLocator.listDetails();
-        System.out.println("*-----------------------*");
-        System.out.println("经纪人:所有演员尽快赶来马戏团，表演要开始了");
-        for(int i=0;i<2;i++){
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println("*-----------------------*");
-        System.out.println("|   经过5min演员迅速赶来   |");
-        System.out.println("*-----------------------*");
-        for(int i=0;i<2;i++){
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        String pos="马戏团央视大舞台";
-        ServiceLocator.modiServicePos(pos,"海马");
-        ServiceLocator.modiServicePos(pos,"大白鲨");
-        ServiceLocator.modiServicePos(pos,"派大星");
-        ServiceLocator.modiServiceAct(true,"海豚");
-        ServiceLocator.modiServiceAct(true,"海狮");
-        ServiceLocator.modiServiceAct(true,"海豹");
-        System.out.println("负责人:告诉我现在演员位置信息");
-        System.out.println("*-----------------------*");
-        ServiceLocator.listDetails();
-        System.out.println("*-----------------------*");
-        System.out.println("负责人:老板，演员已就位");
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|  调用了服务定位器模式哦  |");
-        System.out.println("*-----------------------*\33[0m");
-        for(int i=0;i<2;i++){
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+    //构造函数为导游命名
+    public TotalGuide(String gName)
+    {
+        this.gName=gName;
+    }
 
-        System.out.println("\n负责人:女生们和先生们，马戏团表演即将开始，有我们的演员登场！");
+    //导游帮助游客购票
+    public void buyTicket(){
+        System.out.println("亲爱的游客，请您告诉我您的ID方便我为您购票哦~");
+        this.vID=sc.nextLine();
+        while(this.vID.length()<10||this.vID.length()>16)
+        {
+            System.out.println("您的ID输入有误请重新输入！\n");
+            System.out.println("请重新输入你的ID");
+            this.vID=sc.nextLine();
+        }
+        System.out.println("导游购票ing...");
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("这是您的票哦，请收好~\n");
+        double price=200;
+        String info="非VIP";
+        if(this.vID.charAt(0)=='1')
+        {
+            price=price*0.8;
+            info="VIP";
+        }
+        SerialNumberObject serialNumberObject = SerialNumberObject.getInstance();
+        Long num = serialNumberObject.getnumber();
+        DrawTickets drawTickets = new DrawTickets();
+        drawTickets.run(num, price, info);
+    }
+
+    //导游带领游客游玩游乐场
+    public void play(){
+        Tourist context=new Tourist(null);
+        System.out.println("我们接下来去海底世界游乐场哦~祝您玩的愉快\n");
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("先体验一下章鱼大摆锤吧\n");
+        context.Changemethod(new playBigHammer());
+        context.doPlaying();
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("再体验一下洋流过山车，请注意安全\n");
+        context.Changemethod(new playRollerCoaster());
+        context.doPlaying();
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("游客"+this.vID+"表示在导游"+this.gName+"的带领下玩的很开心");
+    }
+
+    //导游带领游客观看表演
+    public void watch(){
+        System.out.println("亲爱的游客，欢迎来到海底大剧场~请欣赏下一场表演\n");
+        for(int i=0;i<2;i++){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         System.out.println("     \n" +
                 "                                                                                                                    \n" +
                 "                                                                      \33[31m              a,                        \33[0m       \n" +
@@ -106,35 +126,27 @@ public class Show {
                 "         \33[94m       `\"\"   \33[0m                                                        \33[31m         =^      =^            \33[0m        \n" +
                 "    ,g&MMMMNM0@M0M0B00MNMMM&N000MMM0MM0N&MMMMNM0@M0M0B00MNMMM&N000MMM0MMMMM0MM0MNMMM&N000MMM0MMMMM0MM0NMM0MM0Nm  \n" +
                 "  MM0MNMMMMMMM0MNMNMNMMN0MM0NM0MMNM0MMNMM0MNMMMMMMM0MNMNMNMMN0MM0NM0MMNM0MMNMNMMNMMN0MM0NM0MMNM0MMNMNMM#8MM#M#8MM#8\n");
-        List<BasePerformance> performances = new ArrayList<BasePerformance>();
         for(int i=0;i<2;i++){
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        performances.add(new DolphinPerformance());
-        performances.add(new SealPerformance());
-        performances.add(new SeaLionPerformance());
-
-        for(int i=0;i<2;i++){
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        for(BasePerformance p: performances) {
-            p.performProcess();
-        }
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|     调用了模板模式哦     |");
-        System.out.println("*-----------------------*\33[0m");
+        System.out.println("游客"+this.vID+"表示表演非常精彩！\n");
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        Show show = new Show();
-        show.show();
+
+    //参观服务结束后的调用
+    public void end(){ for(int i=0;i<2;i++){
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
+        System.out.println("本次旅程结束了哦~欢迎下次光临");
+    }
+
+
 }

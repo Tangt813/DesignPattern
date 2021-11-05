@@ -7,6 +7,9 @@ package Filter;/*
 
 import java.util.List;
 
+/**
+ * @Desc: 标准的抽象接口，实现一个在tickets中能返回该标准的tickets子集
+ */
 public interface Criteria {
     public List<Ticket> meetCriteria(List<Ticket> tickets);
 }

@@ -8,7 +8,13 @@ package Filter;/*
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class CriteriaAdult implements Criteria{
+    /**
+     * @Desc: 符合成人票的票务过滤
+     * @Param: Tickets列表
+     * @Return: 符合成人标准的tickets列表
+     */
     @Override
     public List<Ticket> meetCriteria(List<Ticket> tickets) {
         List<Ticket> adultTickets = new ArrayList<Ticket>();
