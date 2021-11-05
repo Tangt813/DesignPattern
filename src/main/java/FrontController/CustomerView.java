@@ -5,6 +5,6 @@ package FrontController;
  */
 public class CustomerView {
     public void show(){
-        System.out.println("is entering visitor page...");
+        System.out.println("展示顾客界面");
     }
 }

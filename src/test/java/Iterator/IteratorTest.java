@@ -20,7 +20,11 @@ public class IteratorTest {
                 "但是同时他又不需要对象的内部表示，同时便利任务交由迭代器完成，简化其菜单这一聚合对象。\n" +
                 "增加新的聚合类和迭代器类也十分方便。为主食、饮料、小吃等聚合结构提供一个统一的接口。");
         System.out.println("------------------------------------------------------------------");
-
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Menu menu = new Menu();
         System.out.println("产生一个菜单对象");
         System.out.println("------------------------------------------------------------------");
@@ -32,6 +36,11 @@ public class IteratorTest {
         System.out.println("------------------------------------------------------------------");
         menu.appendDish(new SnackDish("玉米片",2.0));
         Iterator it = menu.iterator();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         while (it.hasNext()) {
             System.out.println("使用迭代器遍历菜品");
             Dish dish = (Dish) it.next();

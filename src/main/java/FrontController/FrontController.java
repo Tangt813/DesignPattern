@@ -15,7 +15,7 @@ public class FrontController {
      * @return 合法或不合法
      */
     private boolean isAuthenticUser(String people){
-        if(people.equals("Customer")||people.equals("Worker")) {
+        if(people.equals("顾客")||people.equals("管理员")) {
             System.out.println("User is authenticated successfully.");
             return true;
         } else{
@@ -44,9 +44,14 @@ public class FrontController {
         trackRequest(request,userType);
         //对用户进行身份验证，由调度器拉取指定界面
         if(isAuthenticUser(userType)){
-            dispatcher.dispatch(request);
+            if(userType.equals(request)) {
+                dispatcher.dispatch(request);
+            }
+            else{
+                System.out.println("无法访问");
+            }
         }else{
-            System.out.println("Not an User,Exit.");
+            System.out.println("不是合法用户,退出.");
         }
     }
 }

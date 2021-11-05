@@ -1,7 +1,8 @@
 package FrontController;
-
-public class demo {
-    public static void main(String[] args) {
+import org.testng.annotations.Test;
+public class FrontControllerTest {
+    @Test
+    public void testFrontController(){
         FrontController frontController = new FrontController();
         System.out.println("大家好，欢迎来到前端控制器模式展示～");
         System.out.println("前端控制器模式是用来提供一个集中的请求处理机制，所有的请求都将由一个单一的处理程序处理。");

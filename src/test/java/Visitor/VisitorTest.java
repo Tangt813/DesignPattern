@@ -12,11 +12,26 @@ public class VisitorTest {
         System.out.println("#访问者模式属于行为型模式");
         System.out.println("----------------------Visitor Pattern Test Start--------------------");
         Facility facility = new RecreationFacility();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("海底世界的娱乐设施有摩天轮、旋转木马、过山车等游乐设施\n");
         System.out.println("设施管理员前来检查设施");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         facility.accept(new FacilityAdministrator());
         System.out.println("=======================");
         System.out.print("游客前来游玩设施\n");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         facility.accept(new FacilityPlayer());
         System.out.println("----------------------Visitor Pattern Test Start--------------------");
     }

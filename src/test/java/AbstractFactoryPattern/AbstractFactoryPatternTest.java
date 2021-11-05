@@ -32,6 +32,11 @@ public class AbstractFactoryPatternTest {
         System.out.println("首先呢，新开业的狂欢节中需要建设餐厅和工作的办公室，那当然要批量买成套的桌椅啦\n" +
                 "接下来我们先来看将办公室椅子生成工厂与办公室桌子生成工厂抽象出来的办公室工厂\n" +
                 "\n");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("*-----------------------*");
         System.out.println("|     OfficeFactory     |");
         System.out.println("*-----------------------*");
@@ -56,6 +61,11 @@ public class AbstractFactoryPatternTest {
         officeFactory.getTable().tableMaterial();
         System.out.println("样子为:");
         officeFactory.getTable().draw();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("有了餐厅工厂，就能够保证工厂内的桌子和椅子是配套的~");
         AbstractFactory restaurantFactory = FactoryProduct.getFactory("Restaurant");

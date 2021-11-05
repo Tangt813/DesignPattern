@@ -30,10 +30,20 @@ public class FacadeTest {
         String ticketId=myGuide.getTicketId();
         System.out.println("导游"+gID+"帮助游客"+vID+"完成购票,您的票号为"+ticketId);
         //导游带领游客游玩游乐设施
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("导游开始带领游客游玩：");
         myGuide.Play();
 
         //导游带领游客观看表演
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("导游带领游客去看表演：");
         myGuide.Watch();
 

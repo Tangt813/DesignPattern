@@ -6,10 +6,10 @@ package FrontController;
  */
 public class Dispatcher {
     private CustomerView CustomerView;
-    private WorkerView WorkerView;
+    private ManagerView ManagerView;
     public Dispatcher(){
         CustomerView = new CustomerView();
-        WorkerView = new WorkerView();
+        ManagerView = new ManagerView();
     }
 
     /**
@@ -17,10 +17,10 @@ public class Dispatcher {
      * @param request 为request创建指定视图
      */
     public void dispatch(String request){
-        if(request.equalsIgnoreCase("Customer")){
+        if(request.equalsIgnoreCase("顾客")){
             CustomerView.show();
-        }else if(request.equalsIgnoreCase("Worker")){
-            WorkerView.show();
+        }else if(request.equalsIgnoreCase("管理员")){
+            ManagerView.show();
         }else{
             System.out.println("404 Not Found");
         }

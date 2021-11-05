@@ -20,9 +20,7 @@ public class Show {
 
         Youth youth = new Youth("TSGirlbaby",true);
         youth.getSpecialTicket();
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|    调用了适配器模式哦    |");
-        System.out.println("*-----------------------*\33[0m");
+
         for(int i=0;i<2;i++){
             try {
                 Thread.sleep(500);
@@ -70,9 +68,7 @@ public class Show {
         ServiceLocator.listDetails();
         System.out.println("*-----------------------*");
         System.out.println("负责人:老板，演员已就位");
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|  调用了服务定位器模式哦  |");
-        System.out.println("*-----------------------*\33[0m");
+
         for(int i=0;i<2;i++){
             try {
                 Thread.sleep(500);
@@ -128,9 +124,7 @@ public class Show {
         for(BasePerformance p: performances) {
             p.performProcess();
         }
-        System.out.println("\33[96m*-----------------------*");
-        System.out.println("|     调用了模板模式哦     |");
-        System.out.println("*-----------------------*\33[0m");
+
     }
 
     public static void main(String[] args) throws InterruptedException {

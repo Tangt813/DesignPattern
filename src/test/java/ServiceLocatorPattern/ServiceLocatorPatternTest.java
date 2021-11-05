@@ -25,7 +25,7 @@ public class ServiceLocatorPatternTest {
         }
         System.out.println("想象一个这样的场景，让我娓娓道来\n~~~~~~~~~~~~~~~~");
         try {
-            Thread.sleep(8000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

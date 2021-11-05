@@ -37,28 +37,53 @@ public class BridgeTest {
 
         System.out.println("通过游乐设施与其适合人群的组合构造出不同的游乐设施");
         System.out.println("------------------------------------------------------------------");
+
         BigHammer bigHammer4Child = new BigHammer(child);
         BigHammer bigHammer4Youth = new BigHammer(youth);
 
         RollerCoaster rollerCoaster4Child = new RollerCoaster(child);
         RollerCoaster rollerCoaster4Youth = new RollerCoaster(youth);
 
+
         Carousel carousel4Child = new Carousel(child);
         Carousel carousel4Youth = new Carousel(youth);
 
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         child.take(bigHammer4Child);
         System.out.println("------------------------------------------------------------------");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         child.take(bigHammer4Youth);
         System.out.println("------------------------------------------------------------------");
-
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         youth.take(rollerCoaster4Child);
         System.out.println("------------------------------------------------------------------");
         youth.take(rollerCoaster4Youth);
         System.out.println("------------------------------------------------------------------");
-
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         child.take(carousel4Child);
         System.out.println("------------------------------------------------------------------");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         child.take(carousel4Youth);
         System.out.println("------------------------------------------------------------------");
     }

@@ -26,6 +26,11 @@ public class CommandTest {
         shop.takeOrder(sellGoodsOrder);
         System.out.println("商店接到了水晶球售卖的命令");
         shop.takeOrder(sellGoodsOrder);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("命令开始按顺序执行");
         shop.placeOrders();
         System.out.println("==========================");

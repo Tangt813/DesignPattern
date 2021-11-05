@@ -72,11 +72,11 @@ public class Main {
     public static void frontControl(int order) throws InterruptedException {
         FrontController frontController = new FrontController();
         if(order==1) {
-            frontController.dispatchRequest("Customer","Customer");
+            frontController.dispatchRequest("顾客","顾客");
             System.out.println("\n");
         }
         else if(order==2){
-            frontController.dispatchRequest("Worker","Worker");
+            frontController.dispatchRequest("管理员","管理员");
             System.out.println("\n");
         }
         Thread.sleep(2000);

@@ -24,13 +24,12 @@ import Prototype.PrototypeTest;
 import Proxy.ProxyPatternDemo;
 import ServiceLocatorPattern.ServiceLocatorPatternTest;
 import Singleton.SingletonPatternDemo;
-import State.StateTest;
 import Strategy.StrategyPatternDemo;
+import State.StateTest;
 import Template.TemplateTest;
 import Visitor.VisitorTest;
 import org.junit.Test;
 
-import java.security.KeyStore;
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -182,8 +181,8 @@ public class testMain {
         this.State.stateTest();
 
         Pause();
-        show("空对象模式");
-        this.NullObject.TestNullObject();
+        show("模板模式");
+        this.Template.templateTest();
 
         Pause();
         show("策略模式");
@@ -199,10 +198,10 @@ public class testMain {
                 "====================\n");
         System.out.format("\33[%dm%s",0,"");
 
-
         Pause();
-        show("模板模式");
-        this.Template.templateTest();
+        show("空对象模式");
+        this.NullObject.TestNullObject();
+
 
         Pause();
         show("MVC模式");

@@ -11,7 +11,13 @@ public class DataAccessObjectTest {
         System.out.println("# 3.模型对象/数值对象:该对象是简单的java对象,包含了get/set方法来存储通过使用DAO类检索到的数据.");
         System.out.println("# 在海底世界狂欢节中,我们需要存储每日日期与营业额状态，下面通过展示对该数据库的增删改查来应用DAO模式\n");
         RecordDAO recordDAO = new RecordDAOImpl();
+
         System.out.println("下面储存进账记录:");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Record record1 = new Record(2000,"2021-10-21",1);
         recordDAO.insertRecord(record1);
         Record record2 = new Record(2030,"2021-10-22",2);
@@ -20,14 +26,29 @@ public class DataAccessObjectTest {
         recordDAO.insertRecord(record3);
 
         System.out.println("\n下面输出所有进账记录:");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         for(Record record:recordDAO.getAllRecords()){
             System.out.println("Record output: date:"+record.getDate()+" income:"+record.getIncome());
         }
         System.out.println("\n下面更新进账记录:");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         record1.setIncome(3000);
         recordDAO.updateRecord(record1);
 
         System.out.println("\n下面删除进账记录:");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         recordDAO.deleteRecord(record3);
 
     }

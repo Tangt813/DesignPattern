@@ -21,7 +21,11 @@ public class BusinessDelegateTest {
                 "还设计来无法找到服务来保障程序的鲁棒性需求" +
                 "实现表示层与业务层的解耦");
         System.out.println("------------------------------------------------------------------");
-
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("我们首先建立一个空仓库");
         Warehouse warehouse = new Warehouse();
 
@@ -31,16 +35,31 @@ public class BusinessDelegateTest {
         WarehouseClient client = new WarehouseClient(warehouseDelegate);
         System.out.println("------------------------------------------------------------------");
         System.out.println("启用查找货物服务");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         warehouseDelegate.setServiceType(WarehouseServiceType.PickUp);
         client.doTask(1,"red", warehouse);
         System.out.println("可以发现并未找到这件货物");
         System.out.println("------------------------------------------------------------------");
         System.out.println("启用存储货物服务");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         warehouseDelegate.setServiceType(WarehouseServiceType.Storage);
         client.doTask(1,"red", warehouse);
 
         System.out.println("------------------------------------------------------------------");
         System.out.println("启用查找货物服务");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         warehouseDelegate.setServiceType(WarehouseServiceType.PickUp);
         client.doTask(1,"red", warehouse);
 
