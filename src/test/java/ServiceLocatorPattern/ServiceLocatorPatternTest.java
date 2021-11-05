@@ -1,12 +1,11 @@
 package ServiceLocatorPattern;
 
 import org.junit.Test;
-
-import java.util.Scanner;
 public class ServiceLocatorPatternTest {
     @Test
     public void testServiceLocatorPattern(){
         System.out.println("大家好，欢迎来到服务定位器模式展示~");
+        //java控制台标准的时间停顿语法，方便观看者在控制台输出时体验感更好
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -49,6 +48,7 @@ public class ServiceLocatorPatternTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        //创建三个演员，分别海马，大白鲨，派大星
         ServiceDetails seaHouse = new ServiceDetails("海马","海马小馆",false);
         ServiceDetails shark = new ServiceDetails("大白鲨","大白鲨馆",false);
         ServiceDetails paidaxing = new ServiceDetails("派大星","派大星小屋",false);
@@ -60,7 +60,7 @@ public class ServiceLocatorPatternTest {
         shark.drawShark();
         System.out.println("演员，派大星");
         paidaxing.drawPaidaXing();
-
+        //讲该三个对象添加进入服务对象list中
         ServiceLocator.addService(seaHouse);
         ServiceLocator.addService(shark);
         ServiceLocator.addService(paidaxing);
@@ -75,6 +75,7 @@ public class ServiceLocatorPatternTest {
         System.out.println("现在经纪人想获取演员海马的信息，因此访问服务定位器");
         ServiceDetails serviceDetail1=ServiceLocator.getService("海马");
         int i=0;
+        //显示搜寻过程中的动画效果
         for(i=0;i<5;i++){
             System.out.println("            |");
             try {
@@ -86,6 +87,7 @@ public class ServiceLocatorPatternTest {
         System.out.println("*-----------------------*");
         System.out.println("|       服务定位器查询     |");
         System.out.println("*-----------------------*");
+        //显示搜寻过程中的动画效果
         for(i=0;i<5;i++){
             System.out.println("            |");
             try {

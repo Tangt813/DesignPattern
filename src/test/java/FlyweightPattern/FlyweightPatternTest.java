@@ -1,6 +1,5 @@
 package FlyweightPattern;
 
-import FlyweightPattern.*;
 import org.junit.Test;
 
 import java.util.Scanner;
@@ -45,7 +44,7 @@ public class FlyweightPatternTest {
             e.printStackTrace();
         }
         System.out.println("温馨提示：为了更人性化，水晶球可以自己选择图案哦~甚至可以打上你的名字");
-        for(int i=0; i < 3; ++i) {
+        for(int i=0; i < 5; ++i) {
             System.out.println("\n此时模子的数量为："+CrystallBallFactory.numMuzi());
             System.out.println("请输入你想要的水晶球半径，颜色，及图案");
             try {
@@ -54,47 +53,52 @@ public class FlyweightPatternTest {
                 e.printStackTrace();
             }
             int raduis1=6;
-//            System.out.print("半径:");
-            boolean isTrue=false;
-            while (!isTrue){
+            //为了更安全，进行了整数规范输入的限制
+            boolean isTrueRadius=false;
+            while (!isTrueRadius){
                 System.out.print("半径:");
                 input= new Scanner(System.in);
-                isTrue=input.hasNextInt();
-                if(isTrue){
+                isTrueRadius=input.hasNextInt();
+                if(isTrueRadius){
                     raduis1=input.nextInt();
                 }
                 else{
                     System.out.println("请输入整数哦！");
                 }
             }
-            System.out.print("颜色:");
-            String color1=input.next();
+            //为了更安全，进行了颜色规范输入的限制
+            boolean isTruecolor=false;
+            String color1="blue";
+            while (!isTruecolor){
+                System.out.print("颜色:");
+                color1=input.next();
+                if(color1.equalsIgnoreCase("blue")|| color1.equalsIgnoreCase("red")|| color1.equalsIgnoreCase("yellow")|| color1.equalsIgnoreCase("green")|| color1.equalsIgnoreCase("white")){
+                    isTruecolor=true;
+                }
+                else{
+                    System.out.println("该颜色仓库没有哦，请重新输入颜色！");
+                }
+            }
+
             System.out.print("图案:");
             String names1=input.next();
+            //通过水晶球工厂，根据半径来创建水晶球对象
             CrystalBall crystalBal = CrystallBallFactory.getCrystalBall(raduis1);
-//            crystalBal.setColor(colors[i%5]);
-//            crystalBal.setName(names[i%5]);
+            //设置水晶球的颜色和名字
             crystalBal.setColor(color1.toString());
             crystalBal.setName(names1);
-//            System.out.println("半径:"+raduis1+" 颜色:"+colors[i%5]+" 图案:"+names[i%5]);
+
             System.out.println("稍等片刻，你的水晶球马上做好！");
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-//            crystalBal.draw(names[i%3]);
+            //打印水晶球的形状
             crystalBal.draw(names1);
-//            try {
-//                Thread.sleep(500);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
+
         }
         System.out.println("谢谢光临享元模式，再见~");
-    }
-    public static int getRandomRadius() {
-        return radius[(int)(Math.random()*radius.length)];
     }
 
 }
