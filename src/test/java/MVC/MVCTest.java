@@ -42,23 +42,27 @@ public class MVCTest {
         while (true) {
             System.out.println("请输入你要执行的要求：(1.更改店名。2.增加顾客。3.顾客离开。4.显示当前信息。0.退出)");
             Scanner scan = new Scanner(System.in);
-            String  choice = scan.nextLine();
+            String choice = scan.nextLine();
             if (choice.equals("1")) {
                 System.out.println("请输入新店名：");
                 scan = new Scanner(System.in);
-                String newName = scan.nextLine();
-                RC.setName(newName);
-            } else if (choice.equals("2")) {
 
+                String newName = scan.nextLine();
+                if (newName != "" && newName != null)
+                    RC.setName(newName);
+                else {
+                    System.out.println("输入错误，没有正确输入店名！");
+                    continue;
+                }
+
+
+            } else if (choice.equals("2")) {
                 System.out.println("请输入来用餐的顾客人数：");
                 scan = new Scanner(System.in);
-                if(scan.hasNextInt())
-                {
+                if (scan.hasNextInt()) {
                     int number = scan.nextInt();
                     RC.add(number);
-                }
-                else
-                {
+                } else {
                     System.out.println("输入错误，请输入整数！");
                     continue;
                 }
@@ -66,13 +70,10 @@ public class MVCTest {
             } else if (choice.equals("3")) {
                 System.out.println("请输入离开的顾客人数：");
                 scan = new Scanner(System.in);
-                if(scan.hasNextInt())
-                {
+                if (scan.hasNextInt()) {
                     int number = scan.nextInt();
                     RC.clear(number);
-                }
-                else
-                {
+                } else {
                     System.out.println("输入错误，请输入整数！");
                     continue;
                 }
@@ -86,14 +87,13 @@ public class MVCTest {
         }
     }
 
-    public static Restaurant getRestaurant()
-    {
+    public static Restaurant getRestaurant() {
         Menu menu = new Menu();
-        menu.appendDish(new MainDish("饭",5.0));
-        menu.appendDish(new DrinkDish("可乐",5.0));
-        menu.appendDish(new SnackDish("零食",5.0));
-        Iterator MI=menu.iterator();
-        return new Restaurant("一起吃餐厅",MI);
+        menu.appendDish(new MainDish("饭", 5.0));
+        menu.appendDish(new DrinkDish("可乐", 5.0));
+        menu.appendDish(new SnackDish("零食", 5.0));
+        Iterator MI = menu.iterator();
+        return new Restaurant("一起吃餐厅", MI);
     }
 
 }
