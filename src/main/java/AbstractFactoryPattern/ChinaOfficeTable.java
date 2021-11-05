@@ -1,13 +1,15 @@
 package AbstractFactoryPattern;
 
 public class ChinaOfficeTable extends Table {
-
+    //打印该桌子的材质
     public void tableMaterial(){
         System.out.println("古典红木材办公桌");
     }
+    //打印该桌子的颜色
     public void tableColor(){
         System.out.println("中国红");
     }
+    //打印该桌子的形状
     public void draw(){
         System.out.println("\33[31m                                                 \n" +
                 "                                                 \n" +

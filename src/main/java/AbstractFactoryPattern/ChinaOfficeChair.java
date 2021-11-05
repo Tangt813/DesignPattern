@@ -1,13 +1,15 @@
 package AbstractFactoryPattern;
 
 public class ChinaOfficeChair extends Chair{
-
+    //打印该椅子的材质
     public void chairMaterial(){
         System.out.println("古典红木材办公椅");
     }
+    //打印该椅子的颜色
     public void chairColor(){
         System.out.println("中国红");
     }
+    //通过手绘ASCII码得到该椅子的形状和颜色
     public void draw(){
         System.out.println("\33[31m                                          \n" +
                 "                _,,,,pem=qqyg,,,g        \n" +

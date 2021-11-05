@@ -1,12 +1,15 @@
 package AbstractFactoryPattern;
 
 public class RestaurantTable extends Table{
+    //打印该桌子的材质
     public void tableMaterial(){
         System.out.println("水晶玻璃餐厅方桌");
     }
+    //打印该桌子的颜色
     public void tableColor(){
         System.out.println("水晶灰");
     }
+    //打印该桌子的形状
     public void draw(){
         System.out.println("\33[37m               __,,_a-pgmgrpx-a__,,_              \n" +
                 "        ,_gpDNwR&#X&FQM&#Q$L0%N0#NNKB&b\\, _       \n" +

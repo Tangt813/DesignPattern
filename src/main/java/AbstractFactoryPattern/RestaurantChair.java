@@ -1,13 +1,15 @@
 package AbstractFactoryPattern;
 
 public class RestaurantChair extends Chair{
-
+    //打印该椅子的材质
     public void chairMaterial(){
         System.out.println("经典塑料餐厅靠背椅");
     }
+    //打印该椅子的颜色
     public void chairColor(){
         System.out.println("太空灰");
     }
+    //通过手绘ASCII码得到该椅子的形状和颜色
     public void draw(){
         System.out.println("\33[37m                            \n" +
                 "              _#0mag_,,_    \n" +

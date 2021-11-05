@@ -1,5 +1,6 @@
 package ServiceLocatorPattern;
 
+//做一个安全防护，即防止找不到的时候，系统出问题，做一个空对象处理
 public class NullService extends Service{
     public String getName(){
         return "";

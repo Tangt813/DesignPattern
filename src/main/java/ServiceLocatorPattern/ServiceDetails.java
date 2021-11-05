@@ -4,13 +4,13 @@ public class ServiceDetails extends Service{
     public String name="";
     public String positon="";
     public boolean isActive=false;
-    public ServiceDetails(){
-    }
+    //初始化对象，根据name,pos,act初始化对象
     public ServiceDetails(String jndiName,String jndiPos,boolean jndiAct){
         name=jndiName;
         positon=jndiPos;
         isActive=jndiAct;
     }
+    //得到关于name,position,active的相关信息
     public String getName(){
         return name;
     }
@@ -20,6 +20,7 @@ public class ServiceDetails extends Service{
     public boolean isBathAndEat(){
         return isActive;
     }
+    //打印关于某个具体的对象的详细信息
     public void printDetails(){
         System.out.print(name+"现在位置在"+positon);
         if(isActive){
@@ -29,6 +30,7 @@ public class ServiceDetails extends Service{
             System.out.println(",但还没有吃饭");
         }
     }
+    //设置关于name,position,active的相关信息
     public void setName(String nameNew){
         positon=nameNew;
     }
@@ -38,6 +40,8 @@ public class ServiceDetails extends Service{
     public void setActive(boolean activeNew){
         isActive=activeNew;
     }
+
+    //用ASCII码手绘大白鲨
     public void drawShark(){
         System.out.println("                          ,                      \n" +
                 "                           0L                     \n" +
@@ -50,12 +54,14 @@ public class ServiceDetails extends Service{
                 "   j0`             q,,_rKKDQB&3N^&Q0KB0KBQza*M^      \n" +
                 "  ,0`               ``~*NAQDWQ&0DQ#M###@    \n" +
                 "                               ##^       ");
+        //采用时间暂停的方式，实现一帧一帧的效果
         try {
             Thread.sleep(800);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+    //用ASCII码手绘蓝色海马
     public void drawSeaHorse(){
         System.out.println("\33[94m   .       \n" +
                 "    MN0f     \n" +
@@ -69,13 +75,14 @@ public class ServiceDetails extends Service{
                 "     #       \n" +
                 "     &` I    \n" +
                 "     `\"\"     \33[0m");
+        //采用时间暂停的方式，实现一帧一帧的效果
         try {
             Thread.sleep(800);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-
+    //用ASCII码手绘派大星
     public void drawPaidaXing(){
         System.out.println("\33[31m               a,\n" +
                 "               !  Dq\n" +
@@ -97,6 +104,7 @@ public class ServiceDetails extends Service{
                 "\33[31m               NN&3p-   #t~3                \n" +
                 "                _ g     ^%p^                \n" +
                 "                 =^      =^    \33[0m");
+        //采用时间暂停的方式，实现一帧一帧的效果
         try {
             Thread.sleep(800);
         } catch (InterruptedException e) {
