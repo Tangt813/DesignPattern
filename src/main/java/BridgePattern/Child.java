@@ -9,14 +9,12 @@ package BridgePattern;
  */
 public class Child extends People {
 
-    public Child(){
-        super();
-    }
-
+    // 设置名称，设置是否为VIP
     public Child(String name,Boolean isVip) {
         super(name,isVip);
     }
 
+    // 获取当前人群名字
     @Override
     public String getAgeGroupName() {
         return "儿童";

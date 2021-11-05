@@ -15,17 +15,20 @@ public class BigHammer extends AmusementFacility{
         super(suitablePeople,true);
     }
 
+    // 设置适合人群
     @Override
     public void setSuitablePeople(People suitablePeople) {
         this.suitablePeople = suitablePeople;
     }
 
+    // 运行
     @Override
     public void run() {
         playAction = (Strategy.PlayAction) new playBigHammer();
         playAction.playFacility();
     }
 
+    // 获取游乐设施名称
     @Override
     public String getAmusementFacilityName() {
         return "适合" + suitablePeople.getAgeGroupName() + "的海底大摆锤";

@@ -13,7 +13,7 @@ import org.junit.Test;
 public class BridgeTest {
     @Test
     public void bridgeTest() {
-        System.out.println("桥接模式");
+        System.out.println("大家好欢迎来到桥接模式");
         System.out.println("在现实生活中，某些类具有两个或多个维度的变化，" +
                 "如果用继承方式，不但对应的子类很多，而且扩展困难。\n选择桥接模式，将抽象与实现分离，" +
                 "使它们可以独立变化。\n它是用组合关系代替继承关系来实现，从而降低了抽象和实现这两个可变维度的耦合度。");

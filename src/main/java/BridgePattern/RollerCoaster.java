@@ -16,17 +16,20 @@ public class RollerCoaster extends AmusementFacility {
         super(suitablePeople,true);
     }
 
+    // 设置适合人群
     @Override
     public void setSuitablePeople(People suitablePeople) {
         this.suitablePeople = suitablePeople;
     }
 
+    // 游乐设施运行
     @Override
     public void run() {
         playAction = new playRollerCoaster();
         playAction.playFacility();
     }
 
+    // 获得游乐设施名称
     @Override
     public String getAmusementFacilityName() {
         return "适合" + suitablePeople.getAgeGroupName() + "的海底过山车";

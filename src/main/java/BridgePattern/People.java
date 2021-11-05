@@ -3,6 +3,7 @@ package BridgePattern;
 import Adapter.RegularTicket;
 import Strategy.PlayAction;
 import Strategy.playBigHammer;
+import com.alibaba.fastjson.JSONObject;
 
 import java.util.Objects;
 
@@ -14,44 +15,54 @@ import java.util.Objects;
  * @createTime 2021年10月11日 23:22:00
  */
 public abstract class People {
+    // 名字
     private final String name;
 
+    // 是否为VIP
     private Boolean isVip;
 
+    // 游玩的项目
     private PlayAction playAction;
 
+    // 初始化一个默认的人
     public People(){
         this.name = "Default Name";
         this.isVip = false;
         this.playAction = null;
     }
 
+    // 初始化一个人，赋予名字与是否为VIP
     public People(String name,Boolean isVip){
         this.name = name;
         this.isVip = isVip;
     }
 
+    // 获取姓名
     public String getName() {
         return name;
     }
 
+    // 获取是否为VIP
     public Boolean getVip() {
         return isVip;
     }
 
+    // 获得游客选择的PlayAction
     public PlayAction getPlayAction() {
         return playAction;
     }
 
+    // 设置游客的PlayAction
     public void setPlayAction(PlayAction playAction) {
         this.playAction = playAction;
     }
 
-
+    // 设置VIP
     public void setVip(Boolean vip) {
         isVip = vip;
     }
 
+    // 获得是否为特殊票
     public void getSpecialTicket() {
         RegularTicket myTicket = new RegularTicket();
         String type = "";
@@ -64,6 +75,7 @@ public abstract class People {
         System.out.println(myTicket.check(type));
     }
 
+    // 获得年龄段
     public abstract String getAgeGroupName();
 
     public Boolean take(AmusementFacility amusementFacility){

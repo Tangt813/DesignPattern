@@ -12,7 +12,7 @@ import org.junit.Test;
 public class BusinessDelegateTest {
     @Test
     public void businessDelegateTest() {
-        System.out.println("业务代表模式");
+        System.out.println("大家好，欢迎来到业务代表模式～");
         System.out.println("用于对表示层和业务层解耦。它基本上是用来减少通信或对表示层代码中的业务层代码的远程查询功能。");
         System.out.println("------------------------------------------------------------------");
         System.out.println("接下来我们通过纪念品商店的仓库来感受桥接模式的使用:");

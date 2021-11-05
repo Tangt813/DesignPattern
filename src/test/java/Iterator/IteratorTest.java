@@ -12,7 +12,7 @@ import org.junit.Test;
 public class IteratorTest {
     @Test
     public void iteratorTest(){
-        System.out.println("迭代器模式");
+        System.out.println("大家好欢迎来到迭代器模式～");
         System.out.println("在客户访问类与聚合类之间插入一个迭代器，这分离了聚合对象与其遍历行为，对客户也隐藏了其内部细节");
         System.out.println("------------------------------------------------------------------");
         System.out.println("接下来我们通过餐厅的菜单模块来感受迭代器模式的使用:");

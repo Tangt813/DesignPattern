@@ -13,10 +13,12 @@ public class Youth extends People {
         super();
     }
 
+
     public Youth(String name,Boolean isVip) {
         super(name,isVip);
     }
 
+    // 获取当前人群名字
     @Override
     public String getAgeGroupName() {
         return "青年";

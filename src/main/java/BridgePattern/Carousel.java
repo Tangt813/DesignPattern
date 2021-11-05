@@ -6,7 +6,7 @@ import Strategy.playCarousel;
  * @author tangshuo
  * @version 1.0.0
  * @ClassName Carousel.java
- * @Description TODO
+ * @Description 旋转木马
  * @createTime 2021年10月31日 22:04:00
  */
 public class Carousel extends AmusementFacility{
