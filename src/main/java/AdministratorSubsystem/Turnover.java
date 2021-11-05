@@ -11,6 +11,11 @@ public class Turnover {
     public String date;
     public Double data;
 
+    public Turnover(String date, double data) {
+        this.data=data;
+        this.date=date;
+    }
+
     public Double getData() {
         return data;
     }

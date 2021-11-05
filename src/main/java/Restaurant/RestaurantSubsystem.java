@@ -29,16 +29,16 @@ public class RestaurantSubsystem {
         {
             RC.updateView();
             DishCache.showCache();
-            System.out.println("请输入你要执行的要求：(1.更改店名。2.增加顾客。3.顾客离开。4.显示当前信息。5.展示菜单。6.顾客点餐。0.退出)");
+            System.out.println("请输入你要执行的要求：(1.增加顾客。2.顾客离开。3.显示当前信息。4.展示菜单。5.顾客点餐。0.退出)");
             Scanner scan= new Scanner(System.in);
             int choice=scan.nextInt();
-            if(choice==1) {
-                System.out.println("请输入新店名：");
-                scan= new Scanner(System.in);
-                String newName=scan.nextLine();
-                RC.setName(newName);
-            }
-            else if(choice==2) {
+//            if(choice==1) {
+//                System.out.println("请输入新店名：");
+//                scan= new Scanner(System.in);
+//                String newName=scan.nextLine();
+//                RC.setName(newName);
+//            }
+             if(choice==1) {
 
                 System.out.println("请输入来用餐的顾客人数：");
                 scan = new Scanner(System.in);
@@ -83,21 +83,21 @@ public class RestaurantSubsystem {
                     }
                 }
             }
-            else if(choice==3) {
+            else if(choice==2) {
                 System.out.println("请输入离开的顾客人数：");
                 scan = new Scanner(System.in);
                 int number = scan.nextInt();
                 RC.clear(number);
             }
-            else if(choice==4)
+            else if(choice==3)
             {
                 RC.updateView();
             }
-            else if(choice==5)
+            else if(choice==4)
             {
                 RC.showMenu();
             }
-            else if(choice==6){
+            else if(choice==5){
                 BaseRestaurantManager restaurantManager = new RestaurantManager();
                 restaurantManager.addWaiter(new RestaurantWaiter());
                 MainFoodFactory mainFoodFactory=new MainFoodFactory();

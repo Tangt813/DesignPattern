@@ -82,26 +82,40 @@ public class HandleDatabase {
         System.out.println("yes");
         RecordDAO recordDAO = new RecordDAOImpl();
         Scanner scanner = new Scanner(System.in);
+        List<Turnover> list=getDataRequest();
         System.out.println("1.查看所有进账记录\n2.将今日进账记录存储至数据库中\n3.按Q/q退出");
         while (true) {
             String command = scanner.nextLine();
-            if(command.equals("1")){
+            if(command.equals("1")) {
                 System.out.println("———————————————————————");
                 System.out.println("|    Date    | Income |");
                 System.out.println("———————————————————————");
-                for(Record record:recordDAO.getAllRecords()){
-                    System.out.println("| "+record.getDate()+" |  "+record.getIncome()+"  |");
+//                for(Record record:recordDAO.getAllRecords()){
+//                    System.out.println("| "+record.getDate()+" |  "+record.getIncome()+"  |");
+//                }
+                for(int i=0;i<list.size();i++){
+                    String date= list.get(i).getDate();
+                    double income=list.get(i).getData();
+                    System.out.println("  "+date+"| "+" "+income+"|\n");
                 }
+
                 System.out.println("———————————————————————");
             }
             if(command.equals("2")){
-                Record record = new Record(3050,"2021-10-21",1);
+                Record record = new Record(3050,"2021-11-6",1);
                 System.out.println("今日营业信息:date:"+record.getDate()+",income:"+record.getIncome());
+                System.out.println("插入数据库中...");
+                list.add(new Turnover("2021-11-06",3050));
                 System.out.println("所有历史记录:\n———————————————————————");
                 System.out.println("|    Date    | Income |");
                 System.out.println("———————————————————————");
-                for(Record r:recordDAO.getAllRecords()){
-                    System.out.println("| "+r.getDate()+" |  "+r.getIncome()+"  |");
+//                for(Record r:recordDAO.getAllRecords()){
+//                    System.out.println("| "+r.getDate()+" |  "+r.getIncome()+"  |");
+//                }
+                for(int i=0;i<list.size();i++){
+                    String date= list.get(i).getDate();
+                    double income=list.get(i).getData();
+                    System.out.println("  "+date+"| "+" "+income+"|\n");
                 }
                 System.out.println("———————————————————————");
             }
