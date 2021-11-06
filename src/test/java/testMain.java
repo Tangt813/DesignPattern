@@ -48,7 +48,7 @@ public class testMain {
     private DecoratedTest Decorated=new DecoratedTest();
 
     private FacadeTest Facade=new FacadeTest();
-    private final FactoryTest Factory=new FactoryTest();
+    private FactoryTest Factory=new FactoryTest();
     private FilterTest Filter=new FilterTest();
     private FlyweightPatternTest Flyweight=new FlyweightPatternTest();
     private FrontControllerTest FrontController=new FrontControllerTest();
@@ -89,12 +89,157 @@ public class testMain {
     @Test
 
     public void Test() throws ParseException, InterruptedException {
-        System.out.format("\33[%dm%s",96,"");
-        System.out.println("=====================\n" +
-                           "* 23个经典设计模式展示 *\n" +
-                           "=====================\n");
-        System.out.format("\33[%dm%s",0,"");
 
+        int exit=1;
+        String order;
+        while(exit==1){
+
+            System.out.format("\33[%dm%s",96,"");
+            System.out.println("====Menu====\n"+
+                    "0.退出\n" +
+                    "1.工厂模式\n" +
+                    "2.抽象工厂模式\n" +
+                    "3.单例模式\n" +
+                    "4.建造者模式\n"+
+                    "5.原型模式\n" +
+                    "6.适配器模式\n" +
+                    "7.桥接模式\n" +
+                    "8.过滤器模式\n" +
+                    "9.组合模式\n" +
+                    "10.装饰器模式\n" +
+                    "11.外观模式\n" +
+                    "12.享元模式\n" +
+                    "13.代理模式\n" +
+                    "14.责任链模式\n" +
+                    "15.命令模式\n" +
+                    "16.解释器模式\n" +
+                    "17.迭代器模式\n" +
+                    "18.中介者模式\n" +
+                    "19.备忘录模式\n" +
+                    "20.观察者模式\n" +
+                    "21.状态模式\n" +
+                    "22.模板模式\n" +
+                    "23.策略模式\n" +
+                    "24.空对象模式\n" +
+                    "25.访问者模式\n" +
+                    "26.MVC模式\n" +
+                    "27.业务代表模式\n" +
+                    "28.数据访问对象模式\n" +
+                    "29.前端控制器模式\n" +
+                    "30.服务定位器模式\n"+
+                    "====Menu====\n");
+            System.out.format("\33[%dm%s",0,"");
+            System.out.println("请输入选择：");
+            order=this.sc.nextLine();
+
+            switch(order){
+                case "0":
+                    exit=0;
+                    break;
+                case "1":
+                    this.Factory.factoryTest();
+                    break;
+                case "2":
+                    this.AbstractFactory.testAbstractFactoryPattern();
+                    break;
+                case"3":
+                    this.Singleton.singletonTest();
+                    break;
+                case"4":
+                    this.Builder.builderTest();
+                    break;
+                case"5":
+                    this.Prototype.prototypeTest();
+                    break;
+                case"6":
+                    this.Adapter.adapterTest();
+                    break;
+                case"7":
+                    this.Bridge.bridgeTest();
+                    break;
+                case"8":
+                    this.Filter.TestFilter();
+                    break;
+                case"9":
+                    this.Composite.testComposite();
+                    break;
+                case"10":
+                    this.Decorated.testDecorated();
+                    break;
+
+                case "11":
+                    this.Facade.facadeTest();
+                    break;
+                case "12":
+                    this.Flyweight.testFlyweightPattern();
+                    break;
+                case"13":
+                    this.Proxy.proxyTest();
+                    break;
+                case"14":
+                    this.ChainOfResponsibility.performTest();
+                    break;
+                case"15":
+                    this.Command.commandTest();
+                    break;
+                case"16":
+                    this.Interpreter.interpreterTest();
+                    break;
+                case"17":
+                    this.Iterator.iteratorTest();
+                    break;
+                case"18":
+                    this.Mediator.TestMediator();
+                    break;
+                case"19":
+                    this.Memento.TestMemento();
+                    break;
+                case"20":
+                    this.Observer.testObserver();
+                    break;
+
+                case "21":
+                    this.State.stateTest();
+                    break;
+                case "22":
+                    this.Template.templateTest();
+                    break;
+                case"23":
+                    this.Strategy.strategyTest();
+                    break;
+                case"24":
+                    this.NullObject.TestNullObject();
+                    break;
+                case"25":
+                   this.Visitor.visitorTest();
+                    break;
+                case"26":
+                    this.MVC.mvcTest();
+                    break;
+                case"27":
+                    this.BusinessDelegate.businessDelegateTest();
+                    break;
+                case"28":
+                    this.DataAccessObject.testDataAccessObject();
+                    break;
+                case"29":
+                    this.FrontController.testFrontController();
+                    break;
+                case"30":
+                    this.ServiceLocator.testServiceLocatorPattern();
+                    break;
+
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        //        System.out.println("=====================\n" +
+//                           "* 23个经典设计模式展示 *\n" +
+//                           "=====================\n");
+/*
         Pause();
         show("工厂模式");
         this.Factory.factoryTest();
@@ -202,7 +347,6 @@ public class testMain {
         show("空对象模式");
         this.NullObject.TestNullObject();
 
-
         Pause();
         show("MVC模式");
         this.MVC.mvcTest();
@@ -233,6 +377,6 @@ public class testMain {
                 "* 所有设计模式展示完毕 *\n" +
                 "=====================\n");
         System.out.format("\33[%dm%s",0,"");
-
+*/
     }
 }

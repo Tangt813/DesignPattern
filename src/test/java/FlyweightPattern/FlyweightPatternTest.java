@@ -96,6 +96,10 @@ public class FlyweightPatternTest {
             }
             //打印水晶球的形状
             crystalBal.draw(names1);
+            if(i==2)
+            {
+                System.out.println("\n此时的模子数量为："+CrystallBallFactory.numMuzi());
+            }
 
         }
         System.out.println("谢谢光临享元模式，再见~");

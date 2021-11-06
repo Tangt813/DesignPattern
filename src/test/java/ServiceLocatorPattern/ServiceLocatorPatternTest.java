@@ -23,12 +23,7 @@ public class ServiceLocatorPatternTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("想象一个这样的场景，让我娓娓道来\n~~~~~~~~~~~~~~~~");
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         System.out.println("让我们一起来看服务定位器模式的具体例子");
         try {
             Thread.sleep(500);

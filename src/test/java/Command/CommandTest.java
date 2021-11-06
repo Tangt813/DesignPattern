@@ -18,7 +18,7 @@ public class CommandTest {
         SellGoods sellGoodsOrder = new SellGoods(abcGoods);
 
         Shop shop = new Shop();
-        System.out.println("商店接到了水晶球进货的命令");
+        System.out.println("商店接到了水晶球进货10个的命令");
         shop.takeOrder(buyStockOrder);
         System.out.println("商店接到了水晶球售卖的命令");
         shop.takeOrder(sellGoodsOrder);
@@ -34,7 +34,7 @@ public class CommandTest {
         System.out.println("命令开始按顺序执行");
         shop.placeOrders();
         System.out.println("==========================");
-        System.out.println("商店接到了水晶球进货的命令");
+        System.out.println("商店接到了水晶球进货10个的命令");
         shop.takeOrder(buyStockOrder);
         System.out.println("商店接到了水晶球售卖的命令");
         shop.takeOrder(sellGoodsOrder);
